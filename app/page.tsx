@@ -131,7 +131,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
                 {/* Image */}
                 <img 
-                  src="https://images.unsplash.com/photo-1494888286974-456052647ba7?q=80&w=1000&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1767452985026-978ef46d335c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Rosalind - Professional SEN Tutor"
                   className="w-full h-full object-cover"
                 />
