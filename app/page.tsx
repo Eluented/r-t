@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import Testimonials from '@/components/Testimonials';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 
@@ -17,6 +18,38 @@ export default function Home() {
       },
     }),
   };
+
+  // Carousel state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselImages = [
+    {
+      src: 'https://images.unsplash.com/photo-1596394516093-501ba68352f7?q=80&w=800&auto=format&fit=crop',
+      title: 'One-to-One Tutoring',
+      desc: 'Personalized learning sessions tailored to each child\'s needs'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1427504494785-cdff5d29f737?q=80&w=800&auto=format&fit=crop',
+      title: 'Interactive Learning',
+      desc: 'Engaging methods that make learning fun and memorable'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop',
+      title: 'Building Confidence',
+      desc: 'Creating a supportive environment for academic growth'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1573496359142-b8d93c34b8f4?q=80&w=800&auto=format&fit=crop',
+      title: 'Expert Guidance',
+      desc: '25+ years of experience supporting children\'s learning'
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <main className="bg-white">
@@ -195,6 +228,95 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Image Carousel Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Tutoring in Action</h2>
+            <p className="text-xl text-gray-600">Real learning moments that inspire growth and confidence</p>
+          </motion.div>
+
+          {/* Carousel Container */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Main Image */}
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-3xl overflow-hidden shadow-2xl h-96 md:h-[500px]"
+            >
+              <img
+                src={carouselImages[currentSlide].src}
+                alt={carouselImages[currentSlide].title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              
+              {/* Text Overlay */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="absolute bottom-0 left-0 right-0 p-8 text-white"
+              >
+                <h3 className="text-3xl font-bold mb-2">{carouselImages[currentSlide].title}</h3>
+                <p className="text-lg text-gray-100">{carouselImages[currentSlide].desc}</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Navigation Buttons */}
+            <div className="flex justify-between items-center mt-8">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
+                className="bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition"
+              >
+                ← Previous
+              </motion.button>
+
+              {/* Dots Indicator */}
+              <div className="flex gap-3">
+                {carouselImages.map((_, idx) => (
+                  <motion.button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    whileHover={{ scale: 1.2 }}
+                    className={`rounded-full transition ${
+                      idx === currentSlide
+                        ? 'bg-gradient-to-r from-emerald-600 to-blue-700 w-3 h-3'
+                        : 'bg-gray-300 w-2 h-2 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % carouselImages.length)}
+                className="bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition"
+              >
+                Next →
+              </motion.button>
+            </div>
+
+            {/* Slide Counter */}
+            <div className="text-center mt-6 text-gray-600 font-semibold">
+              {currentSlide + 1} / {carouselImages.length}
+            </div>
+          </div>
         </div>
       </section>
 

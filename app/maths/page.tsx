@@ -16,33 +16,33 @@ export default function MathsPage() {
   return (
     <main className="bg-white">
       {/* Hero Section - Interactive Problem-Solving Theme */}
-      <section className="relative bg-gradient-to-b from-blue-50 via-white to-amber-50 pt-20 pb-12 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-amber-500 text-white min-h-screen flex items-center overflow-hidden">
         {/* Animated math symbols in background */}
-        <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute inset-0 overflow-hidden opacity-10">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="absolute -top-20 -left-20 text-9xl"
+            className="absolute top-32 left-20 text-9xl"
           >
             ∑
           </motion.div>
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-            className="absolute -bottom-20 -right-20 text-9xl"
+            className="absolute bottom-32 right-20 text-9xl"
           >
             ∫
           </motion.div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Top Badge */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-center mb-8"
           >
-            <div className="inline-block bg-gradient-to-r from-blue-100 to-amber-100 px-6 py-3 rounded-full text-blue-700 font-semibold">
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold border border-white/30">
               🧮 Expert Maths Tutoring in North West London
             </div>
           </motion.div>
@@ -54,13 +54,13 @@ export default function MathsPage() {
             transition={{ delay: 0.1 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span>From Maths Anxiety</span>
-              <span className="block text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">
+              <span className="block text-amber-200">
                 to Mathematical Confidence
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Specialist Maths tutoring for children with dyscalculia, learning gaps, and those who've lost confidence. We focus on understanding, not just answers.
             </p>
           </motion.div>
@@ -76,33 +76,15 @@ export default function MathsPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1577720643272-265f434b3c8c?w=800&h=800&fit=crop&auto=format"
+                  src="https://images.unsplash.com/photo-1758687126499-9ff30d1c5762?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Teacher helping child with math"
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
               </div>
 
-              {/* Floating stat badges */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl border-2 border-blue-600"
-              >
-                <div className="text-4xl font-bold text-blue-600">95%</div>
-                <p className="text-sm text-gray-600 font-semibold">Confidence Boost</p>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl border-2 border-amber-600"
-              >
-                <div className="text-4xl font-bold text-amber-600">100%</div>
-                <p className="text-sm text-gray-600 font-semibold">Personalised</p>
-              </motion.div>
+       
             </motion.div>
 
             {/* Right: Journey Steps */}
@@ -112,7 +94,7 @@ export default function MathsPage() {
               transition={{ delay: 0.3 }}
               className="space-y-4"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Your Child's Maths Journey</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">Your Child's Maths Journey</h2>
 
               {[
                 { step: '01', title: 'Identify the Problem', desc: 'Where are the gaps? What\'s causing the confusion?', icon: '🔍' },
@@ -126,19 +108,19 @@ export default function MathsPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + idx * 0.1 }}
                   whileHover={{ x: 10, scale: 1.02 }}
-                  className="flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-amber-50 border-2 border-blue-200 hover:border-blue-600 hover:shadow-lg transition-all cursor-pointer"
+                  className="flex gap-4 p-5 rounded-2xl bg-white/15 backdrop-blur-sm border-2 border-white/30 hover:border-white/60 hover:shadow-lg transition-all cursor-pointer"
                 >
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-amber-600 text-white font-bold text-lg">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-white/25 text-white font-bold text-lg">
                       {item.step}
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
                       <span>{item.icon}</span>
                       {item.title}
                     </h3>
-                    <p className="text-gray-600">{item.desc}</p>
+                    <p className="text-blue-100">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
