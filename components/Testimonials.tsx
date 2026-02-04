@@ -156,7 +156,7 @@ export default function Testimonials() {
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
           >
-            📞 Call 07908 845 498
+            📞 07908 845 498
           </motion.a>
         </motion.div>
       </div>

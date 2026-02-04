@@ -459,74 +459,40 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="bg-gradient-to-br from-emerald-600 via-blue-700 to-amber-600 text-white py-20 relative overflow-hidden">
-        {/* Animated background */}
-        <motion.div 
-          className="absolute inset-0 opacity-20"
-          animate={{ 
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-          }}
-        />
-        
-        <motion.div 
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+   <motion.div 
+          className="bg-gradient-to-r from-emerald-600 to-blue-700 rounded-2xl p-12 text-center text-white shadow-2xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-4xl font-bold mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+          <motion.h3 
+            className="text-2xl font-bold mb-4"
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Ready to Make a Difference?
-          </motion.h2>
+            Ready to start your child's learning journey?
+          </motion.h3>
           <motion.p 
-            className="text-xl text-purple-100 mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="text-emerald-100 mb-6 text-lg"
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Contact me today for a free, no-obligation consultation. Let's work together to bridge the gaps in your child's learning.
+            Contact me for a free, no-obligation consultation.
           </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true }}
+          <motion.a
+            href="tel:07908845498"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
           >
-            <motion.a
-              href="tel:07908845498"
-              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg shadow-lg"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.3)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              📞 Call 07908 845 498
-            </motion.a>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="#contact"
-                className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg block transition"
-              >
-                Use Contact Form Below
-              </Link>
-            </motion.div>
-          </motion.div>
+            📞 07908 845 498
+          </motion.a>
         </motion.div>
-      </section>
     </main>
   );
 }
