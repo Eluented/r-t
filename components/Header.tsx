@@ -11,8 +11,8 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/english', label: 'English' },
     { href: '/maths', label: 'Maths' },
-    { href: '/advocacy', label: 'Advocacy' },
-    { href: '/about', label: 'About Me' },
+    { href: '/about', label: 'About' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   const containerVariants = {

@@ -381,7 +381,7 @@ export default function AdvocacyPage() {
                 className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all inline-flex items-center gap-2"
               >
                 <span>📞</span>
-                Call 07908 845 498
+                Call Now
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -389,7 +389,7 @@ export default function AdvocacyPage() {
                 href="#contact"
                 className="bg-emerald-400 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-500 transition-all"
               >
-                Schedule Consultation
+                Contact Form
               </motion.a>
             </div>
             <p className="text-emerald-100 italic mt-8">
@@ -400,15 +400,6 @@ export default function AdvocacyPage() {
       </section>
 
 
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* Contact Form */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
     </main>
   );
 }

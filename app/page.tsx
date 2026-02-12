@@ -23,22 +23,22 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselImages = [
     {
-      src: 'https://images.unsplash.com/photo-1596394516093-501ba68352f7?q=80&w=800&auto=format&fit=crop',
+      src: '/rosalind_teaching2.jpeg',
       title: 'One-to-One Tutoring',
       desc: 'Personalized learning sessions tailored to each child\'s needs'
     },
     {
-      src: 'https://images.unsplash.com/photo-1427504494785-cdff5d29f737?q=80&w=800&auto=format&fit=crop',
+      src: '/rosalind_teaching3.jpeg',
       title: 'Interactive Learning',
       desc: 'Engaging methods that make learning fun and memorable'
     },
     {
-      src: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop',
+      src: '/rosalind_teaching4.jpeg',
       title: 'Building Confidence',
       desc: 'Creating a supportive environment for academic growth'
     },
     {
-      src: 'https://images.unsplash.com/photo-1573496359142-b8d93c34b8f4?q=80&w=800&auto=format&fit=crop',
+      src: '/rosalind_teaching5.jpeg',
       title: 'Expert Guidance',
       desc: '25+ years of experience supporting children\'s learning'
     }
@@ -91,7 +91,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                Every Child Can Succeed
+                Bridging Learning Gaps and Building Success
               </motion.h1>
 
               <motion.p 
@@ -100,7 +100,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Discover personalised one-to-one tutoring in Maths and English. With 25 years of experience and lived experience as a parent of 4 children with SEN, Rosalind bridges learning gaps and builds confidence.
+                Welcome to Rosalind's Maths and English Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education. With 30 years of teaching experience and personal experience as a parent of four children with special educational needs, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams.
               </motion.p>
 
               {/* Trust Indicators */}
@@ -111,16 +111,16 @@ export default function Home() {
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-emerald-600">25+</p>
-                  <p className="text-sm text-gray-600">Years Experience</p>
+                  <p className="text-3xl font-bold text-emerald-600">30+</p>
+                  <p className="text-sm text-gray-600">Years Teaching</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-blue-700">SEN</p>
-                  <p className="text-sm text-gray-600">Specialist</p>
+                  <p className="text-3xl font-bold text-blue-700">BA (Hons)</p>
+                  <p className="text-sm text-gray-600">SEN Qualified</p>
                 </div>
                 <div className="text-center">
                   <p className="text-3xl font-bold text-amber-600">4</p>
-                  <p className="text-sm text-gray-600">Lived Experience</p>
+                  <p className="text-sm text-gray-600">Children with SEN</p>
                 </div>
               </motion.div>
 
@@ -164,7 +164,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
                 {/* Image */}
                 <img 
-                  src="https://images.unsplash.com/photo-1767452985026-978ef46d335c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                  src="/rosalind_portrait1.jpg" 
                   alt="Rosalind - Professional SEN Tutor"
                   className="w-full h-full object-cover"
                 />
@@ -457,10 +457,11 @@ export default function Home() {
                   icon: '📖',
                   title: 'Professional Background',
                   items: [
-                    '25 years in education',
                     'BA (Hons) in Professional Practice in Special Needs Education',
-                    'Specialised training in SEN interventions and support strategies',
-                    'Patient, empathetic, and energetic teaching style',
+                    'CACHE Level 3 Children and Young People\'s Workforce',
+                    'Level 2 Certificates in Autism, Dyslexia & Phonics, Safeguarding',
+                    'Enhanced DBS checked with references available',
+                    '30 years in education and specialist SEN support',
                   ],
                 },
                 {
@@ -522,25 +523,29 @@ export default function Home() {
             {[
               {
                 title: 'Who I Work With',
-                intro: 'I specialise in supporting children aged 3–14 (Reception to KS3) across North West London:',
+                intro: 'I specialise in supporting children from reception through to secondary education, particularly those with:',
                 items: [
-                  'Children with special needs diagnoses (dyslexia, dyscalculia, autism, ADHD, etc.)',
-                  'Children with learning gaps or falling behind',
-                  'Reluctant readers and anxious learners',
-                  'Gifted & talented pupils preparing for entrance exams',
-                  'Parents seeking EHCP advice and support',
+                  'Dyslexia, dyspraxia, dyscalculia, dysgraphia and related learning differences',
+                  'Autism and ADHD',
+                  'Auditory processing difficulties and language delays',
+                  'Anxiety or lack of confidence in learning',
+                  'Learning gaps or those falling behind their peers',
+                  'Gifted and talented pupils preparing for entrance exams',
+                  'Home-educated students and EAL learners',
                 ],
                 icon: '👥',
               },
               {
                 title: 'How I Work',
-                intro: 'Every child is unique, so every tutoring programme is tailored to fit their individual needs:',
+                intro: 'Every child is unique, so every tutoring programme is personalised and tailored:',
                 items: [
-                  'One-to-one personalised tuition in a calm, supportive environment',
-                  'Differentiated programmes adapted to your child\'s learning style',
-                  'Step-by-step guidance at the pace that suits your child',
-                  'Making learning fun with engaging, interactive techniques',
-                  'Building confidence and a positive attitude to learning',
+                  'One-to-one lessons in your home, or live online tutoring (international clients welcome)',
+                  'Assessment of each child\'s abilities and learning style',
+                  'Structured yet flexible approach ensuring rapid progress',
+                  'Step-by-step guidance with stimulating, engaging activities',
+                  'Interactive educational resources and games',
+                  'Comprehensive exam preparation (4+, 7+, 11+, SATs)',
+                  'Homework guidance and in-school support when needed',
                 ],
                 icon: '🎯',
               },
@@ -577,6 +582,68 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tuition Across North West London</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Based in Edgware, I offer face-to-face tuition across specific postcodes, with live online tutoring available for all areas</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-emerald-600"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Face-to-Face Areas</h3>
+              <p className="text-gray-700 mb-4">I provide home tuition across the following postcodes:</p>
+              <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 font-mono">
+                <div>AL2</div>
+                <div>EN6</div>
+                <div>HA0, HA1, HA3, HA5, HA6, HA7, HA8, HA9</div>
+                <div>N2, N3, N6, N10, N11, N12, N14, N20</div>
+                <div>NW3, NW4, NW7, NW9, NW11</div>
+                <div>WD6, WD7, WD8, WD19, WD23, WD25</div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Online Tutoring</h3>
+              <p className="text-gray-700 mb-4">Live online tuition is available for:</p>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Any postcodes not listed above in the UK</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>International clients (worldwide welcome)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">✓</span>
+                  <span>Flexible scheduling for busy families</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </section>
 

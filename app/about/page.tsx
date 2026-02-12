@@ -505,7 +505,7 @@ export default function AboutPage() {
                 className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl inline-flex items-center gap-2"
               >
                 <span>📞</span>
-                Call 07908 845 498
+                Call Now
               </motion.a>
               <motion.a
                 href="#contact"
@@ -513,22 +513,14 @@ export default function AboutPage() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"
               >
-                Free Consultation
+                Contact Form
               </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
 
-      {/* Contact Form */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
     </main>
   );
 }
