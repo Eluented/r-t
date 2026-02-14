@@ -276,14 +276,14 @@ export default function AdvocacyPage() {
             {[
               {
                 icon: '👨‍👩‍👧‍👦',
-                title: 'Lived Experience',
-                desc: 'Parent of 4 SEN children. I\'ve fought for EHCPs, navigated tribunals, and managed complex needs. I understand your reality.',
-                subtext: '25+ years of personal advocacy'
+                title: 'Real-World Experience',
+                desc: 'Having supported numerous families through EHCPs, tribunals, and complex needs, I understand the challenges parents face and how to navigate the system.',
+                subtext: '30+ years of professional advocacy'
               },
               {
                 icon: '🎓',
                 title: 'Professional Expertise',
-                desc: 'BA (Hons) in Professional Practice in Special Needs Education. 25 years in the field combining personal experience with professional knowledge.',
+                desc: 'BA (Hons) in Professional Practice in Special Needs Education. 30 years in the field combining extensive experience with professional knowledge.',
                 subtext: 'Trained & qualified specialist'
               },
               {

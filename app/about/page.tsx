@@ -49,9 +49,9 @@ export default function AboutPage() {
 
   const timeline = [
     { year: '1999', title: 'The Beginning', desc: 'Started my journey in education, driven by passion for helping children learn', icon: '🌱' },
-    { year: '2005', title: 'Parent Perspective', desc: 'Became mother to 4 children with SEN - gained invaluable lived experience', icon: '👨‍👩‍👧‍👦' },
+    { year: '2005', title: 'Expanding Expertise', desc: 'Developed specialist skills in SEN, EAL, and supporting diverse learners across key stages', icon: '👨‍👩‍👧‍👦' },
     { year: '2010', title: 'Specialized Training', desc: 'Earned BA (Hons) in Professional Practice in Special Needs Education', icon: '🎓' },
-    { year: '2024', title: 'Full Circle', desc: 'Founded London Maths & English Tutoring - combining 25 years of expertise', icon: '⭐' }
+    { year: '2024', title: 'Full Circle', desc: 'Founded London Maths, English & Science Tutoring - combining 30 years of expertise', icon: '⭐' }
   ];
 
   const philosophyCards = [
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="text-xl text-gray-300 mb-8 leading-relaxed"
               >
-                Where 25 years of educational expertise meets the lived experience of raising 4 children with SEN. This is more than a job—it's a calling.
+                Where 30 years of educational expertise meets a deep understanding of diverse learners. This is more than a job—it's a calling.
               </motion.p>
 
               {/* Animated Stats */}
@@ -150,7 +150,7 @@ export default function AboutPage() {
                   >
                     {children}
                   </motion.div>
-                  <p className="text-gray-400 text-sm">SEN Children Raised</p>
+                  <p className="text-gray-400 text-sm">Key Stages Taught</p>
                 </div>
               </motion.div>
 
@@ -430,7 +430,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <strong className="text-blue-600">As a parent,</strong> everything changed when my four children were diagnosed with SEN. I wasn't just teaching anymore—I was living it. Fighting for EHCPs, navigating tribunals, understanding the emotional weight of being different.
+                  <strong className="text-blue-600">Through relationships,</strong> I've developed deep understanding of the challenges families face. From EHCPs to supporting home-educated children, from EAL learners to gifted and talented pupils—my expertise spans the full spectrum of educational needs.
                 </motion.p>
 
                 <motion.p
@@ -440,7 +440,7 @@ export default function AboutPage() {
                   transition={{ delay: 0.3 }}
                   className="text-lg font-semibold text-purple-600"
                 >
-                  This dual experience—professional expertise and lived reality—is what makes me different. I don't just understand SEN theoretically. I live it every single day.
+                  This breadth of experience—from SEN to gifted pupils, EAL to home education—is what makes me different. I understand every child's unique learning journey.
                 </motion.p>
               </div>
 

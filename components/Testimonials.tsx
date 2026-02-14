@@ -5,21 +5,21 @@ import { motion } from 'framer-motion';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Parent of 9-year-old',
-      text: 'Rosalind completely transformed my son\'s confidence with Maths. He went from dreading lessons to actually enjoying them!',
+      name: 'Parent',
+      role: 'Year 6 Student',
+      text: 'Patient, supportive and explains things clearly. We\'ve seen great progress in both confidence and understanding. Would happily recommend her.',
       rating: 5,
     },
     {
-      name: 'Michael Chen',
-      role: 'Parent of 7-year-old',
-      text: 'The multi-sensory approach helped our daughter with dyslexia make real progress in reading. Highly recommended.',
+      name: 'Parent',
+      role: 'Year 2 Student',
+      text: 'I was blown away! You have been so kind and my daughter really enjoys your sessions, which means everything for us.',
       rating: 5,
     },
     {
-      name: 'Emma Wilson',
-      role: 'Parent of 11-year-old',
-      text: 'Rosalind\'s SATs preparation was invaluable. My child felt prepared and confident going into the exams.',
+      name: 'Parent',
+      role: 'Year 5 Student',
+      text: 'Thank you for all the help and progress. We\'re so grateful for the difference you\'ve made.',
       rating: 5,
     },
   ];

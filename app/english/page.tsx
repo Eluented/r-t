@@ -34,7 +34,7 @@ export default function EnglishPage() {
                 </span>
               </h1>
               <p className="text-xl text-emerald-100 max-w-3xl leading-relaxed mb-8">
-                I help children gain confidence in English by creating a safe, encouraging environment where they feel comfortable to express themselves. Through clear strategies, practical techniques, and celebration of progress, I help every child discover they can succeed in reading and writing.
+                I help children gain confidence in English by creating a safe, encouraging environment where they feel comfortable to express themselves. Following the national curriculum for Key Stage 1-4 (primary and secondary education), I support SEN, EAL (English as Additional Language), Gifted & Talented, and home-educated pupils.
               </p>
               <div className="flex flex-wrap gap-4">
                 <motion.a
@@ -90,8 +90,8 @@ export default function EnglishPage() {
               <div className="text-sm text-gray-600">Years of Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">SEN</div>
-              <div className="text-sm text-gray-600">Qualified Specialist</div>
+              <div className="text-3xl font-bold text-blue-600">KS 1-4</div>
+              <div className="text-sm text-gray-600">Key Stages Taught</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-amber-600">⭐⭐⭐⭐⭐</div>
@@ -126,7 +126,7 @@ export default function EnglishPage() {
               {
                 icon: '🤝',
                 title: 'Patient & Empathetic',
-                description: 'With 30 years\' experience and personal experience as a parent of children with SEN, I understand frustration and anxiety. I create a safe space for learning.',
+                description: 'With 30 years\' experience supporting diverse learners including SEN, EAL, Gifted & Talented pupils, I understand frustration and anxiety. I create a safe space for learning.',
                 color: 'blue'
               },
               {

@@ -56,15 +56,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-16 pb-20 overflow-hidden">
         {/* Decorative gradient orb */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-emerald-200 via-blue-200 to-amber-200 rounded-full opacity-20 blur-3xl"
-          animate={{ 
+          animate={{
             y: [0, 30, 0],
             x: [0, 20, 0],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Hero Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
@@ -85,7 +85,7 @@ export default function Home() {
                 </span>
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-emerald-600 via-blue-700 to-amber-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -94,17 +94,17 @@ export default function Home() {
                 Bridging Learning Gaps and Building Success
               </motion.h1>
 
-              <motion.p 
+              <motion.p
                 className="text-xl text-gray-700 mb-4 leading-relaxed font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Welcome to Rosalind's Maths and English Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education. With 30 years of teaching experience and personal experience as a parent of four children with special educational needs, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams.
+                Welcome to Rosalind's Maths, English, and Science Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education (Key Stage 1-4). With 30 years of teaching experience following the national curriculum, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams. I also teach History, Geography, and Cookery.
               </motion.p>
 
               {/* Trust Indicators */}
-              <motion.div 
+              <motion.div
                 className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-gray-200"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -119,13 +119,13 @@ export default function Home() {
                   <p className="text-sm text-gray-600">SEN Qualified</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-600">4</p>
-                  <p className="text-sm text-gray-600">Children with SEN</p>
+                  <p className="text-3xl font-bold text-amber-600">KS 1-4</p>
+                  <p className="text-sm text-gray-600">Key Stages</p>
                 </div>
               </motion.div>
 
               {/* CTA Buttons */}
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -163,17 +163,17 @@ export default function Home() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
                 {/* Image */}
-                <img 
-                  src="/rosalind_portrait1.jpg" 
+                <img
+                  src="/rosalind_portrait1.jpg"
                   alt="Rosalind - Professional SEN Tutor"
                   className="w-full h-full object-cover"
                 />
-                
+
                 {/* Overlay gradient for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
                 {/* Info Card Overlay */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-2xl p-6 shadow-xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
 
           {/* Features Below Hero */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-gray-200"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -262,7 +262,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Text Overlay */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -293,11 +293,10 @@ export default function Home() {
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
                     whileHover={{ scale: 1.2 }}
-                    className={`rounded-full transition ${
-                      idx === currentSlide
-                        ? 'bg-gradient-to-r from-emerald-600 to-blue-700 w-3 h-3'
-                        : 'bg-gray-300 w-2 h-2 hover:bg-gray-400'
-                    }`}
+                    className={`rounded-full transition ${idx === currentSlide
+                      ? 'bg-gradient-to-r from-emerald-600 to-blue-700 w-3 h-3'
+                      : 'bg-gray-300 w-2 h-2 hover:bg-gray-400'
+                      }`}
                   />
                 ))}
               </div>
@@ -336,9 +335,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: '🎓', title: '25 Years Experience', desc: 'Dedicated educator with proven track record' },
+              { icon: '🎓', title: '30 Years Experience', desc: 'Dedicated educator with proven track record' },
               { icon: '💙', title: 'SEN Specialist', desc: 'BA (Hons) in Special Needs Education' },
-              { icon: '👨‍👩‍👧‍👦', title: 'Parent Experience', desc: 'Mother of 4 children with SEN' },
+              { icon: '🌍', title: 'Diverse Learners', desc: 'Supporting SEN, EAL, Gifted & Talented pupils' },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -360,7 +359,7 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +370,7 @@ export default function Home() {
             <p className="text-xl text-gray-600">Specialist tutoring tailored to your child's needs</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -381,24 +380,24 @@ export default function Home() {
             {[
               {
                 icon: '🌟',
-                title: 'SEN & Learning Support',
-                desc: 'Specialised support for children with dyslexia, dyscalculia, autism, ADHD, auditory processing difficulties, SEMH, and speech/language delays.',
-                links: [{ href: '/english', text: 'Explore English Support' }, { href: '/maths', text: 'Explore Maths Support' }],
+                title: 'Maths, English & Science',
+                desc: 'Core subject tutoring following the national curriculum for Key Stage 1-4. Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
+                links: [{ href: '/english', text: 'English Tutoring' }, { href: '/maths', text: 'Maths Tutoring' }],
                 color: 'from-emerald-600 to-emerald-400',
                 borderColor: 'border-emerald-600',
               },
               {
                 icon: '📚',
-                title: 'SATs & Entrance Exams',
-                desc: 'Booster SATs programme for KS2. Preparation for 4+, 7+, and 11+ entrance exams. Build confidence and achieve your goals.',
-                links: [{ href: '/english', text: 'English Preparation' }, { href: '/maths', text: 'Maths Preparation' }],
+                title: 'SATs, Entrance & Functional Skills',
+                desc: 'Preparation for SATs, 4+/7+/11+ entrance exams, Entry level and Functional Skills exams. Supporting home-educated children and exam preparation.',
+                links: [{ href: '/english', text: 'English Exams' }, { href: '/maths', text: 'Maths Exams' }],
                 color: 'from-blue-700 to-blue-400',
                 borderColor: 'border-blue-700',
               },
               {
                 icon: '🌉',
-                title: 'Bridging Learning Gaps',
-                desc: 'If your child is falling behind, struggling with anxiety about school, or needs a confidence boost, I provide targeted support.',
+                title: 'EAL, Gifted & Home-Educated',
+                desc: 'Support for English as an Additional Language (EAL), Gifted and Talented pupils, and home-educated children. Also teaching History, Geography, and Cookery.',
                 links: [{ href: '/about', text: 'Learn More About My Approach' }],
                 color: 'from-amber-600 to-amber-400',
                 borderColor: 'border-amber-600',
@@ -413,7 +412,7 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 viewport={{ once: true }}
               >
-                <motion.div 
+                <motion.div
                   className="text-5xl mb-4"
                   whileHover={{ scale: 1.2, rotate: 10 }}
                 >
@@ -443,7 +442,7 @@ export default function Home() {
       {/* Key Qualifications & Experience */}
       <section className="py-20 bg-gradient-to-b from-white to-emerald-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -510,77 +509,115 @@ export default function Home() {
       {/* Testimonials Carousel */}
       <TestimonialsCarousel />
 
-      {/* Target Audience & Service Area */}
+      {/* Who I Work With & How I Work */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ staggerChildren: 0.2 }}
+          {/* Who I Work With */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Who I Work With</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">I specialise in supporting children from reception through to secondary education, particularly those with:</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: '🧩', title: 'Dyslexia & Dyspraxia', desc: 'Multi-sensory approaches tailored to learning differences' },
+                { icon: '🔢', title: 'Dyscalculia', desc: 'Concrete-to-abstract progression for maths confidence' },
+                { icon: '🧠', title: 'Autism & ADHD', desc: 'Structured, personalised learning strategies' },
+                { icon: '🎧', title: 'Auditory Processing', desc: 'Language delays and communication support' },
+                { icon: '💪', title: 'Anxiety & Confidence', desc: 'Building self-belief and reducing learning anxiety' },
+                { icon: '📚', title: 'Learning Gaps', desc: 'Targeted catch-up and bridging support' },
+                { icon: '⭐', title: 'Gifted & Talented', desc: 'Stretch and challenge for high achievers' },
+                { icon: '🏠', title: 'Home-Educated', desc: 'Flexible programmes for independent learners' },
+                { icon: '🌍', title: 'EAL Learners', desc: 'English as an Additional Language support' },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 border border-emerald-200 hover:shadow-lg transition-all"
+                >
+                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* How I Work */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {[
-              {
-                title: 'Who I Work With',
-                intro: 'I specialise in supporting children from reception through to secondary education, particularly those with:',
-                items: [
-                  'Dyslexia, dyspraxia, dyscalculia, dysgraphia and related learning differences',
-                  'Autism and ADHD',
-                  'Auditory processing difficulties and language delays',
-                  'Anxiety or lack of confidence in learning',
-                  'Learning gaps or those falling behind their peers',
-                  'Gifted and talented pupils preparing for entrance exams',
-                  'Home-educated students and EAL learners',
-                ],
-                icon: '👥',
-              },
-              {
-                title: 'How I Work',
-                intro: 'Every child is unique, so every tutoring programme is personalised and tailored:',
-                items: [
-                  'One-to-one lessons in your home, or live online tutoring (international clients welcome)',
-                  'Assessment of each child\'s abilities and learning style',
-                  'Structured yet flexible approach ensuring rapid progress',
-                  'Step-by-step guidance with stimulating, engaging activities',
-                  'Interactive educational resources and games',
-                  'Comprehensive exam preparation (4+, 7+, 11+, SATs)',
-                  'Homework guidance and in-school support when needed',
-                ],
-                icon: '🎯',
-              },
-            ].map((section, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: idx === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="text-4xl">{section.icon}</span>
-                  {section.title}
-                </h2>
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {section.intro}
-                </p>
-                <ul className="space-y-3">
-                  {section.items.map((item, itemIdx) => (
-                    <motion.li
-                      key={itemIdx}
-                      className="flex gap-3 text-gray-700"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + itemIdx * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <span className="text-emerald-600 font-bold">→</span>
-                      <span>{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">My Approach</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Every child is unique, so every tutoring programme is personalised and tailored to their needs.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { number: '1', title: 'Assessment', desc: 'Each child\'s abilities and learning style' },
+                { number: '2', title: 'Personalise', desc: 'Tailored programme based on needs' },
+                { number: '3', title: 'Deliver', desc: 'Interactive sessions with clear progress' },
+                { number: '4', title: 'Celebrate', desc: 'Track wins and build confidence' },
+              ].map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-full w-20 h-20 flex items-center justify-center text-white font-bold text-2xl absolute -top-4 -left-4 shadow-lg">
+                    {step.number}
+                  </div>
+                  <div className="bg-white border-2 border-blue-200 rounded-xl p-8 pt-12 text-center hover:shadow-lg transition-all">
+                    <h3 className="font-bold text-gray-900 mb-2 text-lg">{step.title}</h3>
+                    <p className="text-sm text-gray-600">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-12 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-8 border border-emerald-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">What This Means for Your Child</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  { icon: '✓', title: 'One-to-one lessons', desc: 'In your home or online (worldwide welcome)' },
+                  { icon: '✓', title: 'Structured yet flexible', desc: 'Rapid progress with adaptable pacing' },
+                  { icon: '✓', title: 'Exam preparation', desc: '4+, 7+, 11+, SATs, Functional Skills' },
+                ].map((benefit, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex gap-3 items-start">
+                      <span className="text-emerald-600 font-bold text-2xl mt-1">{benefit.icon}</span>
+                      <div>
+                        <p className="font-bold text-gray-900 mb-1">{benefit.title}</p>
+                        <p className="text-gray-600 text-sm">{benefit.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -593,95 +630,119 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tuition Across North West London</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Based in Edgware, I offer face-to-face tuition across specific postcodes, with live online tutoring available for all areas</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Wherever You Are</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Flexible tutoring options to fit your family's needs</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-emerald-600"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Face-to-Face Areas</h3>
-              <p className="text-gray-700 mb-4">I provide home tuition across the following postcodes:</p>
-              <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 font-mono">
-                <div>AL2</div>
-                <div>EN6</div>
-                <div>HA0, HA1, HA3, HA5, HA6, HA7, HA8, HA9</div>
-                <div>N2, N3, N6, N10, N11, N12, N14, N20</div>
-                <div>NW3, NW4, NW7, NW9, NW11</div>
-                <div>WD6, WD7, WD8, WD19, WD23, WD25</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Online Tutoring</h3>
-              <p className="text-gray-700 mb-4">Live online tuition is available for:</p>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold">✓</span>
-                  <span>Any postcodes not listed above in the UK</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold">✓</span>
-                  <span>International clients (worldwide welcome)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold">✓</span>
-                  <span>Flexible scheduling for busy families</span>
-                </li>
-              </ul>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🏠',
+                title: 'Face-to-Face',
+                subtitle: 'North West London',
+                desc: 'Personalised tuition in your home across Edgware, Finchley, Barnet, Hampstead and surrounding areas',
+                color: 'from-emerald-600 to-emerald-400'
+              },
+              {
+                icon: '💻',
+                title: 'Online',
+                subtitle: 'UK-Wide',
+                desc: 'Live video tutoring available throughout the UK and internationally for families who prefer remote learning',
+                color: 'from-blue-600 to-blue-400'
+              },
+              {
+                icon: '🌍',
+                title: 'International',
+                subtitle: 'Worldwide Welcome',
+                desc: 'Online sessions for families across the globe, with flexible scheduling across time zones',
+                color: 'from-amber-600 to-amber-400'
+              }
+            ].map((option, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-2xl shadow-lg p-8 border-t-4 hover:shadow-xl transition-all"
+              >
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${option.color} text-white mb-6`}>
+                  <span className="text-3xl">{option.icon}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">{option.title}</h3>
+                <p className="text-sm font-semibold text-gray-500 mb-3">{option.subtitle}</p>
+                <p className="text-gray-700 leading-relaxed">{option.desc}</p>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="text-gray-600 text-sm">
+              For a detailed list of postcodes I cover for face-to-face tuition,{' '}
+              <span className="text-emerald-600 font-semibold cursor-pointer hover:underline">
+                <Link href="/contact">contact me</Link>
+              </span>
+              {' '}for more information.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-   <motion.div 
-          className="bg-gradient-to-r from-emerald-600 to-blue-700 rounded-2xl p-12 text-center text-white shadow-2xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <motion.h3 
-            className="text-2xl font-bold mb-4"
-            initial={{ y: 20 }}
-            whileInView={{ y: 0 }}
-            transition={{ delay: 0.2 }}
+      <section className="py-20 bg-gradient-to-br from-emerald-600 via-blue-600 to-purple-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+              backgroundSize: '60px 60px'
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Ready to start your child's learning journey?
-          </motion.h3>
-          <motion.p 
-            className="text-emerald-100 mb-6 text-lg"
-            initial={{ y: 20 }}
-            whileInView={{ y: 0 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Contact me for a free, no-obligation consultation.
-          </motion.p>
-          <motion.a
-            href="tel:07908845498"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-shadow"
-          >
-            📞 07908 845 498
-          </motion.a>
-        </motion.div>
+            <h2 className="text-5xl font-bold mb-6">Let's Start Your Child's Journey</h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              Whether you're navigating SEN, preparing for exams, or filling learning gaps—I'm here to help. Let's have a conversation about your child's needs.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <motion.a
+                href="tel:07908845498"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl inline-flex items-center gap-2"
+              >
+                <span>📞</span>
+                Call Now
+              </motion.a>
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"
+              >
+                Contact Form
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }

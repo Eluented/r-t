@@ -51,13 +51,13 @@ export default function MathsPage() {
     },
     {
       icon: '📚',
-      title: 'Entrance Exam Preparation (11+)',
+      title: 'Entrance, SATs & Functional Skills',
       items: [
-        'Time-pressured problem-solving practice',
+        'Time-pressured problem-solving practice for 11+',
         'Non-verbal reasoning and pattern work',
-        'Speed and accuracy development',
-        'Exam technique and confidence building',
-        'Bespoke programmes for selective schools',
+        'SATs arithmetic and reasoning practice',
+        'Entry level and Functional Skills exam preparation',
+        'Support for home-educated children',
       ]
     },
     {
@@ -154,7 +154,7 @@ export default function MathsPage() {
                 </span>
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl leading-relaxed mb-8">
-                I'm a patient and empathetic teacher who helps children build genuine confidence, fill gaps in their learning, and discover that Maths can actually make sense. By breaking skills into small, manageable steps and creating a calm, supportive environment, I help children transform from anxious to assured mathematicians.
+                I'm a patient and empathetic teacher who helps children build genuine confidence following the national curriculum for Key Stage 1-4 (primary and secondary education). Whether preparing for SATs, entrance exams, Entry level or Functional Skills exams, or supporting home-educated children, I create a calm environment where Maths makes sense.
               </p>
             </motion.div>
 

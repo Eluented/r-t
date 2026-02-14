@@ -12,7 +12,7 @@ export default function Header() {
     { href: '/english', label: 'English' },
     { href: '/maths', label: 'Maths' },
     { href: '/about', label: 'About' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const containerVariants = {

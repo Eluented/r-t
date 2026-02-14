@@ -45,6 +45,11 @@ export default function Footer() {
                   About Me
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
