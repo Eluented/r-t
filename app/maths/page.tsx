@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
+import StructuredData from '@/components/StructuredData';
 
 export default function MathsPage() {
   const teachingAreas = [
@@ -108,8 +110,9 @@ export default function MathsPage() {
 
   return (
     <main className="bg-white">
+      <StructuredData type="maths" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-amber-500 text-white min-h-screen flex items-center overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-amber-500 text-white pt-20 pb-16 overflow-hidden">
         {/* Animated background patterns */}
         <div className="absolute inset-0 overflow-hidden opacity-10">
           <motion.div
@@ -129,17 +132,6 @@ export default function MathsPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex justify-center mb-8"
-          >
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold border border-white/30">
-              🧮 Expert Maths Tutoring in North West London
-            </div>
-          </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <motion.div
@@ -147,15 +139,57 @@ export default function MathsPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span>Maths Tutoring</span>
-                <span className="block text-amber-200">
-                  That Adds Up to Results
-                </span>
+              <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold mb-6 border border-white/30">
+                🧮 Maths Tuition - Key Stages 1-4
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <span className="text-amber-200">Maths Tutoring</span>
+                <br className="hidden sm:block" />
+                That Makes Sense
               </h1>
-              <p className="text-xl text-blue-100 max-w-3xl leading-relaxed mb-8">
-                I'm a patient and empathetic teacher who helps children build genuine confidence following the national curriculum for Key Stage 1-4 (primary and secondary education). Whether preparing for SATs, entrance exams, Entry level or Functional Skills exams, or supporting home-educated children, I create a calm environment where Maths makes sense.
+
+              <p className="text-lg text-blue-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills.
               </p>
+
+              {/* Support Types - Visual Pills */}
+              <div className="mb-8">
+                <p className="text-sm font-semibold text-blue-100 mb-3">Specialist support for:</p>
+                <div className="flex flex-wrap gap-3">
+                  {['Dyscalculia', 'Maths Anxiety', 'Home-Educated', 'Exam Prep'].map((tag, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.3 + idx * 0.1 }}
+                      className="bg-amber-400/20 border border-amber-300/50 text-white px-4 py-2 rounded-full text-sm font-semibold"
+                    >
+                      {tag}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="tel:07908845498"
+                  className="bg-amber-500 text-white px-8 py-3 rounded-lg font-bold text-lg shadow-xl hover:bg-amber-600 transition-all"
+                >
+                  Call Now
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="/contact"
+                  className="bg-white text-blue-700 px-8 py-3 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+                >
+                  Free Consultation
+                </motion.a>
+              </div>
             </motion.div>
 
             {/* Right: Image */}
@@ -166,40 +200,18 @@ export default function MathsPage() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="/rosalind_teaching6.jpeg"
+                <Image
+                  src="/rosalind_teaching7.jpeg"
                   alt="Rosalind teaching maths to a student"
+                  width={800}
+                  height={500}
                   className="w-full h-[500px] object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
               </div>
             </motion.div>
           </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-16 flex flex-wrap gap-4 justify-center"
-          >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#approach"
-              className="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
-            >
-              Discover My Approach
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="tel:07908845498"
-              className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-blue-700 transition-all border-2 border-white"
-            >
-              📞 Call for a Free Consultation
-            </motion.a>
-          </motion.div>
         </div>
       </section>
 
@@ -259,9 +271,11 @@ export default function MathsPage() {
               transition={{ duration: 0.6 }}
               className="relative rounded-2xl overflow-hidden shadow-xl"
             >
-              <img
-                src="/rosalind_teaching7.jpeg"
+              <Image
+                src="/rosalind_teaching2.jpeg"
                 alt="Building confidence through interactive maths learning"
+                width={700}
+                height={400}
                 className="w-full h-[400px] object-cover"
               />
             </motion.div>
@@ -465,9 +479,11 @@ export default function MathsPage() {
               transition={{ duration: 0.6 }}
               className="relative rounded-2xl overflow-hidden shadow-xl order-2 md:order-1"
             >
-              <img
-                src="/rosalind_portrait1.jpg"
+              <Image
+                src="/rosalind_portrait3.jpeg"
                 alt="Child achieving success in maths"
+                width={700}
+                height={400}
                 className="w-full h-[400px] object-cover"
               />
             </motion.div>
@@ -521,67 +537,54 @@ export default function MathsPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-amber-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+   
+
+      <section className="py-20 bg-gradient-to-br from-emerald-600 via-blue-600 to-purple-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+              backgroundSize: '60px 60px'
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Is Your Child Ready for a Maths Breakthrough?</h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            <h2 className="text-5xl font-bold mb-6">Ready for a Maths Breakthrough?</h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
               Let's chat about your child's needs and create a personalised plan that brings genuine understanding, confidence, and real progress.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 href="tel:07908845498"
-                className="bg-white text-blue-600 px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl inline-flex items-center gap-2"
               >
                 <span>📞</span>
-                Call 07908 845 498
+                Call Now
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.05 }}
+                href="/contact"
+                whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact-form"
-                className="bg-blue-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-blue-700 transition-all border-2 border-white"
+                className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"
               >
-                Get a Free Consultation
+                Contact Form
               </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-gradient-to-b from-blue-600 via-blue-500 to-amber-500 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <motion.div
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -50, 0],
-            }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              x: [0, -50, 0],
-              y: [0, 50, 0],
-            }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute bottom-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl"
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import StructuredData from '@/components/StructuredData';
 
 interface FormData {
   name: string;
@@ -160,6 +161,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white">
+      <StructuredData type="contact" />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 pt-20 pb-32 overflow-hidden">
         {/* Animated background elements */}
@@ -639,25 +641,25 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">Hertfordshire</p>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Hatfield & St Albans</li>
-                      <li>• Welwyn Garden City</li>
-                      <li>• Watford & Rickmansworth</li>
+                      <li>• Hatfield & St Albans <span className="text-gray-500">(AL2)</span></li>
+                      <li>• Welwyn Garden City <span className="text-gray-500">(EN6)</span></li>
+                      <li>• Watford & Rickmansworth <span className="text-gray-500">(WD6, WD7, WD8, WD19, WD23, WD25)</span></li>
                     </ul>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">North London</p>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Finchley & Muswell Hill</li>
-                      <li>• Barnet & Hampstead</li>
-                      <li>• Mill Hill & West Hendon</li>
+                      <li>• Finchley & Muswell Hill <span className="text-gray-500">(N2, N3, N6)</span></li>
+                      <li>• Barnet & Hampstead <span className="text-gray-500">(N10, N11, N12, N14, N20, NW3, NW4)</span></li>
+                      <li>• Mill Hill & West Hendon <span className="text-gray-500">(NW7, NW9, NW11)</span></li>
                     </ul>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">North West London</p>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Edgware (my base)</li>
-                      <li>• Burnt Oak</li>
-                      <li>• Borehamwood & Surrounds</li>
+                      <li>• Edgware (my base) <span className="text-gray-500">(HA8)</span></li>
+                      <li>• Burnt Oak <span className="text-gray-500">(HA0, HA1)</span></li>
+                      <li>• Borehamwood & Surrounds <span className="text-gray-500">(HA3, HA5, HA6, HA7, HA9)</span></li>
                     </ul>
                   </div>
                 </div>

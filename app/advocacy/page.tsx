@@ -386,7 +386,7 @@ export default function AdvocacyPage() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact"
+                href="/contact"
                 className="bg-emerald-400 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-500 transition-all"
               >
                 Contact Form

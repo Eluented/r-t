@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import Testimonials from '@/components/Testimonials';
+import StructuredData from '@/components/StructuredData';
 
 export default function AboutPage() {
   const [activeTimeline, setActiveTimeline] = useState(0);
@@ -65,6 +66,7 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white overflow-hidden" ref={containerRef}>
+      <StructuredData type="about" />
       {/* Hero Section - Diagonal Split Design */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* Animated Background Pattern */}
@@ -508,7 +510,7 @@ export default function AboutPage() {
                 Call Now
               </motion.a>
               <motion.a
-                href="#contact"
+                href="/contact"
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"

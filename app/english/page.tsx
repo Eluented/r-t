@@ -1,11 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
+import StructuredData from '@/components/StructuredData';
 
 export default function EnglishPage() {
   return (
     <main className="bg-white">
+      <StructuredData type="english" />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-emerald-900 via-blue-900 to-emerald-800 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -25,17 +28,37 @@ export default function EnglishPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="inline-block bg-emerald-100/20 backdrop-blur px-6 py-3 rounded-full text-emerald-100 font-semibold mb-6">
-                📚 Expert English Tuition in North West London
+                📚 English Tuition - Key Stages 1-4
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                English Tutoring That
-                <span className="block text-emerald-200">
-                  Inspires Creativity and Clarity
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <span className="text-emerald-200">English Tutoring</span>
+                <br className="hidden sm:block" />
+                That Builds Confidence
               </h1>
-              <p className="text-xl text-emerald-100 max-w-3xl leading-relaxed mb-8">
-                I help children gain confidence in English by creating a safe, encouraging environment where they feel comfortable to express themselves. Following the national curriculum for Key Stage 1-4 (primary and secondary education), I support SEN, EAL (English as Additional Language), Gifted & Talented, and home-educated pupils.
+
+              <p className="text-lg text-emerald-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one English tuition following the national curriculum for primary and secondary education. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment.
               </p>
+
+              {/* Support Types - Visual Pills */}
+              <div className="mb-8">
+                <p className="text-sm font-semibold text-emerald-200 mb-3">Specialist support for:</p>
+                <div className="flex flex-wrap gap-3">
+                  {['SEN & Dyslexia', 'EAL Learners', 'Gifted & Talented', 'Home-Educated'].map((tag, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.3 + idx * 0.1 }}
+                      className="bg-emerald-500/20 border border-emerald-400/50 text-emerald-100 px-4 py-2 rounded-full text-sm font-semibold"
+                    >
+                      {tag}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTAs */}
               <div className="flex flex-wrap gap-4">
                 <motion.a
                   whileHover={{ scale: 1.05 }}
@@ -43,12 +66,12 @@ export default function EnglishPage() {
                   href="tel:07908845498"
                   className="bg-emerald-500 text-white px-8 py-3 rounded-lg font-bold text-lg shadow-xl hover:bg-emerald-600 transition-all"
                 >
-                  Call Now: 07908 845 498
+                  Call Now
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="#contact-form"
+                  href="/contact"
                   className="bg-white text-emerald-700 px-8 py-3 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
                 >
                   Free Consultation
@@ -64,10 +87,13 @@ export default function EnglishPage() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/rosalind_teaching1.jpeg"
                   alt="Rosalind teaching English to a student"
+                  width={800}
+                  height={500}
                   className="w-full h-[500px] object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 via-transparent to-transparent" />
               </div>
@@ -383,64 +409,53 @@ export default function EnglishPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-emerald-600 via-blue-600 to-purple-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+              backgroundSize: '60px 60px'
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Child's English?</h2>
-            <p className="text-xl text-emerald-100 mb-8 leading-relaxed">
-              Let's chat about your child's unique needs and create a personalised plan that brings genuine confidence and skills.
+            <h2 className="text-4xl font-bold mb-6">Ready for an English Breakthrough?</h2>
+            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+              Let's chat about your child's needs and create a personalised plan that brings genuine understanding, confidence, and real progress.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 href="tel:07908845498"
-                className="bg-white text-emerald-600 px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl inline-flex items-center gap-2"
               >
                 <span>📞</span>
-                Call 07908 845 498
+                Call Now
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.05 }}
+                href="/contact"
+                whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact-form"
-                className="bg-emerald-600 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-emerald-700 transition-all border-2 border-white"
+                className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"
               >
-                Get a Free Consultation
+                Contact Form
               </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact-form" className="py-20 bg-gradient-to-br from-emerald-500 to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <motion.svg
-            animate={{ x: [0, 100, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              fill="white"
-              d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z"
-            />
-          </motion.svg>
-        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

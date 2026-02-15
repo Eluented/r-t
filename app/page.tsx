@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Testimonials from '@/components/Testimonials';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import StructuredData from '@/components/StructuredData';
 
 export default function Home() {
   const featureVariants = {
@@ -53,6 +55,7 @@ export default function Home() {
 
   return (
     <main className="bg-white">
+      <StructuredData type="home" />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-16 pb-20 overflow-hidden">
         {/* Decorative gradient orb */}
@@ -144,7 +147,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="#contact"
+                    href="/contact"
                     className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-50 transition text-center block"
                   >
                     Free Consultation
@@ -163,10 +166,13 @@ export default function Home() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
                 {/* Image */}
-                <img
+                <Image
                   src="/rosalind_portrait1.jpg"
-                  alt="Rosalind - Professional SEN Tutor"
+                  alt="Rosalind - Professional SEN Tutor in North West London"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover"
+                  priority
                 />
 
                 {/* Overlay gradient for depth */}
@@ -256,10 +262,13 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl h-96 md:h-[500px]"
             >
-              <img
+              <Image
                 src={carouselImages[currentSlide].src}
                 alt={carouselImages[currentSlide].title}
+                width={900}
+                height={500}
                 className="w-full h-full object-cover"
+                priority={currentSlide === 0}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -732,7 +741,7 @@ export default function Home() {
                 Call Now
               </motion.a>
               <motion.a
-                href="#contact"
+                href="/contact"
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-400 transition"

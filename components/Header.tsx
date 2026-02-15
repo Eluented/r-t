@@ -51,34 +51,40 @@ export default function Header() {
 
   return (
     <motion.header 
-      className="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-md bg-opacity-95"
+      className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo with hover animation */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-3">
               <motion.div 
-                className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-emerald-600 to-blue-700 text-white rounded-lg font-bold text-lg"
-                whileHover={{ rotate: 10 }}
+                className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-600 via-emerald-500 to-blue-600 text-white rounded-xl shadow-lg"
+                whileHover={{ rotate: 5 }}
+                transition={{ type: 'spring', stiffness: 400 }}
               >
-                📚
+                <span className="text-2xl">📚</span>
               </motion.div>
-              <span className="hidden sm:inline text-xl font-bold bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text text-transparent">
-                London Maths & English
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text text-transparent leading-tight">
+                  Rosalind's Tuition
+                </span>
+                <span className="text-xs text-gray-500 font-medium hidden sm:block">
+                  North West London
+                </span>
+              </div>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <motion.nav 
-            className="hidden md:flex items-center gap-8"
+            className="hidden md:flex items-center gap-1"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -87,14 +93,9 @@ export default function Header() {
               <motion.div key={item.href} variants={itemVariants}>
                 <Link 
                   href={item.href} 
-                  className="text-gray-700 font-medium relative group"
+                  className="text-gray-700 font-medium hover:text-emerald-600 px-4 py-2 rounded-lg hover:bg-emerald-50 transition-all relative group"
                 >
                   {item.label}
-                  <motion.span 
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-600 to-blue-700"
-                    whileHover={{ width: '100%' }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </Link>
               </motion.div>
             ))}
@@ -104,11 +105,12 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <motion.a
               href="tel:07908845498"
-              className="hidden sm:block bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-2 rounded-lg font-semibold shadow-lg"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 25px rgba(236, 72, 153, 0.3)' }}
+              className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              📞 07908 845 498
+              <span>📞</span>
+              <span>Call Now</span>
             </motion.a>
 
             {/* Mobile Menu Toggle */}
