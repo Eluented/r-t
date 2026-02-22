@@ -59,6 +59,7 @@ export default function MathsPage() {
         'Non-verbal reasoning and pattern work',
         'SATs arithmetic and reasoning practice',
         'Entry level and Functional Skills exam preparation',
+        'Entrance success at Haberdashers\', Channing, Queenswood and UCS',
         'Support for home-educated children',
       ]
     },
@@ -145,12 +146,18 @@ export default function MathsPage() {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 <span className="text-amber-200">Maths Tutoring</span>
-                <br className="hidden sm:block" />
+                <br />
                 That Makes Sense
               </h1>
 
-              <p className="text-lg text-blue-100 max-w-2xl leading-relaxed mb-6">
-                Expert one-to-one maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills.
+              {/* Mobile Text */}
+              <p className="md:hidden text-base text-blue-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one maths tuition KS1-4. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
+              </p>
+
+              {/* Desktop Text */}
+              <p className="hidden md:block text-lg text-blue-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
               </p>
 
               {/* Support Types - Visual Pills */}
@@ -201,7 +208,7 @@ export default function MathsPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/rosalind_teaching7.jpeg"
+                  src="/rosalind_teaching7.webp"
                   alt="Rosalind teaching maths to a student"
                   width={800}
                   height={500}
@@ -238,7 +245,7 @@ export default function MathsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-3xl font-bold text-gray-900 mb-8">My Approach to Building Confidence</h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">My Approach to Building Confidence</h2>
               <ul className="space-y-4">
                 {[
                   'Identifying gaps in understanding and building from there',
@@ -272,7 +279,7 @@ export default function MathsPage() {
               className="relative rounded-2xl overflow-hidden shadow-xl"
             >
               <Image
-                src="/rosalind_teaching2.jpeg"
+                src="/rosalind_teaching2.webp"
                 alt="Building confidence through interactive maths learning"
                 width={700}
                 height={400}
@@ -291,7 +298,7 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               What I <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Teach</span>
             </h2>
             <p className="text-xl text-gray-600">Comprehensive Maths support across all year groups and ability levels</p>
@@ -376,8 +383,8 @@ export default function MathsPage() {
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-blue-600"
               >
                 <div className="text-5xl mb-4">{area.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{area.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">{area.title}</h3>
+                <ul className="space-y-2 md:space-y-3">
                   {area.items.map((item, itemIdx) => (
                     <motion.li
                       key={itemIdx}
@@ -385,7 +392,7 @@ export default function MathsPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1 + itemIdx * 0.05 }}
-                      className="flex gap-2 text-gray-700"
+                      className={`flex gap-2 text-gray-700 text-sm md:text-base ${itemIdx >= 3 ? 'hidden md:flex' : ''}`}
                     >
                       <span className="text-blue-600 font-bold">•</span>
                       <span>{item}</span>
@@ -407,10 +414,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               How I <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Work</span>
             </h2>
-            <p className="text-xl text-gray-600">Step-by-step guidance that produces real results, fast</p>
+            <p className="text-lg md:text-xl text-gray-600">Step-by-step guidance that produces real results, fast</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -441,7 +448,7 @@ export default function MathsPage() {
                 className="bg-gradient-to-br from-blue-50 to-amber-50 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all"
               >
                 <motion.div
-                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                   className="text-6xl mb-6 inline-block"
                 >
@@ -464,10 +471,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Experience & <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Results</span>
             </h2>
-            <p className="text-xl text-gray-600">What my pupils and their families have to say</p>
+            <p className="text-lg md:text-xl text-gray-600">What my pupils and their families have to say</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -480,7 +487,7 @@ export default function MathsPage() {
               className="relative rounded-2xl overflow-hidden shadow-xl order-2 md:order-1"
             >
               <Image
-                src="/rosalind_portrait3.jpeg"
+                src="/rosalind_teaching3.webp"
                 alt="Child achieving success in maths"
                 width={700}
                 height={400}

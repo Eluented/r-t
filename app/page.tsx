@@ -25,22 +25,22 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselImages = [
     {
-      src: '/rosalind_teaching2.jpeg',
+      src: '/rosalind_teaching2.webp',
       title: 'One-to-One Tutoring',
       desc: 'Personalized learning sessions tailored to each child\'s needs'
     },
     {
-      src: '/rosalind_teaching3.jpeg',
+      src: '/rosalind_teaching3.webp',
       title: 'Interactive Learning',
       desc: 'Engaging methods that make learning fun and memorable'
     },
     {
-      src: '/rosalind_teaching4.jpeg',
+      src: '/rosalind_teaching4.webp',
       title: 'Building Confidence',
       desc: 'Creating a supportive environment for academic growth'
     },
     {
-      src: '/rosalind_teaching5.jpeg',
+      src: '/rosalind_teaching5.webp',
       title: 'Expert Guidance',
       desc: '25+ years of experience supporting children\'s learning'
     }
@@ -97,13 +97,24 @@ export default function Home() {
                 Bridging Learning Gaps and Building Success
               </motion.h1>
 
+              {/* Mobile Text */}
               <motion.p
-                className="text-xl text-gray-700 mb-4 leading-relaxed font-light"
+                className="text-lg md:hidden text-gray-700 mb-4 leading-relaxed font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Welcome to Rosalind's Maths, English, and Science Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education (Key Stage 1-4). With 30 years of teaching experience following the national curriculum, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams. I also teach History, Geography, and Cookery.
+                Expert one-to-one tuition for KS1-4 in Edgware, NW London. 30+ years teaching experience with proven results. Specializing in entrance exams, SEN support, and building confidence.
+              </motion.p>
+
+              {/* Desktop Text */}
+              <motion.p
+                className="hidden md:block text-xl text-gray-700 mb-4 leading-relaxed font-light"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                Welcome to Rosalind's EYFS, KS1, KS2, KS3 Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education (Key Stage 1-4). With 30 years of teaching experience following the national curriculum, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams. My pupils have secured places at Haberdashers', Channing, Queenswood, UCS, and many more. I also offer Primary Science (KS1/KS2), alongside selected enrichment subjects including History, Geography, and Cookery.
               </motion.p>
 
               {/* Trust Indicators */}
@@ -118,7 +129,10 @@ export default function Home() {
                   <p className="text-sm text-gray-600">Years Teaching</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-blue-700">BA (Hons)</p>
+                  <p className="text-3xl font-bold text-blue-700">
+                    <span className="md:hidden">BA</span>
+                    <span className="hidden md:inline">BA (Hons)</span>
+                  </p>
                   <p className="text-sm text-gray-600">SEN Qualified</p>
                 </div>
                 <div className="text-center">
@@ -167,7 +181,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
                 {/* Image */}
                 <Image
-                  src="/rosalind_portrait1.jpg"
+                  src="/rosalind_portrait1.webp"
                   alt="Rosalind - Professional SEN Tutor in North West London"
                   width={800}
                   height={600}
@@ -247,8 +261,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Tutoring in Action</h2>
-            <p className="text-xl text-gray-600">Real learning moments that inspire growth and confidence</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tutoring in Action</h2>
+            <p className="text-lg md:text-xl text-gray-600">Real learning moments that inspire growth and confidence</p>
           </motion.div>
 
           {/* Carousel Container */}
@@ -338,8 +352,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-lg font-semibold mb-4 bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text text-transparent">✨ Why Choose Rosalind?</p>
-            <h2 className="text-4xl font-bold text-gray-900">Expert Support That Works</h2>
+            <p className="text-lg md:text-lg font-semibold mb-4 bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text text-transparent">✨ Why Choose Rosalind?</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Expert Support That Works</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -375,8 +389,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Services</h2>
-            <p className="text-xl text-gray-600">Specialist tutoring tailored to your child's needs</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
+            <p className="text-lg md:text-xl text-gray-600">Specialist tutoring tailored to your child's needs</p>
           </motion.div>
 
           <motion.div
@@ -389,8 +403,9 @@ export default function Home() {
             {[
               {
                 icon: '🌟',
-                title: 'Maths, English & Science',
-                desc: 'Core subject tutoring following the national curriculum for Key Stage 1-4. Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
+                title: 'Maths, English & Primary Science',
+                desc: 'Core subjects KS1-4 with specialist support for dyslexia, dyscalculia, autism, ADHD and other learning needs.',
+                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-4, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
                 links: [{ href: '/english', text: 'English Tutoring' }, { href: '/maths', text: 'Maths Tutoring' }],
                 color: 'from-emerald-600 to-emerald-400',
                 borderColor: 'border-emerald-600',
@@ -398,7 +413,8 @@ export default function Home() {
               {
                 icon: '📚',
                 title: 'SATs, Entrance & Functional Skills',
-                desc: 'Preparation for SATs, 4+/7+/11+ entrance exams, Entry level and Functional Skills exams. Supporting home-educated children and exam preparation.',
+                desc: 'SATs, entrance exams & Functional Skills. Proven success at top schools.',
+                descFull: 'Preparation for SATs, 4+/7+/11+ entrance exams, Entry level and Functional Skills exams. Recent entrance success includes Haberdashers\', Channing, Queenswood and UCS.',
                 links: [{ href: '/english', text: 'English Exams' }, { href: '/maths', text: 'Maths Exams' }],
                 color: 'from-blue-700 to-blue-400',
                 borderColor: 'border-blue-700',
@@ -406,7 +422,8 @@ export default function Home() {
               {
                 icon: '🌉',
                 title: 'EAL, Gifted & Home-Educated',
-                desc: 'Support for English as an Additional Language (EAL), Gifted and Talented pupils, and home-educated children. Also teaching History, Geography, and Cookery.',
+                desc: 'EAL, Gifted & Talented pupils. Plus History, Geography & Cookery.',
+                descFull: 'Support for English as an Additional Language (EAL), Gifted and Talented pupils, and home-educated children. Also teaching History, Geography, and Cookery.',
                 links: [{ href: '/about', text: 'Learn More About My Approach' }],
                 color: 'from-amber-600 to-amber-400',
                 borderColor: 'border-amber-600',
@@ -423,12 +440,13 @@ export default function Home() {
               >
                 <motion.div
                   className="text-5xl mb-4"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  whileHover={{ scale: 1.2 }}
                 >
                   {service.icon}
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-700 mb-6">{service.desc}</p>
+                <p className="md:hidden text-gray-700 mb-6 text-sm">{service.desc}</p>
+                <p className="hidden md:block text-gray-700 mb-6">{service.descFull || service.desc}</p>
                 <div className="space-y-2">
                   {service.links.map((link, linkIdx) => (
                     <motion.div
@@ -452,20 +470,21 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-white to-emerald-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-12"
+            className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-6 md:p-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What Sets Me Apart</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">What Sets Me Apart</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {[
                 {
                   icon: '📖',
                   title: 'Professional Background',
                   items: [
                     'BA (Hons) in Professional Practice in Special Needs Education',
+                    'GCSE Mathematics and GCSE English qualifications',
                     'CACHE Level 3 Children and Young People\'s Workforce',
                     'Level 2 Certificates in Autism, Dyslexia & Phonics, Safeguarding',
                     'Enhanced DBS checked with references available',
@@ -476,9 +495,8 @@ export default function Home() {
                   icon: '❤️',
                   title: 'Personal Experience',
                   items: [
-                    'Parent of 4 children with special needs',
                     'Lived experience with EHCPs (Educational Health Care Plans)',
-                    'Understanding of the parent\'s perspective and journey',
+                    'In-depth understanding of parent concerns and education pathways',
                     'Commitment to making a real difference',
                   ],
                 },
@@ -490,21 +508,21 @@ export default function Home() {
                   transition={{ delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text mb-4">
+                  <h3 className="text-lg md:text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text mb-4">
                     {section.icon} {section.title}
                   </h3>
-                  <ul className="space-y-3 text-gray-700">
+                  <ul className="space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
                     {section.items.map((item, itemIdx) => (
                       <motion.li
                         key={itemIdx}
-                        className="flex gap-3 items-start"
+                        className={`flex gap-3 items-start ${itemIdx >= 3 ? 'hidden md:flex' : ''}`}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 + itemIdx * 0.1 }}
                         viewport={{ once: true }}
                       >
-                        <span className="text-green-500 font-bold mt-1">✓</span>
-                        <span>{item}</span>
+                        <span className="text-green-500 font-bold mt-1 flex-shrink-0">✓</span>
+                        <span className="text-sm md:text-base">{item}</span>
                       </motion.li>
                     ))}
                   </ul>

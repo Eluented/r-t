@@ -11,6 +11,7 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/english', label: 'English' },
     { href: '/maths', label: 'Maths' },
+    { href: '/advocacy', label: 'Advocacy' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
@@ -36,15 +37,29 @@ export default function Header() {
   };
 
   const mobileItemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
       x: 0,
+      transition: { duration: 0.4 },
+    },
+    exit: {
+      opacity: 0,
+      x: -30,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  const mobileMenuVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: {
+      opacity: 1,
+      height: 'auto',
       transition: { duration: 0.3 },
     },
     exit: {
       opacity: 0,
-      x: -20,
+      height: 0,
       transition: { duration: 0.2 },
     },
   };
@@ -66,7 +81,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3">
               <motion.div 
                 className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-600 via-emerald-500 to-blue-600 text-white rounded-xl shadow-lg"
-                whileHover={{ rotate: 5 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 400 }}
               >
                 <span className="text-2xl">📚</span>
@@ -116,22 +131,32 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <motion.button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-gray-700"
+              className="md:hidden text-gray-700 p-2 -mr-2 rounded-lg hover:bg-gray-100 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Toggle mobile menu"
             >
               <svg
-                className="w-6 h-6"
+                className={`w-6 h-6 transition-transform duration-300 ${mobileMenuOpen ? 'rotate-90' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                {mobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
               </svg>
             </motion.button>
           </div>
@@ -141,45 +166,48 @@ export default function Header() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.nav 
-              className="md:hidden pb-4 space-y-1 border-t border-gray-200"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              className="md:hidden bg-gradient-to-b from-white via-white to-emerald-50/20 border-t border-gray-200"
+              variants={mobileMenuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
             >
-              {navItems.map((item, index) => (
+              <div className="py-4 space-y-1 px-2">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.href}
+                    variants={mobileItemVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{ delay: index * 0.08 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-blue-50 rounded-lg transition-all font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
                 <motion.div
-                  key={item.href}
                   variants={mobileItemVariants}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: navItems.length * 0.08 }}
+                  className="pt-2 border-t border-gray-200 mt-2"
                 >
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-blue-50 rounded transition font-medium"
+                  <a
+                    href="tel:07908845498"
+                    className="block px-4 py-3 text-white font-semibold bg-gradient-to-r from-emerald-600 to-blue-600 rounded-lg hover:shadow-lg shadow-md transition-all"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.label}
-                  </Link>
+                    📞 Call 07908 845 498
+                  </a>
                 </motion.div>
-              ))}
-              <motion.div
-                variants={mobileItemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ delay: navItems.length * 0.05 }}
-              >
-                <a
-                  href="tel:07908845498"
-                  className="block px-4 py-2 text-amber-600 font-semibold hover:bg-amber-50 rounded transition"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  📞 Call 07908 845 498
-                </a>
-              </motion.div>
+              </div>
             </motion.nav>
           )}
         </AnimatePresence>

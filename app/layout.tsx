@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   keywords: ["maths tutor north west london", "english tutor edgware", "SEN tutor", "dyslexia support", "dyscalculia tutor", "11+ tutor", "GCSE tutor", "EAL tutor", "home tuition barnet", "private tutor hertfordshire", "one-to-one tuition", "Key Stage 1 tutor", "Key Stage 2 tutor", "phonics tutor"],
   authors: [{ name: "Rosalind" }],
   creator: "Rosalind's Tuition",
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   metadataBase: new URL('https://rosalindtuition.com'), // Update with actual domain
   alternates: {
     canonical: '/',
@@ -55,6 +65,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+      </head>
       <body className={inter.className}>
         <Header />
         {children}

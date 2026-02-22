@@ -32,12 +32,18 @@ export default function EnglishPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 <span className="text-emerald-200">English Tutoring</span>
-                <br className="hidden sm:block" />
+                <br />
                 That Builds Confidence
               </h1>
 
-              <p className="text-lg text-emerald-100 max-w-2xl leading-relaxed mb-6">
-                Expert one-to-one English tuition following the national curriculum for primary and secondary education. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment.
+              {/* Mobile Text */}
+              <p className="md:hidden text-base text-emerald-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one English tuition KS1-4. Reading, writing, phonics, and exam prep. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
+              </p>
+
+              {/* Desktop Text */}
+              <p className="hidden md:block text-lg text-emerald-100 max-w-2xl leading-relaxed mb-6">
+                Expert one-to-one English tuition following the national curriculum for primary and secondary education. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment. My entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
               </p>
 
               {/* Support Types - Visual Pills */}
@@ -88,7 +94,7 @@ export default function EnglishPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/rosalind_teaching1.jpeg"
+                  src="/rosalind_teaching8.webp"
                   alt="Rosalind teaching English to a student"
                   width={800}
                   height={500}
@@ -136,7 +142,7 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why My <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Approach Works</span>
             </h2>
           </motion.div>
@@ -146,19 +152,22 @@ export default function EnglishPage() {
               {
                 icon: '🎯',
                 title: 'Personalised Learning',
-                description: 'Every child learns differently. I adapt methods, pace, and materials to suit your child\'s unique learning style and needs.',
+                description: 'Every child learns differently. I adapt methods, pace, and materials to suit your child\'s unique learning style and needs after assessment.',
+                descShort: 'Methods adapted to your child\'s learning style.',
                 color: 'emerald'
               },
               {
                 icon: '🤝',
                 title: 'Patient & Empathetic',
                 description: 'With 30 years\' experience supporting diverse learners including SEN, EAL, Gifted & Talented pupils, I understand frustration and anxiety. I create a safe space for learning.',
+                descShort: 'Safe, supportive environment for all learners.',
                 color: 'blue'
               },
               {
                 icon: '✨',
                 title: 'Multi-Sensory Techniques',
                 description: 'Especially effective for dyslexia and SEN, multi-sensory methods engage different learning pathways and boost retention.',
+                descShort: 'Proven techniques that boost retention.',
                 color: 'amber'
               }
             ].map((item, idx) => (
@@ -172,14 +181,15 @@ export default function EnglishPage() {
                 className="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-2xl transition-all"
               >
                 <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
+                  whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                   className="text-6xl mb-6 inline-block"
                 >
                   {item.icon}
                 </motion.div>
                 <h3 className={`text-2xl font-bold text-${item.color}-600 mb-4`}>{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <p className="md:hidden text-gray-700 leading-relaxed text-sm">{item.descShort}</p>
+                <p className="hidden md:block text-gray-700 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -195,10 +205,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               What I <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Teach</span>
             </h2>
-            <p className="text-xl text-gray-600">Comprehensive English support tailored to your child's needs and level</p>
+            <p className="text-lg md:text-xl text-gray-600">Comprehensive English support tailored to your child's needs and level</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -210,7 +220,7 @@ export default function EnglishPage() {
                   'Phonics and early reading skills using recognised methods',
                   'Decoding and fluency development',
                   'Comprehension, vocabulary and inference',
-                  'Prediction skills and critical reading',
+                  'Prediction critical thinking skills',
                   'Support for dyslexia and auditory processing difficulties',
                 ]
               },
@@ -240,11 +250,11 @@ export default function EnglishPage() {
                 icon: '🔤',
                 title: 'Spelling, Grammar & Punctuation',
                 items: [
-                  'Spelling patterns and rules taught through multi-sensory methods',
+                  'Spelling patterns and rules taught through interventions',
                   'Proven interventions that build confidence and independence',
                   'Grammar and punctuation taught in meaningful contexts',
                   'Application to own writing',
-                  'Particularly effective for children with dyslexia and ADHD',
+                  'Particularly effective for children with dyslexia and SEN',
                 ]
               },
               {
@@ -255,6 +265,7 @@ export default function EnglishPage() {
                   'Creative writing under timed conditions',
                   'Verbal reasoning practice and strategies',
                   'Test-taking techniques and confidence building',
+                  'Strong 7+ and 11+ outcomes including Haberdashers\', Channing, Queenswood and UCS',
                   'Tailored to your child\'s learning style and pace',
                 ]
               },
@@ -265,7 +276,7 @@ export default function EnglishPage() {
                   'Dyslexia-friendly approaches and multi-sensory techniques',
                   'Support for speech/language and auditory processing difficulties',
                   'Adapted teaching methods for different learning needs',
-                  'Individualised programmes for ADHD, autism and other conditions',
+                  'Individualised programmes for dyslexia, autism, ADHD and more',
                   'Building both skills and genuine self-belief',
                 ]
               }
@@ -280,8 +291,8 @@ export default function EnglishPage() {
                 className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-emerald-600"
               >
                 <div className="text-5xl mb-4">{area.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{area.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">{area.title}</h3>
+                <ul className="space-y-2 md:space-y-3">
                   {area.items.map((item, itemIdx) => (
                     <motion.li
                       key={itemIdx}
@@ -289,9 +300,9 @@ export default function EnglishPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1 + itemIdx * 0.05 }}
-                      className="flex gap-2 text-gray-700"
+                      className={`flex gap-2 text-gray-700 text-sm md:text-base ${itemIdx >= 3 ? 'hidden md:flex' : ''}`}
                     >
-                      <span className="text-emerald-600 font-bold">•</span>
+                      <span className="text-emerald-600 font-bold flex-shrink-0">•</span>
                       <span>{item}</span>
                     </motion.li>
                   ))}
@@ -311,10 +322,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               How I <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Work</span>
             </h2>
-            <p className="text-xl text-gray-600">My approach ensures every child makes genuine progress</p>
+            <p className="text-lg md:text-xl text-gray-600">My approach ensures every child makes genuine progress</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -322,17 +333,20 @@ export default function EnglishPage() {
               {
                 icon: '🔍',
                 title: 'Individual Assessment',
-                desc: 'I take time to understand each child\'s unique abilities, learning style, and challenges. This informs every lesson.'
+                desc: 'I take time to understand each child\'s unique abilities, learning style, and challenges. This informs every lesson.',
+                descShort: 'Understand your child\'s abilities and needs.'
               },
               {
                 icon: '📋',
                 title: 'Personalised Planning',
-                desc: 'Each programme is tailored to your child\'s specific needs, interests, and pace of learning.'
+                desc: 'Each programme is tailored to your child\'s specific needs, interests, and pace of learning.',
+                descShort: 'Programmes tailored to your child.'
               },
               {
                 icon: '🌟',
                 title: 'Engaging Methods',
-                desc: 'Lessons combine step-by-step guidance with stimulating, interactive activities that make learning genuinely enjoyable.'
+                desc: 'Lessons combine step-by-step guidance with stimulating, interactive activities that make learning genuinely enjoyable.',
+                descShort: 'Interactive activities that make learning fun.'
               }
             ].map((item, idx) => (
               <motion.div
@@ -345,14 +359,15 @@ export default function EnglishPage() {
                 className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all"
               >
                 <motion.div
-                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                   className="text-6xl mb-6 inline-block"
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="md:hidden text-gray-700 leading-relaxed text-sm">{item.descShort}</p>
+                <p className="hidden md:block text-gray-700 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -368,10 +383,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Real Results,<span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text"> Real Progress</span>
             </h2>
-            <p className="text-xl text-gray-600">What parents and children say about their tutoring experience</p>
+            <p className="text-lg md:text-xl text-gray-600">What parents and children say about their tutoring experience</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -379,17 +394,20 @@ export default function EnglishPage() {
               {
                 icon: '📚',
                 title: 'Dyslexia Support',
-                desc: 'I\'ve developed guided reading and creative writing programmes specifically for children with dyslexia, helping them progress consistently.'
+                desc: 'I have developed guided reading and creative writing programmes specifically for children with dyslexia, helping them progress consistently.',
+                descShort: 'Dyslexia-friendly reading & writing programmes.'
               },
               {
                 icon: '⭐',
                 title: 'Reluctant to Confident',
-                desc: 'Many pupils have progressed from reluctant, anxious readers to confident, independent learners—with some becoming reading mentors to others.'
+                desc: 'Many pupils have progressed from reluctant, anxious readers to confident, independent learners with some becoming reading mentors to others.',
+                descShort: 'Anxious readers become confident learners.'
               },
               {
                 icon: '💪',
                 title: 'Parent Testimonials',
-                desc: 'Parents consistently report significant improvements in both skills and confidence, with children now enjoying reading and wanting to write.'
+                desc: 'Parents consistently report significant improvements in both skills and confidence, with children now enjoying reading and writing independently.',
+                descShort: 'Improved skills and lasting confidence.'
               }
             ].map((item, idx) => (
               <motion.div
@@ -402,7 +420,8 @@ export default function EnglishPage() {
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                <p className="md:hidden text-gray-700 leading-relaxed text-sm">{item.descShort}</p>
+                <p className="hidden md:block text-gray-700 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>

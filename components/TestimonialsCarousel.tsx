@@ -94,7 +94,7 @@ export default function TestimonialsCarousel() {
 
         {/* Carousel Container */}
         <div 
-          className="relative h-96 bg-white rounded-2xl shadow-2xl overflow-hidden"
+          className="relative h-80 sm:h-96 bg-white rounded-2xl shadow-2xl overflow-hidden"
           onMouseEnter={() => setAutoplay(false)}
           onMouseLeave={() => setAutoplay(true)}
         >
@@ -133,7 +133,7 @@ export default function TestimonialsCarousel() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-2xl text-gray-800 mb-8 italic font-light"
+                  className="text-lg sm:text-2xl text-gray-800 mb-4 sm:mb-8 italic font-light line-clamp-4 sm:line-clamp-none"
                 >
                   "{current.content}"
                 </motion.blockquote>
@@ -144,8 +144,8 @@ export default function TestimonialsCarousel() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <p className="text-xl font-bold text-gray-900">{current.name}</p>
-                  <p className="text-gray-600">{current.role}</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900">{current.name}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{current.role}</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -156,7 +156,7 @@ export default function TestimonialsCarousel() {
             onClick={() => paginate(-1)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
           >
             ←
           </motion.button>
@@ -165,7 +165,7 @@ export default function TestimonialsCarousel() {
             onClick={() => paginate(1)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
           >
             →
           </motion.button>

@@ -40,7 +40,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     '@type': 'LocalBusiness',
     '@id': `${baseUrl}/#localbusiness`,
     name: "Rosalind's Tuition",
-    image: `${baseUrl}/rosalind_portrait1.jpg`,
+    image: `${baseUrl}/rosalind_portrait1.webp`,
     description: 'Professional one-to-one Maths and English tuition in North West London with 30+ years of experience.',
     address: {
       '@type': 'PostalAddress',

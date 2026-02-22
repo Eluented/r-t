@@ -184,13 +184,13 @@ export default function AboutPage() {
             >
               {/* Main large image */}
               <motion.div
-                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
                 className="absolute top-0 left-0 w-3/4 h-2/3 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1767452985026-978ef46d335c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Teaching moment"
+                  src="/rosalind_portrait2.webp"
+                  alt="Rosalind's Portrait"
                   fill
                   className="object-cover"
                 />
@@ -244,15 +244,15 @@ export default function AboutPage() {
             <h2 className="text-5xl font-bold text-gray-900 mb-4">
               The <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text">Journey</span>
             </h2>
-            <p className="text-xl text-gray-600">From educator to parent to specialist—every step shaped who I am today</p>
+            <p className="text-xl text-gray-600">From educator to specialist—every step shaped who I am today</p>
           </motion.div>
 
           {/* Timeline */}
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-300 via-blue-300 to-purple-300" />
+            {/* Vertical line - hidden on mobile */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-300 via-blue-300 to-purple-300" />
 
-            <div className="space-y-24">
+            <div className="space-y-8 md:space-y-24">
               {timeline.map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -260,20 +260,18 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`flex items-center gap-8 ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                  className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                   onMouseEnter={() => setActiveTimeline(idx)}
                 >
                   {/* Content Card */}
                   <motion.div
-                    whileHover={{ scale: 1.05, rotate: idx % 2 === 0 ? 2 : -2 }}
-                    className={`w-5/12 bg-white rounded-2xl p-8 shadow-xl border-2 ${
-                      activeTimeline === idx ? 'border-emerald-500' : 'border-gray-100'
-                    } transition-all`}
+                    whileHover={{ scale: 1.05 }}
+                    className={`w-full md:w-5/12 bg-white rounded-2xl p-6 md:p-8 shadow-xl border-2 ${activeTimeline === idx ? 'border-emerald-500' : 'border-gray-100'} transition-all`}
                   >
-                    <div className="text-6xl mb-4">{item.icon}</div>
+                    <div className="text-4xl md:text-6xl mb-4">{item.icon}</div>
                     <div className="text-sm font-bold text-emerald-600 mb-2">{item.year}</div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 text-sm md:text-base">{item.desc}</p>
                   </motion.div>
 
                   {/* Center dot */}
@@ -282,11 +280,11 @@ export default function AboutPage() {
                       scale: activeTimeline === idx ? 1.3 : 1,
                       boxShadow: activeTimeline === idx ? '0 0 30px rgba(5, 150, 105, 0.5)' : '0 0 0px rgba(5, 150, 105, 0)'
                     }}
-                    className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full border-4 border-white shadow-lg z-10"
+                    className="hidden md:block w-6 h-6 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full border-4 border-white shadow-lg z-10 my-0 md:my-0"
                   />
 
                   {/* Empty space on other side */}
-                  <div className="w-5/12" />
+                  <div className="hidden md:block w-5/12" />
                 </motion.div>
               ))}
             </div>
@@ -340,15 +338,15 @@ export default function AboutPage() {
                   <motion.div
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                    className={`text-6xl mb-4 ${idx === 0 ? 'text-8xl mb-8' : ''}`}
+                    className={`text-6xl mb-4 ${idx === 0 ? 'md:text-8xl md:mb-8' : ''}`}
                   >
                     {card.icon}
                   </motion.div>
-                  <h3 className={`font-bold text-white ${idx === 0 ? 'text-4xl mb-4' : 'text-2xl'}`}>
+                  <h3 className={`font-bold text-white ${idx === 0 ? 'text-2xl md:text-4xl md:mb-4' : 'text-2xl'}`}>
                     {card.title}
                   </h3>
                   {idx === 0 && (
-                    <p className="text-white/90 text-lg leading-relaxed mt-4">
+                    <p className="hidden md:block text-white/90 text-lg leading-relaxed mt-4">
                       I believe passionately that every child, regardless of their learning profile, can succeed. Struggling doesn't mean lacking ability—it often means the teaching approach hasn't matched the learning style yet.
                     </p>
                   )}
@@ -378,8 +376,8 @@ export default function AboutPage() {
               className="relative h-[600px] rounded-3xl overflow-hidden"
             >
               <Image
-                src="https://images.unsplash.com/photo-1767452985026-978ef46d335c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Rosalind teaching"
+                src="/rosalind_portrait3.webp"
+                alt="Rosalind's teaching lesson in action"
                 fill
                 className="object-cover"
               />
@@ -456,13 +454,13 @@ export default function AboutPage() {
               >
                 {[
                   { icon: '🎓', label: 'Qualified Educator' },
-                  { icon: '👨‍👩‍👧‍👦', label: 'SEN Parent' },
+                  { icon: '🧩', label: 'SEN Specialist' },
                   { icon: '💙', label: 'Empathetic' },
                   { icon: '🌟', label: 'Passionate' }
                 ].map((trait, idx) => (
                   <motion.div
                     key={idx}
-                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileHover={{ scale: 1.05 }}
                     className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-4 text-center border-2 border-emerald-200"
                   >
                     <div className="text-3xl mb-2">{trait.icon}</div>

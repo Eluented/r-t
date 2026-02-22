@@ -107,7 +107,7 @@ export default function AdvocacyPage() {
                 transition={{ delay: 0.5 }}
                 className="mt-12 text-emerald-100 italic text-lg"
               >
-                "I've been where you are. As a parent of 4 children with SEN, I understand the journey. You're doing brilliantly."
+                "You are not alone in this process. With specialist guidance and steady support, we can move forward with clarity and confidence."
               </motion.p>
             </div>
 
@@ -119,7 +119,7 @@ export default function AdvocacyPage() {
               className="relative h-96 lg:h-full lg:min-h-[600px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1752652016199-a9ca574e08cb?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/rosalind_teaching4.webp"
                 alt="Parent and child supporting each other"
                 fill
                 className="object-cover object-center"
@@ -141,7 +141,7 @@ export default function AdvocacyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Does This Sound <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Familiar?</span>
             </h2>
           </motion.div>
@@ -163,8 +163,8 @@ export default function AdvocacyPage() {
                 transition={{ delay: idx * 0.05 }}
                 className="flex gap-4 p-6 bg-white rounded-xl border-2 border-emerald-100 hover:border-emerald-600 hover:shadow-lg transition-all"
               >
-                <span className="text-5xl flex-shrink-0">{item.icon}</span>
-                <p className="text-gray-700 font-semibold text-lg my-auto">{item.text}</p>
+              <span className="text-3xl md:text-5xl flex-shrink-0">{item.icon}</span>
+                <p className="text-gray-700 font-semibold text-sm md:text-lg my-auto">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -180,12 +180,10 @@ export default function AdvocacyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               How I Can <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Support You</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive advocacy support informed by both lived experience and professional expertise
-            </p>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive advocacy support informed by lived experience and expertise</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -194,37 +192,49 @@ export default function AdvocacyPage() {
                 title: 'EHCP Navigation',
                 icon: '📋',
                 points: ['Understanding the process', 'Building strong applications', 'Challenging refusals', 'Managing your EHCP'],
-                color: 'emerald'
+                bgClass: 'from-emerald-50',
+                borderClass: 'border-emerald-600',
+                textClass: 'text-emerald-700'
               },
               {
                 title: 'Tribunal Support',
                 icon: '⚖️',
                 points: ['Explaining appeals process', 'Building evidence & cases', 'Representation guidance', 'Emotional support'],
-                color: 'teal'
+                bgClass: 'from-teal-50',
+                borderClass: 'border-teal-600',
+                textClass: 'text-teal-700'
               },
               {
                 title: 'School Advocacy',
                 icon: '🏫',
                 points: ['Communicating with SENCOs', 'Requesting accommodations', 'Understanding reports', 'Planning transitions'],
-                color: 'cyan'
+                bgClass: 'from-cyan-50',
+                borderClass: 'border-cyan-600',
+                textClass: 'text-cyan-700'
               },
               {
                 title: 'Understanding SEN',
                 icon: '🧠',
                 points: ['Diagnosis explanations', 'Support strategies', 'Specialist resources', 'Intervention advice'],
-                color: 'emerald'
+                bgClass: 'from-emerald-50',
+                borderClass: 'border-emerald-600',
+                textClass: 'text-emerald-700'
               },
               {
                 title: 'Parent Listening',
                 icon: '💙',
                 points: ['Non-judgmental support', 'Shared experiences', 'Practical advice', 'Resource connections'],
-                color: 'teal'
+                bgClass: 'from-teal-50',
+                borderClass: 'border-teal-600',
+                textClass: 'text-teal-700'
               },
               {
                 title: 'Rights & Resources',
                 icon: '🛡️',
                 points: ['Legal knowledge sharing', 'Organisation signposting', 'Funding information', 'Support networks'],
-                color: 'cyan'
+                bgClass: 'from-cyan-50',
+                borderClass: 'border-cyan-600',
+                textClass: 'text-cyan-700'
               }
             ].map((service, idx) => (
               <motion.div
@@ -234,24 +244,34 @@ export default function AdvocacyPage() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className={`bg-gradient-to-br from-${service.color}-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-${service.color}-600 group`}
+                className={`bg-gradient-to-br ${service.bgClass} to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 ${service.borderClass} group`}
               >
                 <motion.div
-                  whileHover={{ scale: 1.3, rotate: 360 }}
+                  whileHover={{ scale: 1.3 }}
                   transition={{ duration: 0.6 }}
-                  className="text-6xl mb-6 inline-block"
+                  className="text-4xl md:text-6xl mb-6 inline-block"
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className={`text-2xl font-bold text-${service.color}-700 mb-6`}>{service.title}</h3>
-                <ul className="space-y-3">
-                  {service.points.map((point, pidx) => (
-                    <li key={pidx} className="flex items-center gap-3 text-gray-700">
-                      <span className={`text-${service.color}-600 font-bold`}>✓</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <h3 className={`text-xl md:text-2xl font-bold ${service.textClass} mb-6`}>{service.title}</h3>
+                  {/* Mobile: show only title & first 2 points */}
+                  <div className="md:hidden space-y-2">
+                    {service.points.slice(0, 2).map((point, pidx) => (
+                      <li key={pidx} className="flex items-center gap-2 text-gray-700 text-sm">
+                        <span className="text-emerald-600 font-bold flex-shrink-0">✓</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </div>
+                  {/* Desktop: show all points */}
+                  <ul className="hidden md:block space-y-3">
+                    {service.points.map((point, pidx) => (
+                      <li key={pidx} className="flex items-center gap-3 text-gray-700">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
               </motion.div>
             ))}
           </div>
@@ -267,7 +287,7 @@ export default function AdvocacyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Trust <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Rosalind?</span>
             </h2>
           </motion.div>
@@ -303,7 +323,7 @@ export default function AdvocacyPage() {
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-emerald-600"
               >
                 <motion.div
-                  whileHover={{ rotate: 360, scale: 1.2 }}
+                  whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.6 }}
                   className="text-6xl mb-6 inline-block"
                 >

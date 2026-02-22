@@ -244,7 +244,7 @@ export default function ContactPage() {
               >
                 <div className="flex items-start gap-4">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={{ scale: 1.1 }}
                     className="text-4xl"
                   >
                     📞
@@ -271,7 +271,7 @@ export default function ContactPage() {
               >
                 <div className="flex items-start gap-4">
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    whileHover={{ scale: 1.1 }}
                     className="text-4xl"
                   >
                     ✉️

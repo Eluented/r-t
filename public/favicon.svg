@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main rounded square background -->
+  <rect width="200" height="200" fill="url(#brandGradient)" rx="50" ry="50"/>
+  
+  <!-- Subtle shine overlay -->
+  <ellipse cx="65" cy="65" rx="45" ry="45" fill="white" opacity="0.12"/>
+  
+  <!-- Stylized "R" monogram -->
+  <g transform="translate(50, 35)">
+    <!-- R letter - bold and modern -->
+    <!-- Vertical stem -->
+    <rect x="35" y="15" width="16" height="100" fill="white" rx="3" ry="3"/>
+    
+    <!-- Top bowl of R -->
+    <path d="M 51 15 Q 85 15 85 45 Q 85 65 65 70 L 51 70 Z" fill="none" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Diagonal leg of R -->
+    <line x1="68" y1="72" x2="95" y2="115" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Small accent dot above R for sophistication -->
+    <circle cx="110" cy="20" r="5" fill="white" opacity="0.7"/>
+  </g>
+</svg>
