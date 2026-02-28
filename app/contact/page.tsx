@@ -21,6 +21,8 @@ interface FormErrors {
 }
 
 export default function ContactPage() {
+  const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -33,6 +35,7 @@ export default function ContactPage() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [showAllNwAreas, setShowAllNwAreas] = useState(false);
 
   const hertfordshireAreas = [
@@ -180,6 +183,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError('');
 
     if (!validateForm()) {
       return;
@@ -187,25 +191,76 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      if (!web3FormsKey) {
+        throw new Error('Form is not configured yet. Please try again shortly.');
+      }
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-
-    // Reset form after success
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+      const submittedAt = new Date().toLocaleString('en-GB', {
+        dateStyle: 'full',
+        timeStyle: 'short',
       });
-      setTouched({});
-      setErrors({});
-      setSubmitSuccess(false);
-    }, 3000);
+
+      const formattedMessage = [
+        'New Contact Enquiry — Rosalind\'s Tuition',
+        '────────────────────────────────────────',
+        '',
+        'Parent/Guardian Details',
+        `• Name: ${formData.name}`,
+        `• Email: ${formData.email}`,
+        `• Phone: ${formData.phone}`,
+        '',
+        'Enquiry Details',
+        `• Subject: ${formData.subject}`,
+        `• Submitted: ${submittedAt}`,
+        '',
+        'Message',
+        '────────────────────────────────────────',
+        formData.message,
+      ].join('\n');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: web3FormsKey,
+          from_name: "Rosalind's Tuition",
+          subject: `New Contact Enquiry: ${formData.subject}`,
+          name: formData.name,
+          email: formData.email,
+          message: formattedMessage,
+          replyto: formData.email,
+          botcheck: ''
+        }),
+      });
+
+      const result = await response.json() as { success?: boolean; message?: string };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to send your message right now. Please try again.');
+      }
+
+      setSubmitSuccess(true);
+
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        setTouched({});
+        setErrors({});
+        setSubmitSuccess(false);
+      }, 3000);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unable to send your message right now. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const isFormValid = !Object.values(errors).some(error => error) &&
@@ -215,7 +270,7 @@ export default function ContactPage() {
     <main className="bg-white">
       <StructuredData type="contact" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 pt-20 pb-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 pt-12 md:pt-20 pb-32 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <motion.div
@@ -263,7 +318,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="hero-title text-white mb-6"
             >
               Let's Start Your Child's
               <span className="block text-yellow-200">Learning Journey</span>
@@ -273,7 +328,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+              className="hero-lead text-white/90 max-w-3xl mx-auto"
             >
               Ready to help your child thrive? Reach out for a free consultation and discover how personalised tutoring can make all the difference.
             </motion.p>
@@ -404,8 +459,18 @@ export default function ContactPage() {
               className="lg:col-span-2"
             >
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Send a Message</h2>
+                <h2 className="section-title text-gray-900 mb-2">Send a Message</h2>
                 <p className="text-gray-600 mb-8">Fill out the form below and I'll get back to you as soon as possible.</p>
+
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3"
+                  >
+                    <p className="text-sm font-semibold text-red-700">{submitError}</p>
+                  </motion.div>
+                )}
 
                 <AnimatePresence mode="wait">
                   {submitSuccess ? (
@@ -669,7 +734,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="mt-20 mb-20"
           >
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="section-title text-center text-gray-900 mb-12">
               Where I Tutor
             </h2>
 
@@ -681,7 +746,7 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8 border-l-4 border-emerald-600"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <h3 className="card-title text-gray-900 mb-4 flex items-center gap-3">
                   <span className="text-3xl">🏠</span>
                   Face-to-Face Tuition - North West London
                 </h3>
@@ -745,7 +810,7 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border-l-4 border-blue-600"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                  <h3 className="card-title text-gray-900 mb-4 flex items-center gap-3">
                     <span className="text-3xl">💻</span>
                     Online Tutoring - UK Wide
                   </h3>
@@ -763,7 +828,7 @@ export default function ContactPage() {
                   transition={{ delay: 0.1 }}
                   className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border-l-4 border-amber-600"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                  <h3 className="card-title text-gray-900 mb-4 flex items-center gap-3">
                     <span className="text-3xl">🌍</span>
                     International Students Welcome
                   </h3>
@@ -784,7 +849,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="section-title text-center text-gray-900 mb-12">
               Frequently Asked <span className="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">Questions</span>
             </h2>
 

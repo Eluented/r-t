@@ -154,18 +154,20 @@ export default function TestimonialsCarousel() {
           {/* Navigation Buttons */}
           <motion.button
             onClick={() => paginate(-1)}
-            whileHover={{ scale: 1.1 }}
+            style={{ top: '50%', y: '-50%' }}
+            whileHover={{ scale: 1.1, y: '-50%' }}
             whileTap={{ scale: 0.95 }}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
+            className="absolute left-2 sm:left-4 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
           >
             ←
           </motion.button>
 
           <motion.button
             onClick={() => paginate(1)}
-            whileHover={{ scale: 1.1 }}
+            style={{ top: '50%', y: '-50%' }}
+            whileHover={{ scale: 1.1, y: '-50%' }}
             whileTap={{ scale: 0.95 }}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
+            className="absolute right-2 sm:right-4 z-20 bg-gradient-to-r from-emerald-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base"
           >
             →
           </motion.button>

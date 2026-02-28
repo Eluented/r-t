@@ -10,7 +10,7 @@ export default function EnglishPage() {
     <main className="bg-white">
       <StructuredData type="english" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-blue-900 to-emerald-800 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-emerald-900 via-blue-900 to-emerald-800 pt-12 md:pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.div
             animate={{ y: [0, 20, 0] }}
@@ -30,19 +30,19 @@ export default function EnglishPage() {
               <div className="inline-block bg-emerald-100/20 backdrop-blur px-6 py-3 rounded-full text-emerald-100 font-semibold mb-6">
                 📚 English Tuition - Key Stages 1-3
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="hero-title text-white mb-6">
                 <span className="text-emerald-200">English Tutoring</span>
                 <br />
                 That Builds Confidence
               </h1>
 
               {/* Mobile Text */}
-              <p className="md:hidden text-base text-emerald-100 max-w-2xl leading-relaxed mb-6">
+              <p className="md:hidden hero-lead text-emerald-100 max-w-2xl mb-6">
                 Expert one-to-one English tuition KS1-3. Reading, writing, phonics, and exam prep. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}
-              <p className="hidden md:block text-lg text-emerald-100 max-w-2xl leading-relaxed mb-6">
+              <p className="hidden md:block hero-lead text-emerald-100 max-w-2xl mb-6">
                 Expert one-to-one English tuition following the national curriculum for primary and secondary education. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment. My entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
               </p>
 
@@ -142,7 +142,7 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               Why My <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Approach Works</span>
             </h2>
           </motion.div>
@@ -205,10 +205,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               What I <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Teach</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">Comprehensive English support tailored to your child's needs and level</p>
+            <p className="section-lead text-gray-600">Comprehensive English support tailored to your child's needs and level</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -324,10 +324,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               How I <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text">Work</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">My approach ensures every child makes genuine progress</p>
+            <p className="section-lead text-gray-600">My approach ensures every child makes genuine progress</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -385,10 +385,10 @@ export default function EnglishPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               Real Results,<span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text"> Real Progress</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">What parents and children say about their tutoring experience</p>
+            <p className="section-lead text-gray-600">What parents and children say about their tutoring experience</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -449,8 +449,8 @@ export default function EnglishPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready for an English Breakthrough?</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            <h2 className="section-title text-white mb-6">Ready for an English Breakthrough?</h2>
+            <p className="section-lead text-white/90 mb-10 leading-relaxed">
               Let's chat about your child's needs and create a personalised plan that brings genuine understanding, confidence, and real progress.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

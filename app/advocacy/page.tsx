@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import Testimonials from '@/components/Testimonials';
+import StructuredData from '@/components/StructuredData';
 
 export default function AdvocacyPage() {
   const containerVariants = {
@@ -16,21 +17,22 @@ export default function AdvocacyPage() {
 
   return (
     <main className="bg-white overflow-hidden">
+      <StructuredData type="advocacy" />
       {/* Hero Section - Powerful & Inspiring */}
-      <section className="relative min-h-screen bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white pt-56 pb-12 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white pt-12 md:pt-24 pb-12 md:pb-16 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             animate={{ y: [0, 30, 0] }}
             transition={{ duration: 8, repeat: Infinity }}
-            className="absolute top-20 left-10 text-8xl opacity-10"
+            className="hidden md:block absolute top-20 left-10 text-8xl opacity-10"
           >
             ✊
           </motion.div>
           <motion.div
             animate={{ y: [0, -30, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
-            className="absolute bottom-20 right-10 text-8xl opacity-10"
+            className="absolute bottom-12 right-4 md:bottom-20 md:right-10 text-6xl md:text-8xl opacity-10"
           >
             💪
           </motion.div>
@@ -42,35 +44,36 @@ export default function AdvocacyPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <div className="max-w-3xl">
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-emerald-100 font-semibold mb-8 border border-white/30"
+                className="inline-block bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base text-emerald-100 font-semibold mb-6 md:mb-8 border border-white/30"
               >
-                🛡️ Parent Advocacy & Children's Rights
+                <span className="md:hidden">🛡️ Parent Advocacy</span>
+                <span className="hidden md:inline">🛡️ Parent Advocacy & Children's Rights</span>
               </motion.div>
 
               {/* Main Headline */}
               <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-6xl sm:text-7xl font-bold mb-8 leading-tight"
-            >
-              Your Child's <br />
-              <span className="text-emerald-100">Voice Matters</span>
-            </motion.h1>
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="hero-title mb-5 md:mb-8"
+              >
+                Your Child's <br />
+                <span className="text-emerald-100">Voice Matters</span>
+              </motion.h1>
 
               {/* Subheading */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl text-emerald-100 mb-12 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 md:mb-12 leading-relaxed max-w-2xl"
               >
                 You don't have to navigate the complex world of special needs alone. I'm here to empower you, guide you, and help you fight for your child's rights and the support they deserve.
               </motion.p>
@@ -80,13 +83,13 @@ export default function AdvocacyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4"
               >
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#support"
-                  className="bg-white text-emerald-600 px-10 py-5 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all"
+                  className="w-full sm:w-auto bg-white text-emerald-600 px-6 md:px-10 py-3.5 md:py-5 rounded-lg font-bold text-base md:text-lg shadow-2xl hover:shadow-3xl transition-all text-center"
                 >
                   Explore Support
                 </motion.a>
@@ -94,7 +97,7 @@ export default function AdvocacyPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="tel:07908845498"
-                  className="bg-emerald-400 text-white px-10 py-5 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all"
+                  className="w-full sm:w-auto bg-emerald-400 text-white px-6 md:px-10 py-3.5 md:py-5 rounded-lg font-bold text-base md:text-lg shadow-2xl hover:shadow-3xl transition-all text-center"
                 >
                   📞 Speak to Rosalind
                 </motion.a>
@@ -105,7 +108,7 @@ export default function AdvocacyPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-12 text-emerald-100 italic text-lg"
+                className="mt-8 md:mt-12 text-emerald-100 italic text-base md:text-lg"
               >
                 "You are not alone in this process. With specialist guidance and steady support, we can move forward with clarity and confidence."
               </motion.p>
@@ -116,7 +119,7 @@ export default function AdvocacyPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="relative h-96 lg:h-full lg:min-h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-72 sm:h-96 lg:h-full lg:min-h-[600px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
                 src="/rosalind_teaching4.webp"
@@ -133,20 +136,20 @@ export default function AdvocacyPage() {
       </section>
 
       {/* Why You're Here - Problem Statement */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-14 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               Does This Sound <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Familiar?</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {[
               { icon: '😰', text: "You're fighting to get your child's needs recognised" },
               { icon: '🗂️', text: 'The EHCP process feels impossibly complex' },
@@ -161,9 +164,9 @@ export default function AdvocacyPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="flex gap-4 p-6 bg-white rounded-xl border-2 border-emerald-100 hover:border-emerald-600 hover:shadow-lg transition-all"
+                className="flex gap-3 md:gap-4 p-4 md:p-6 bg-white rounded-xl border-2 border-emerald-100 hover:border-emerald-600 hover:shadow-lg transition-all"
               >
-              <span className="text-3xl md:text-5xl flex-shrink-0">{item.icon}</span>
+              <span className="text-2xl md:text-5xl flex-shrink-0">{item.icon}</span>
                 <p className="text-gray-700 font-semibold text-sm md:text-lg my-auto">{item.text}</p>
               </motion.div>
             ))}
@@ -172,21 +175,21 @@ export default function AdvocacyPage() {
       </section>
 
       {/* What I Offer - Core Services */}
-      <section id="support" className="py-20 bg-white">
+      <section id="support" className="py-14 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               How I Can <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Support You</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive advocacy support informed by experience and expertise</p>
+            <p className="section-lead text-gray-600 max-w-2xl mx-auto">Comprehensive advocacy support informed by experience and expertise</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {[
               {
                 title: 'EHCP Navigation',
@@ -243,17 +246,17 @@ export default function AdvocacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                whileHover={{ y: -12, scale: 1.02 }}
-                className={`bg-gradient-to-br ${service.bgClass} to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 ${service.borderClass} group`}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className={`bg-gradient-to-br ${service.bgClass} to-white rounded-2xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 ${service.borderClass} group`}
               >
                 <motion.div
                   whileHover={{ scale: 1.3 }}
                   transition={{ duration: 0.6 }}
-                  className="text-4xl md:text-6xl mb-6 inline-block"
+                  className="text-3xl md:text-6xl mb-4 md:mb-6 inline-block"
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className={`text-xl md:text-2xl font-bold ${service.textClass} mb-6`}>{service.title}</h3>
+                <h3 className={`text-lg md:text-2xl font-bold ${service.textClass} mb-4 md:mb-6`}>{service.title}</h3>
                   {/* Mobile: show only title & first 2 points */}
                   <div className="md:hidden space-y-2">
                     {service.points.slice(0, 2).map((point, pidx) => (
@@ -279,20 +282,20 @@ export default function AdvocacyPage() {
       </section>
 
       {/* Why Me - Credentials Section */}
-      <section className="py-20 bg-gradient-to-b from-emerald-50 to-cyan-50">
+      <section className="py-14 md:py-20 bg-gradient-to-b from-emerald-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               Why Trust <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Rosalind?</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
             {[
               {
                 icon: '👨‍👩‍👧‍👦',
@@ -320,17 +323,17 @@ export default function AdvocacyPage() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-emerald-600"
+                className="bg-white rounded-2xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-emerald-600"
               >
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.6 }}
-                  className="text-6xl mb-6 inline-block"
+                  className="text-5xl md:text-6xl mb-4 md:mb-6 inline-block"
                 >
                   {credential.icon}
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{credential.title}</h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">{credential.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{credential.title}</h3>
+                <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">{credential.desc}</p>
                 <p className="text-emerald-600 font-semibold text-sm">{credential.subtext}</p>
               </motion.div>
             ))}
@@ -368,27 +371,27 @@ export default function AdvocacyPage() {
       </section>
 
       {/* Important Legal Note */}
-      <section className="py-20 bg-white">
+      <section className="py-14 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-12 border-l-4 border-amber-600 shadow-lg"
+            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 md:p-12 border-l-4 border-amber-600 shadow-lg"
           >
-            <h3 className="text-2xl font-bold text-amber-900 mb-6 flex items-center gap-2">
+            <h3 className="text-xl md:text-2xl font-bold text-amber-900 mb-4 md:mb-6 flex items-center gap-2">
               <span className="text-3xl">⚖️</span>
               Important Legal Note
             </h3>
-            <p className="text-gray-800 mb-6 leading-relaxed text-lg">
+            <p className="text-gray-800 mb-5 md:mb-6 leading-relaxed text-sm md:text-lg">
               While I offer guidance, advice, and emotional support based on my experience and knowledge, <strong>I am not a lawyer</strong>. For complex legal matters, particularly around tribunal representation or legal advice, I recommend seeking specialist legal support from organisations like:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-white rounded-xl p-4 md:p-6">
                 <h4 className="font-bold text-amber-900 mb-2">IPSEA</h4>
                 <p className="text-gray-700 text-sm">Independent Parental Special Education Advice - offers free or low-cost specialist advice</p>
               </div>
-              <div className="bg-white rounded-xl p-6">
+              <div className="bg-white rounded-xl p-4 md:p-6">
                 <h4 className="font-bold text-amber-900 mb-2">ACE</h4>
                 <p className="text-gray-700 text-sm">Alliance for Inclusive Education - provides support and legal information</p>
               </div>
@@ -399,7 +402,7 @@ export default function AdvocacyPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white relative overflow-hidden">
+      <section className="py-14 md:py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.div
             animate={{ rotate: 360 }}
@@ -418,16 +421,16 @@ export default function AdvocacyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold mb-6">Let's Empower Your Child</h2>
-            <p className="text-xl text-emerald-100 mb-10 leading-relaxed">
+            <h2 className="section-title text-white mb-4 md:mb-6">Let's Empower Your Child</h2>
+            <p className="section-lead text-emerald-100 mb-8 md:mb-10 leading-relaxed">
               You don't have to fight this battle alone. Whether you need guidance, support, or just someone who understands, I'm here for you. Let's work together to ensure your child gets the rights and support they deserve.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="tel:07908845498"
-                className="bg-white text-emerald-600 px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all inline-flex items-center gap-2"
+                className="w-full sm:w-auto bg-white text-emerald-600 px-6 md:px-10 py-3.5 md:py-5 rounded-xl font-bold text-base md:text-xl shadow-2xl hover:shadow-3xl transition-all inline-flex items-center justify-center gap-2"
               >
                 <span>📞</span>
                 Call Now
@@ -436,12 +439,12 @@ export default function AdvocacyPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact"
-                className="bg-emerald-400 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-emerald-500 transition-all"
+                className="w-full sm:w-auto bg-emerald-400 text-white px-6 md:px-10 py-3.5 md:py-5 rounded-xl font-bold text-base md:text-xl shadow-2xl hover:bg-emerald-500 transition-all"
               >
                 Contact Form
               </motion.a>
             </div>
-            <p className="text-emerald-100 italic mt-8">
+            <p className="text-emerald-100 italic text-sm md:text-base mt-6 md:mt-8">
               "Your child deserves to be heard, valued, and supported. Let's make sure they get exactly that."
             </p>
           </motion.div>

@@ -113,7 +113,7 @@ export default function MathsPage() {
     <main className="bg-white">
       <StructuredData type="maths" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-amber-500 text-white pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-amber-500 text-white pt-12 md:pt-20 pb-16 overflow-hidden">
         {/* Animated background patterns */}
         <div className="absolute inset-0 overflow-hidden opacity-10">
           <motion.div
@@ -144,19 +144,19 @@ export default function MathsPage() {
                 🧮 Maths Tuition - Key Stages 1-3
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="hero-title text-white mb-6">
                 <span className="text-amber-200">Maths Tutoring</span>
                 <br />
                 That Makes Sense
               </h1>
 
               {/* Mobile Text */}
-              <p className="md:hidden text-base text-blue-100 max-w-2xl leading-relaxed mb-6">
+              <p className="md:hidden hero-lead text-blue-100 max-w-2xl mb-6">
                 Expert one-to-one maths tuition KS1-3. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}
-              <p className="hidden md:block text-lg text-blue-100 max-w-2xl leading-relaxed mb-6">
+              <p className="hidden md:block hero-lead text-blue-100 max-w-2xl mb-6">
                 Expert one-to-one maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
               </p>
 
@@ -231,10 +231,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               How I Build <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Confidence</span>
             </h2>
-            <p className="text-xl text-gray-600">Moving from anxiety to understanding and self-belief</p>
+            <p className="section-lead text-gray-600">Moving from anxiety to understanding and self-belief</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
@@ -245,7 +245,7 @@ export default function MathsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">My Approach to Building Confidence</h2>
+              <h2 className="section-title text-gray-900 mb-8">My Approach to Building Confidence</h2>
               <ul className="space-y-4">
                 {[
                   'Identifying gaps in understanding and building upon strengths',
@@ -298,10 +298,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               What I <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Teach</span>
             </h2>
-            <p className="text-xl text-gray-600">Comprehensive Maths support across all year groups and ability levels</p>
+            <p className="section-lead text-gray-600">Comprehensive Maths support across all year groups and ability levels</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -414,10 +414,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               How I <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Work</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">Step-by-step guidance that produces real results, fast</p>
+            <p className="section-lead text-gray-600">Step-by-step guidance that produces real results, fast</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -471,10 +471,10 @@ export default function MathsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               Experience & <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Results</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600">What my pupils and their families have to say</p>
+            <p className="section-lead text-gray-600">What my pupils and their families have to say</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -565,8 +565,8 @@ export default function MathsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold mb-6">Ready for a Maths Breakthrough?</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            <h2 className="section-title text-white mb-6">Ready for a Maths Breakthrough?</h2>
+            <p className="section-lead text-white/90 mb-10 leading-relaxed">
               Let's chat about your child's needs and create a personalised plan that brings genuine understanding, confidence, and real progress.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

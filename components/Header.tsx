@@ -1,11 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { href: '/', label: 'Home' },
@@ -64,6 +66,17 @@ export default function Header() {
     },
   };
 
+  const isActiveRoute = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname?.startsWith(href);
+  };
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <motion.header 
       className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm"
@@ -106,12 +119,29 @@ export default function Header() {
           >
             {navItems.map((item) => (
               <motion.div key={item.href} variants={itemVariants}>
+                {(() => {
+                  const isActive = isActiveRoute(item.href);
+
+                  return (
                 <Link 
                   href={item.href} 
-                  className="text-gray-700 font-medium hover:text-emerald-600 px-4 py-2 rounded-lg hover:bg-emerald-50 transition-all relative group"
+                  className={`px-4 py-2 rounded-lg transition-all relative group font-medium ${
+                    isActive
+                      ? 'text-emerald-700 bg-gradient-to-r from-emerald-50 to-blue-50 shadow-sm'
+                      : 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="desktop-nav-active"
+                      className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-emerald-500 to-blue-600"
+                    />
+                  )}
                 </Link>
+                  );
+                })()}
               </motion.div>
             ))}
           </motion.nav>
@@ -182,13 +212,32 @@ export default function Header() {
                     exit="exit"
                     transition={{ delay: index * 0.08 }}
                   >
+                    {(() => {
+                      const isActive = isActiveRoute(item.href);
+
+                      return (
                     <Link
                       href={item.href}
-                      className="block px-4 py-3 text-gray-700 hover:text-emerald-600 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-blue-50 rounded-lg transition-all font-medium"
+                      className={`group flex items-center justify-between px-4 py-3 rounded-xl transition-all font-medium border ${
+                        isActive
+                          ? 'text-emerald-700 border-emerald-200 bg-gradient-to-r from-emerald-50 to-blue-50 shadow-sm'
+                          : 'text-gray-700 border-transparent hover:text-emerald-600 hover:border-emerald-100 hover:bg-gradient-to-r hover:from-emerald-50/80 hover:to-blue-50/80'
+                      }`}
+                      aria-current={isActive ? 'page' : undefined}
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      {isActive ? (
+                        <motion.span
+                          layoutId="mobile-nav-active-dot"
+                          className="inline-flex h-2.5 w-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-blue-600"
+                        />
+                      ) : (
+                        <span className="h-2.5 w-2.5 rounded-full bg-transparent border border-gray-200 group-hover:border-emerald-300 transition-colors" />
+                      )}
                     </Link>
+                      );
+                    })()}
                   </motion.div>
                 ))}
                 <motion.div

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function ContactForm() {
+  const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
   const [formData, setFormData] = useState({
     parentName: '',
     email: '',
@@ -34,18 +36,55 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      if (!web3FormsKey) {
+        throw new Error('Form is not configured yet. Please try again shortly.');
+      }
+
+      const submittedAt = new Date().toLocaleString('en-GB', {
+        dateStyle: 'full',
+        timeStyle: 'short',
+      });
+
+      const formattedMessage = [
+        'New Tutoring Enquiry — Rosalind\'s Tuition',
+        '────────────────────────────────────────',
+        '',
+        'Parent/Guardian Details',
+        `• Name: ${formData.parentName}`,
+        `• Email: ${formData.email}`,
+        `• Phone: ${formData.phone}`,
+        '',
+        'Learning Details',
+        `• Child Age / Year Group: ${formData.childAge}`,
+        `• Subjects: ${formData.subjects}`,
+        `• Submitted: ${submittedAt}`,
+        '',
+        'Message / Concerns',
+        '────────────────────────────────────────',
+        formData.message || 'No additional message provided.',
+      ].join('\n');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: web3FormsKey,
+          from_name: "Rosalind's Tuition",
+          subject: `New Tutoring Enquiry: ${formData.parentName}`,
+          name: formData.parentName,
+          email: formData.email,
+          message: formattedMessage,
+          replyto: formData.email,
+          botcheck: formData.website,
+        }),
       });
 
-      const result = await response.json();
+      const result = await response.json() as { success?: boolean; message?: string };
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Something went wrong. Please try again.');
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Something went wrong. Please try again.');
       }
 
       setSubmitted(true);

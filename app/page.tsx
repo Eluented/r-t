@@ -42,7 +42,7 @@ export default function Home() {
     {
       src: '/rosalind_teaching5.webp',
       title: 'Expert Guidance',
-      desc: '25+ years of experience supporting children\'s learning'
+      desc: '30+ years of experience supporting children\'s learning'
     }
   ];
 
@@ -57,7 +57,7 @@ export default function Home() {
     <main className="bg-white">
       <StructuredData type="home" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-12 md:pt-16 pb-12 md:pb-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-10 md:pt-20 pb-10 md:pb-16 overflow-hidden">
         {/* Decorative gradient orb */}
         <motion.div
           className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-emerald-200 via-blue-200 to-amber-200 rounded-full opacity-20 blur-3xl"
@@ -70,7 +70,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Hero Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-8 md:py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-0 md:py-10">
             {/* Left side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -89,7 +89,7 @@ export default function Home() {
               </motion.div>
 
               <motion.h1
-                className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-emerald-600 via-blue-700 to-amber-600 bg-clip-text text-transparent"
+                className="hero-title mb-5 md:mb-6 bg-gradient-to-r from-emerald-600 via-blue-700 to-amber-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -261,8 +261,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tutoring in Action</h2>
-            <p className="text-lg md:text-xl text-gray-600">Real learning moments that inspire growth and confidence</p>
+            <h2 className="section-title text-gray-900 mb-4">Tutoring in Action</h2>
+            <p className="section-lead text-gray-600">Real learning moments that inspire growth and confidence</p>
           </motion.div>
 
           {/* Carousel Container */}
@@ -353,7 +353,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <p className="text-lg md:text-lg font-semibold mb-4 bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text text-transparent">✨ Why Choose Rosalind?</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Expert Support That Works</h2>
+            <h2 className="section-title text-gray-900">Expert Support That Works</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -389,8 +389,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
-            <p className="text-lg md:text-xl text-gray-600">Specialist tutoring tailored to your child's needs</p>
+            <h2 className="section-title text-gray-900 mb-4">My Services</h2>
+            <p className="section-lead text-gray-600">Specialist tutoring tailored to your child's needs</p>
           </motion.div>
 
           <motion.div
@@ -549,8 +549,8 @@ export default function Home() {
             className="mb-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Who I Work With</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">I specialise in supporting children from Reception through to secondary education, particularly those with:</p>
+              <h2 className="section-title text-gray-900 mb-4">Who I Work With</h2>
+              <p className="section-lead text-gray-600 max-w-2xl mx-auto">I specialise in supporting children from Reception through to secondary education, particularly those with:</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -590,8 +590,8 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">My Approach</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Every child is unique, so every tutoring programme is personalised and tailored to their needs.</p>
+              <h2 className="section-title text-gray-900 mb-4">My Approach</h2>
+              <p className="section-lead text-gray-600 max-w-2xl mx-auto">Every child is unique, so every tutoring programme is personalised and tailored to their needs.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -609,7 +609,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-full w-20 h-20 flex items-center justify-center text-white font-bold text-2xl absolute -top-4 -left-4 shadow-lg">
+                  <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-full w-14 h-14 md:w-20 md:h-20 flex items-center justify-center text-white font-bold text-lg md:text-2xl absolute -top-3 -left-3 md:-top-4 md:-left-4 shadow-lg">
                     {step.number}
                   </div>
                   <div className="bg-white border-2 border-blue-200 rounded-xl p-8 pt-12 text-center hover:shadow-lg transition-all">
@@ -660,8 +660,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Wherever You Are</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Flexible tutoring options to fit your family's needs</p>
+              <h2 className="section-title text-gray-900 mb-4">Wherever You Are</h2>
+              <p className="section-lead text-gray-600 max-w-2xl mx-auto">Flexible tutoring options to fit your family's needs</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -23,9 +23,9 @@ export default function AboutPage() {
     if (countersStarted) {
       const yearsInterval = setInterval(() => {
         setYears(prev => {
-          if (prev >= 25) {
+          if (prev >= 30) {
             clearInterval(yearsInterval);
-            return 25;
+            return 30;
           }
           return prev + 1;
         });
@@ -68,7 +68,7 @@ export default function AboutPage() {
     <main className="bg-white overflow-hidden" ref={containerRef}>
       <StructuredData type="about" />
       {/* Hero Section - Diagonal Split Design */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="relative min-h-screen flex items-start md:items-center pt-10 md:pt-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <motion.div
@@ -84,7 +84,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left - Text Content with Stagger Animation */}
             <motion.div
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                className="hero-title mb-6"
               >
                 <span className="text-white">Meet</span>{' '}
                 <span className="text-transparent bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text">
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-300 mb-8 leading-relaxed"
+                className="hero-lead text-gray-300 mb-8"
               >
                 Where 30 years of educational expertise meets a deep understanding of diverse learners. This is more than a job, it's a calling.
               </motion.p>
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 className="absolute top-0 left-0 w-3/4 h-2/3 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10"
               >
                 <Image
-                  src="/rosalind_portrait3.jpg"
+                  src="/rosalind_portrait3.webp"
                   alt="Rosalind's Portrait"
                   fill
                   className="object-cover"
@@ -241,10 +241,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-gray-900 mb-4">
               The <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text">Journey</span>
             </h2>
-            <p className="text-xl text-gray-600">From educator to specialist, every step shaped who I am today</p>
+            <p className="section-lead text-gray-600">From educator to specialist, every step shaped who I am today</p>
           </motion.div>
 
           {/* Timeline */}
@@ -301,10 +301,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold mb-4">
+            <h2 className="section-title mb-4">
               My <span className="text-transparent bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text">Philosophy</span>
             </h2>
-            <p className="text-xl text-gray-400">The principles that guide every lesson I teach</p>
+            <p className="section-lead text-gray-400">The principles that guide every lesson I teach</p>
           </motion.div>
 
           {/* Bento Grid */}
@@ -406,7 +406,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <motion.h2
-                className="text-4xl font-bold text-gray-900"
+                className="section-title text-gray-900"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -421,7 +421,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <strong className="text-emerald-600">As an educator,</strong> I've spent 25 years witnessing transformation. The child who couldn't read suddenly discovering their favourite book. The anxious mathematician building genuine confidence with numbers.
+                  <strong className="text-emerald-600">As an educator,</strong> I've spent 30+ years witnessing transformation. The child who couldn't read suddenly discovering their favourite book. The anxious mathematician building genuine confidence with numbers.
                 </motion.p>
 
                 <motion.p
@@ -493,8 +493,8 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold mb-6">Let's Start Your Child's Journey</h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            <h2 className="section-title text-white mb-6">Let's Start Your Child's Journey</h2>
+            <p className="section-lead text-white/90 mb-10 leading-relaxed">
               Whether you're navigating SEN, preparing for exams, or filling learning gaps. I'm here to help. Let's have a conversation about your child's needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

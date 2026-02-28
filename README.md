@@ -22,25 +22,34 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Contact Form Email Setup
 
-The contact form posts to `POST /api/contact` and sends a styled HTML email to `eluented@gmail.com`.
+The contact form sends directly to Web3Forms (client-side, free-tier compatible) and delivers to your configured Web3Forms recipient email.
 
 1. Copy `.env.example` to `.env.local`
-2. Configure SMTP credentials:
+2. Configure your Web3Forms key and recipient:
 
 ```bash
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-SMTP_FROM="Rosalind's Tuition <your-email@gmail.com>"
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
+GOOGLE_SITE_VERIFICATION=your-google-site-verification-token
 ```
 
-Security controls included in the endpoint:
-- Input validation and length limits (`zod`)
-- HTML escaping and control-character stripping
-- Honeypot bot trap field
-- IP/User-Agent rate limiting
-- Server-side SMTP only (no credentials exposed to browser)
+3. Create a free Web3Forms account and generate an access key.
+4. In the Web3Forms dashboard, set or verify recipient email as `onurbelek11@gmail.com`.
+
+## SEO Setup (High Impact)
+
+Technical SEO already implemented:
+- Global metadata, Open Graph, Twitter cards, canonical tags
+- Route-level metadata for `about`, `english`, `maths`, `contact`, `advocacy`
+- Dynamic `sitemap.xml`, `robots.txt`, and `manifest.webmanifest`
+- JSON-LD structured data for organization/local business/services/person/breadcrumbs
+
+To maximize rankings after deploy:
+1. Add your real domain and deploy publicly.
+2. Set `GOOGLE_SITE_VERIFICATION` in production env.
+3. Connect Google Search Console and submit `https://yourdomain.com/sitemap.xml`.
+4. Connect Bing Webmaster Tools and submit the same sitemap.
+5. Create/optimize Google Business Profile and keep NAP details consistent.
+6. Gather high-quality local backlinks and client reviews (major ranking factor).
 
 ## Learn More
 

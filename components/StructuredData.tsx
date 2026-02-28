@@ -3,7 +3,7 @@
 import Script from 'next/script';
 
 interface StructuredDataProps {
-  type?: 'home' | 'english' | 'maths' | 'about' | 'contact';
+  type?: 'home' | 'english' | 'maths' | 'about' | 'contact' | 'advocacy';
 }
 
 export default function StructuredData({ type = 'home' }: StructuredDataProps) {
@@ -23,16 +23,63 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       addressCountry: 'GB',
     },
     areaServed: [
-      'North West London',
       'Edgware',
-      'Barnet',
+      'Burnt Oak',
       'Finchley',
-      'Hertfordshire',
+      'Fortis Green',
+      'Hampstead Garden Suburb',
+      'Church End',
+      'Highgate',
+      'Hampstead',
+      'Muswell Hill',
+      'Friern Barnet',
+      'Southgate',
+      'Woodside Park',
+      'Totteridge and Whetstone',
+      'Oakwood',
+      'Cockfosters',
+      'Oakleigh Park',
+      'Hendon and Brent Cross',
+      'Stanmore',
+      'Mill Hill',
+      'Highwood Hill',
+      'Colindale',
+      'Kingsbury',
+      'Queensbury',
+      'Belmont',
+      'Golders Green',
+      'Hadley Wood',
+      'Wembley',
+      'Harrow on the Hill',
+      'Harrow Weald',
+      'Pinner',
+      'Hatch End',
+      'Arkley',
       'Watford',
-      'St Albans',
+      'Borehamwood & Elstree',
+      'Radlett and Shenley',
+      'Oxhey',
+      'Carpenders Park',
+      'Bushey & Bushey Heath',
+      'Caldecott Hill',
+      'Finchley & Muswell Hill',
+      'Barnet & Hampstead',
+      'Mill Hill & West Hendon',
     ],
-    telephone: '+44-20-8381-1792',
-    email: 'rosalind_tutor@hotmail.co.uk',
+    telephone: '+44 7908 845498',
+    email: 'rosalindreindorp@sky.com',
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    url: baseUrl,
+    name: "Rosalind's Tuition",
+    inLanguage: 'en-GB',
+    publisher: {
+      '@id': `${baseUrl}/#localbusiness`,
+    },
   };
 
   const localBusinessSchema = {
@@ -46,7 +93,6 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       '@type': 'PostalAddress',
       streetAddress: 'Edgware',
       addressLocality: 'London',
-      postalCode: 'HA8',
       addressCountry: 'GB',
     },
     geo: {
@@ -55,24 +101,8 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       longitude: -0.2763,
     },
     url: baseUrl,
-    telephone: '+44-20-8381-1792',
-    email: 'rosalind_tutor@hotmail.co.uk',
-    priceRange: '££',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '18:00',
-      },
-    ],
-    areaServed: [
-      { '@type': 'City', name: 'Edgware' },
-      { '@type': 'City', name: 'Barnet' },
-      { '@type': 'City', name: 'Finchley' },
-      { '@type': 'City', name: 'Watford' },
-      { '@type': 'City', name: 'St Albans' },
-    ],
+    telephone: '+44 7908 845498',
+    email: 'rosalindreindorp@sky.com',
   };
 
   const serviceSchema = {
@@ -81,15 +111,6 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     serviceType: 'Private Tutoring',
     provider: {
       '@id': `${baseUrl}/#localbusiness`,
-    },
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: 51.6195,
-        longitude: -0.2763,
-      },
-      geoRadius: '15000', // 15km radius
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -137,11 +158,58 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       'Dyscalculia Support',
       'EAL Teaching',
     ],
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'University of London',
+    worksFor: {
+      '@id': `${baseUrl}/#localbusiness`,
     },
   };
+
+  const pageNames: Record<NonNullable<StructuredDataProps['type']>, string> = {
+    home: 'Home',
+    english: 'English Tuition',
+    maths: 'Maths Tuition',
+    about: 'About',
+    contact: 'Contact',
+    advocacy: 'Advocacy',
+  };
+
+  const contactFaqSchema = type === 'contact' ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How quickly will you respond?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'I aim to respond to all inquiries within 24 hours, usually much sooner during business hours.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is the first consultation free?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Yes! The initial consultation is completely free with no obligation, so we can discuss your child's needs.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you offer online tutoring?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, I offer both in-person tutoring in North West London and online sessions via video call.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What age groups do you teach?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'I teach children across Key Stages 1-3, covering primary and secondary education (ages 5-16).',
+        },
+      },
+    ],
+  } : null;
 
   const breadcrumbSchema = type !== 'home' ? {
     '@context': 'https://schema.org',
@@ -156,7 +224,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: type.charAt(0).toUpperCase() + type.slice(1),
+        name: pageNames[type],
         item: `${baseUrl}/${type}`,
       },
     ],
@@ -169,6 +237,13 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
         }}
       />
       <Script
@@ -198,6 +273,15 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+      )}
+      {contactFaqSchema && (
+        <Script
+          id="contact-faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(contactFaqSchema),
           }}
         />
       )}
