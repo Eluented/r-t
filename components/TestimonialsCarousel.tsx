@@ -88,7 +88,7 @@ export default function TestimonialsCarousel() {
             What Parents Are Saying
           </h2>
           <p className="text-lg text-gray-600">
-            Real stories from families we\'ve helped
+            Real stories from families we've helped
           </p>
         </motion.div>
 

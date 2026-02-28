@@ -100,7 +100,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
           itemOffered: {
             '@type': 'Service',
             name: 'Maths Tutoring',
-            description: 'One-to-one maths tuition for Key Stages 1-4, including SEN support and exam preparation',
+            description: 'One-to-one maths tuition for Key Stages 1-3, including SEN support and exam preparation',
           },
         },
         {

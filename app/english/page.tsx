@@ -28,7 +28,7 @@ export default function EnglishPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="inline-block bg-emerald-100/20 backdrop-blur px-6 py-3 rounded-full text-emerald-100 font-semibold mb-6">
-                📚 English Tuition - Key Stages 1-4
+                📚 English Tuition - Key Stages 1-3
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 <span className="text-emerald-200">English Tutoring</span>
@@ -38,7 +38,7 @@ export default function EnglishPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden text-base text-emerald-100 max-w-2xl leading-relaxed mb-6">
-                Expert one-to-one English tuition KS1-4. Reading, writing, phonics, and exam prep. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
+                Expert one-to-one English tuition KS1-3. Reading, writing, phonics, and exam prep. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}
@@ -94,7 +94,7 @@ export default function EnglishPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/rosalind_teaching8.webp"
+                  src="/rosalind_teaching2.webp"
                   alt="Rosalind teaching English to a student"
                   width={800}
                   height={500}
@@ -122,7 +122,7 @@ export default function EnglishPage() {
               <div className="text-sm text-gray-600">Years of Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">KS 1-4</div>
+              <div className="text-3xl font-bold text-blue-600">KS 1-3</div>
               <div className="text-sm text-gray-600">Key Stages Taught</div>
             </div>
             <div>
@@ -159,7 +159,7 @@ export default function EnglishPage() {
               {
                 icon: '🤝',
                 title: 'Patient & Empathetic',
-                description: 'With 30 years\' experience supporting diverse learners including SEN, EAL, Gifted & Talented pupils, I understand frustration and anxiety. I create a safe space for learning.',
+                description: 'With 30 years\' experience supporting diverse learners including SEN, EAL, Gifted & Talented pupils, I understand the frustration and anxiety. I create a safe space for learning.',
                 descShort: 'Safe, supportive environment for all learners.',
                 color: 'blue'
               },
@@ -220,7 +220,7 @@ export default function EnglishPage() {
                   'Phonics and early reading skills using recognised methods',
                   'Decoding and fluency development',
                   'Comprehension, vocabulary and inference',
-                  'Prediction critical thinking skills',
+                  'Prediction and critical thinking skills',
                   'Support for dyslexia and auditory processing difficulties',
                 ]
               },
@@ -231,7 +231,7 @@ export default function EnglishPage() {
                   'Sentence structure and grammar in context',
                   'Language techniques and writing styles',
                   'Story planning, brainstorming and idea development',
-                  'Crafting engaging plots and coherent narratives',
+                  'Creating engaging plots and coherent narratives',
                   'Building independent, confident writing',
                 ]
               },
@@ -253,7 +253,7 @@ export default function EnglishPage() {
                   'Spelling patterns and rules taught through interventions',
                   'Proven interventions that build confidence and independence',
                   'Grammar and punctuation taught in meaningful contexts',
-                  'Application to own writing',
+                  'Transfering learned skills to writing and comprehension',
                   'Particularly effective for children with dyslexia and SEN',
                 ]
               },
@@ -264,9 +264,10 @@ export default function EnglishPage() {
                   'Targeted comprehension skills development',
                   'Creative writing under timed conditions',
                   'Verbal reasoning practice and strategies',
-                  'Test-taking techniques and confidence building',
+                  'Exam preparation techniques and confidence building',
                   'Strong 7+ and 11+ outcomes including Haberdashers\', Channing, Queenswood and UCS',
                   'Tailored to your child\'s learning style and pace',
+                  'Entry Level English (1, 2, 3) and Functional Skills (1, 2 ,3) (KS4)',
                 ]
               },
               {
@@ -278,6 +279,7 @@ export default function EnglishPage() {
                   'Adapted teaching methods for different learning needs',
                   'Individualised programmes for dyslexia, autism, ADHD and more',
                   'Building both skills and genuine self-belief',
+                  'And other SEN difficulties',
                 ]
               }
             ].map((area, idx) => (
@@ -333,7 +335,7 @@ export default function EnglishPage() {
               {
                 icon: '🔍',
                 title: 'Individual Assessment',
-                desc: 'I take time to understand each child\'s unique abilities, learning style, and challenges. This informs every lesson.',
+                desc: 'I take time to understand each child\'s unique abilities, learning style, and challenges. This helps plan individualised differentiated lessons.',
                 descShort: 'Understand your child\'s abilities and needs.'
               },
               {
@@ -399,7 +401,7 @@ export default function EnglishPage() {
               },
               {
                 icon: '⭐',
-                title: 'Reluctant to Confident',
+                title: 'Anxious to Confident',
                 desc: 'Many pupils have progressed from reluctant, anxious readers to confident, independent learners with some becoming reading mentors to others.',
                 descShort: 'Anxious readers become confident learners.'
               },

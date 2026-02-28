@@ -25,17 +25,17 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselImages = [
     {
-      src: '/rosalind_teaching2.webp',
+      src: '/rosalind_teaching8cropped.webp',
       title: 'One-to-One Tutoring',
       desc: 'Personalized learning sessions tailored to each child\'s needs'
     },
     {
-      src: '/rosalind_teaching3.webp',
+      src: '/rosalind_teaching7.webp',
       title: 'Interactive Learning',
       desc: 'Engaging methods that make learning fun and memorable'
     },
     {
-      src: '/rosalind_teaching4.webp',
+      src: '/rosalind_teaching4crop.webp',
       title: 'Building Confidence',
       desc: 'Creating a supportive environment for academic growth'
     },
@@ -57,7 +57,7 @@ export default function Home() {
     <main className="bg-white">
       <StructuredData type="home" />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-16 pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 text-gray-900 pt-12 md:pt-16 pb-12 md:pb-16 overflow-hidden">
         {/* Decorative gradient orb */}
         <motion.div
           className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-emerald-200 via-blue-200 to-amber-200 rounded-full opacity-20 blur-3xl"
@@ -70,7 +70,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Hero Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-8 md:py-10">
             {/* Left side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -104,7 +104,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Expert one-to-one tuition for KS1-4 in Edgware, NW London. 30+ years teaching experience with proven results. Specializing in entrance exams, SEN support, and building confidence.
+                Hello, I’m Rosalind. I offer personalised one-to-one tuition in Edgware for KS1–KS3 across Maths, English, Primary Science, History, Geography, and Cookery. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
               </motion.p>
 
               {/* Desktop Text */}
@@ -114,12 +114,12 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Welcome to Rosalind's EYFS, KS1, KS2, KS3 Tuition. I'm Rosalind, a tutor based in Edgware, NW London, specialising in one-to-one support for children across primary and secondary education (Key Stage 1-4). With 30 years of teaching experience following the national curriculum, I help every child reach their full potential—whether that's building confidence, closing learning gaps, or preparing for entrance exams. My pupils have secured places at Haberdashers', Channing, Queenswood, UCS, and many more. I also offer Primary Science (KS1/KS2), alongside selected enrichment subjects including History, Geography, and Cookery.
+                Hello, I’m Rosalind, with over 30 years of teaching experience. Based in Edgware, North West London, I provide personalised one-to-one tuition for KS1–KS3 in Maths, English, Primary Science, History, Geography, and Cookery, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
               </motion.p>
 
               {/* Trust Indicators */}
               <motion.div
-                className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-gray-200"
+                className="grid grid-cols-3 gap-4 mb-6 py-4 border-y border-gray-200"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
@@ -136,7 +136,7 @@ export default function Home() {
                   <p className="text-sm text-gray-600">SEN Qualified</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-600">KS 1-4</p>
+                  <p className="text-3xl font-bold text-amber-600">KS 1-3</p>
                   <p className="text-sm text-gray-600">Key Stages</p>
                 </div>
               </motion.div>
@@ -178,7 +178,7 @@ export default function Home() {
               whileHover={{ y: -10 }}
               className="relative"
             >
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[600px]">
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl h-96 md:h-full md:min-h-[520px]">
                 {/* Image */}
                 <Image
                   src="/rosalind_portrait1.webp"
@@ -212,7 +212,7 @@ export default function Home() {
 
           {/* Features Below Hero */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-gray-200"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-12 pt-10 md:pt-12 border-t border-gray-200"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -404,26 +404,26 @@ export default function Home() {
               {
                 icon: '🌟',
                 title: 'Maths, English & Primary Science',
-                desc: 'Core subjects KS1-4 with specialist support for dyslexia, dyscalculia, autism, ADHD and other learning needs.',
-                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-4, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
+                desc: 'Core subjects KS1-3 with specialist support for dyslexia, dyscalculia, autism, ADHD and other learning needs.',
+                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-3, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
                 links: [{ href: '/english', text: 'English Tutoring' }, { href: '/maths', text: 'Maths Tutoring' }],
                 color: 'from-emerald-600 to-emerald-400',
                 borderColor: 'border-emerald-600',
               },
               {
                 icon: '📚',
-                title: 'SATs, Entrance & Functional Skills',
-                desc: 'SATs, entrance exams & Functional Skills. Proven success at top schools.',
-                descFull: 'Preparation for SATs, 4+/7+/11+ entrance exams, Entry level and Functional Skills exams. Recent entrance success includes Haberdashers\', Channing, Queenswood and UCS.',
+                title: 'SATs, Entrance, Revision & Homework Support',
+                desc: 'SATs, entrance exams, revision skills and homework support, plus Functional Skills.',
+                descFull: 'Preparation for SATs, 4+, 7+, 11+ entrance exams, study and revision skills, structured homework support, and Entry Level/Functional Skills exams. Recent entrance success includes Haberdashers\', Channing, Queenswood and UCS.',
                 links: [{ href: '/english', text: 'English Exams' }, { href: '/maths', text: 'Maths Exams' }],
                 color: 'from-blue-700 to-blue-400',
                 borderColor: 'border-blue-700',
               },
               {
                 icon: '🌉',
-                title: 'EAL, Gifted & Home-Educated',
+                title: 'EAL, Gifted and Talented & Home-Educated',
                 desc: 'EAL, Gifted & Talented pupils. Plus History, Geography & Cookery.',
-                descFull: 'Support for English as an Additional Language (EAL), Gifted and Talented pupils, and home-educated children. Also teaching History, Geography, and Cookery.',
+                descFull: 'Support for English as an Additional Language (EAL), Gifted and Talented pupils, and home-educated children. I also teach History, Geography, and Cookery.',
                 links: [{ href: '/about', text: 'Learn More About My Approach' }],
                 color: 'from-amber-600 to-amber-400',
                 borderColor: 'border-amber-600',
@@ -495,9 +495,10 @@ export default function Home() {
                   icon: '❤️',
                   title: 'Personal Experience',
                   items: [
-                    'Lived experience with EHCPs (Educational Health Care Plans)',
+                    'Experience with EHCPs (Educational Health Care Plans)',
                     'In-depth understanding of parent concerns and education pathways',
                     'Commitment to making a real difference',
+                    'SEN Tribunal successes',
                   ],
                 },
               ].map((section, idx) => (
@@ -549,18 +550,18 @@ export default function Home() {
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Who I Work With</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">I specialise in supporting children from reception through to secondary education, particularly those with:</p>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">I specialise in supporting children from Reception through to secondary education, particularly those with:</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: '🧩', title: 'Dyslexia & Dyspraxia', desc: 'Multi-sensory approaches tailored to learning differences' },
-                { icon: '🔢', title: 'Dyscalculia', desc: 'Concrete-to-abstract progression for maths confidence' },
+                { icon: '🔢', title: 'Dyscalculia', desc: 'Concrete-to-abstract progression for Maths confidence' },
                 { icon: '🧠', title: 'Autism & ADHD', desc: 'Structured, personalised learning strategies' },
                 { icon: '🎧', title: 'Auditory Processing', desc: 'Language delays and communication support' },
                 { icon: '💪', title: 'Anxiety & Confidence', desc: 'Building self-belief and reducing learning anxiety' },
-                { icon: '📚', title: 'Learning Gaps', desc: 'Targeted catch-up and bridging support' },
-                { icon: '⭐', title: 'Gifted & Talented', desc: 'Stretch and challenge for high achievers' },
+                { icon: '📚', title: 'Learning Gaps', desc: 'Targeted SEN interventions and bridging support' },
+                { icon: '⭐', title: 'Gifted & Talented', desc: 'Stretching their knowledge and challenging higher achievers' },
                 { icon: '🏠', title: 'Home-Educated', desc: 'Flexible programmes for independent learners' },
                 { icon: '🌍', title: 'EAL Learners', desc: 'English as an Additional Language support' },
               ].map((item, idx) => (
@@ -623,7 +624,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">What This Means for Your Child</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { icon: '✓', title: 'One-to-one lessons', desc: 'In your home or online (worldwide welcome)' },
+                  { icon: '✓', title: 'One-to-one lessons', desc: 'In your home or online (international students welcome)' },
                   { icon: '✓', title: 'Structured yet flexible', desc: 'Rapid progress with adaptable pacing' },
                   { icon: '✓', title: 'Exam preparation', desc: '4+, 7+, 11+, SATs, Functional Skills' },
                 ].map((benefit, idx) => (
@@ -746,7 +747,7 @@ export default function Home() {
           >
             <h2 className="text-5xl font-bold mb-6">Let's Start Your Child's Journey</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Whether you're navigating SEN, preparing for exams, or filling learning gaps—I'm here to help. Let's have a conversation about your child's needs.
+              Whether you're navigating SEN, preparing for exams, or filling learning gaps. I'm here to help. Let's have a conversation about your child's needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a

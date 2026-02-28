@@ -33,9 +33,9 @@ export default function AboutPage() {
 
       const childrenInterval = setInterval(() => {
         setChildren(prev => {
-          if (prev >= 4) {
+          if (prev >= 3) {
             clearInterval(childrenInterval);
-            return 4;
+            return 3;
           }
           return prev + 1;
         });
@@ -49,16 +49,16 @@ export default function AboutPage() {
   }, [countersStarted]);
 
   const timeline = [
-    { year: '1999', title: 'The Beginning', desc: 'Started my journey in education, driven by passion for helping children learn', icon: '🌱' },
+    { year: '1999', title: 'The Beginning', desc: 'Started my journey in education, driven by passion for helping children with SEN learning difficulties', icon: '🌱' },
     { year: '2005', title: 'Expanding Expertise', desc: 'Developed specialist skills in SEN, EAL, and supporting diverse learners across key stages', icon: '👨‍👩‍👧‍👦' },
-    { year: '2010', title: 'Specialized Training', desc: 'Earned BA (Hons) in Professional Practice in Special Needs Education', icon: '🎓' },
-    { year: '2024', title: 'Full Circle', desc: 'Founded London Maths, English & Science Tutoring - combining 30 years of expertise', icon: '⭐' }
+    { year: '2010', title: 'Specialised Training', desc: 'I graduated from Middlesex University with a BA (Hons) in Professional Practice in Special Needs Education', icon: '🎓' },
+    { year: '2024', title: 'Full Circle', desc: 'Founded Rosalind Tuition, combining 30 years of expertise', icon: '⭐' }
   ];
 
   const philosophyCards = [
     { title: 'Every Child Can Succeed', icon: '🌟', color: 'from-emerald-500 to-teal-500' },
     { title: 'Understanding Before Speed', icon: '🧠', color: 'from-blue-500 to-cyan-500' },
-    { title: 'Individualized Teaching', icon: '🎯', color: 'from-purple-500 to-pink-500' },
+    { title: 'Individualised Teaching', icon: '🎯', color: 'from-purple-500 to-pink-500' },
     { title: 'Step-by-Step Guidance', icon: '📊', color: 'from-amber-500 to-orange-500' },
     { title: 'Making Learning Fun', icon: '🎨', color: 'from-rose-500 to-red-500' },
     { title: 'Building Confidence', icon: '💪', color: 'from-indigo-500 to-blue-500' }
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="text-xl text-gray-300 mb-8 leading-relaxed"
               >
-                Where 30 years of educational expertise meets a deep understanding of diverse learners. This is more than a job—it's a calling.
+                Where 30 years of educational expertise meets a deep understanding of diverse learners. This is more than a job, it's a calling.
               </motion.p>
 
               {/* Animated Stats */}
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 className="absolute top-0 left-0 w-3/4 h-2/3 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10"
               >
                 <Image
-                  src="/rosalind_portrait2.webp"
+                  src="/rosalind_portrait3.jpg"
                   alt="Rosalind's Portrait"
                   fill
                   className="object-cover"
@@ -244,7 +244,7 @@ export default function AboutPage() {
             <h2 className="text-5xl font-bold text-gray-900 mb-4">
               The <span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text">Journey</span>
             </h2>
-            <p className="text-xl text-gray-600">From educator to specialist—every step shaped who I am today</p>
+            <p className="text-xl text-gray-600">From educator to specialist, every step shaped who I am today</p>
           </motion.div>
 
           {/* Timeline */}
@@ -347,7 +347,7 @@ export default function AboutPage() {
                   </h3>
                   {idx === 0 && (
                     <p className="hidden md:block text-white/90 text-lg leading-relaxed mt-4">
-                      I believe passionately that every child, regardless of their learning profile, can succeed. Struggling doesn't mean lacking ability—it often means the teaching approach hasn't matched the learning style yet.
+                      I believe passionately that every child, regardless of their learning profile, can succeed. Struggling doesn't mean lacking ability, it often means the teaching approach hasn't matched the pupils' learning style. I can normally identify the right approach to unlock a child's full potential.
                     </p>
                   )}
                 </div>
@@ -421,7 +421,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <strong className="text-emerald-600">As an educator,</strong> I've spent 25 years witnessing transformation. The child who couldn't read suddenly discovering their favorite book. The anxious mathematician building genuine confidence with numbers.
+                  <strong className="text-emerald-600">As an educator,</strong> I've spent 25 years witnessing transformation. The child who couldn't read suddenly discovering their favourite book. The anxious mathematician building genuine confidence with numbers.
                 </motion.p>
 
                 <motion.p
@@ -430,7 +430,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <strong className="text-blue-600">Through relationships,</strong> I've developed deep understanding of the challenges families face. From EHCPs to supporting home-educated children, from EAL learners to gifted and talented pupils—my expertise spans the full spectrum of educational needs.
+                  <strong className="text-blue-600">Through relationships,</strong> I have developed a deep understanding of the challenges families face. From EHCPs to supporting home-educated children, from EAL learners to gifted and talented pupils, my expertise spans the full spectrum of educational needs.
                 </motion.p>
 
                 <motion.p
@@ -440,7 +440,7 @@ export default function AboutPage() {
                   transition={{ delay: 0.3 }}
                   className="text-lg font-semibold text-purple-600"
                 >
-                  This breadth of experience—from SEN to gifted pupils, EAL to home education—is what makes me different. I understand every child's unique learning journey.
+                  This breadth of experience from SEN to gifted pupils, EAL to home education is what makes me different. I understand every child's unique learning journey.
                 </motion.p>
               </div>
 
@@ -495,7 +495,7 @@ export default function AboutPage() {
           >
             <h2 className="text-5xl font-bold mb-6">Let's Start Your Child's Journey</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Whether you're navigating SEN, preparing for exams, or filling learning gaps—I'm here to help. Let's have a conversation about your child's needs.
+              Whether you're navigating SEN, preparing for exams, or filling learning gaps. I'm here to help. Let's have a conversation about your child's needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a

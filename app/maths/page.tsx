@@ -141,7 +141,7 @@ export default function MathsPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold mb-6 border border-white/30">
-                🧮 Maths Tuition - Key Stages 1-4
+                🧮 Maths Tuition - Key Stages 1-3
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -152,7 +152,7 @@ export default function MathsPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden text-base text-blue-100 max-w-2xl leading-relaxed mb-6">
-                Expert one-to-one maths tuition KS1-4. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
+                Expert one-to-one maths tuition KS1-3. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}
@@ -208,7 +208,7 @@ export default function MathsPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/rosalind_teaching7.webp"
+                  src="/rosalind_teaching5.webp"
                   alt="Rosalind teaching maths to a student"
                   width={800}
                   height={500}
@@ -248,11 +248,11 @@ export default function MathsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">My Approach to Building Confidence</h2>
               <ul className="space-y-4">
                 {[
-                  'Identifying gaps in understanding and building from there',
+                  'Identifying gaps in understanding and building upon strengths',
                   'Teaching strategies that make Maths easier and less intimidating',
                   'Providing guided practice with immediate, positive feedback',
                   'Showing children how to check their own work and learn from mistakes',
-                  'Celebrating progress—not just correct answers, but effort and improvement',
+                  'Celebrating success by positive affirmations for effort and improvement',
                   'Creating a calm space where questions are encouraged and anxiety has no place'
                 ].map((item, idx) => (
                   <motion.li
@@ -311,8 +311,8 @@ export default function MathsPage() {
                 title: 'Foundation Maths (EYFS & KS1)',
                 items: [
                   'Number recognition and understanding (0–20, then beyond)',
-                  'Subitising (recognising groups of objects instantly)',
-                  'Counting, cardinality and one-to-one correspondence',
+                  'Recognising groups of objects instantly',
+                  'Counting and one-to-one correspondence',
                   'Introduction to addition and subtraction using concrete objects',
                   'Shapes, patterns and spatial reasoning',
                 ]
@@ -366,7 +366,7 @@ export default function MathsPage() {
                 title: 'SATs & Secondary Prep',
                 items: [
                   'KS2 booster classes for arithmetic, reasoning and problem-solving',
-                  'Entry Level Maths (1, 2, 3) and Functional Skills',
+                  'Entry Level Maths (1, 2, 3) and Functional Skills (1, 2 ,3) (KS4)',
                   'Secondary transition support',
                   'Building foundations for GCSE success',
                   'Managing exam anxiety and building resilience',
@@ -425,7 +425,7 @@ export default function MathsPage() {
               {
                 icon: '📐',
                 title: 'Concrete to Abstract',
-                desc: 'Starting with real objects, moving through visual representations, then arriving at symbols—so concepts stick.'
+                desc: 'Starting with real objects, moving through visual representations, then arriving at symbols, so concepts are retained in pupils\' long-term memory.'
               },
               {
                 icon: '🎮',

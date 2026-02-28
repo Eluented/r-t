@@ -11,8 +11,11 @@ export default function ContactForm() {
     childAge: '',
     subjects: '',
     message: '',
+    website: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [focused, setFocused] = useState('');
 
   const handleChange = (
@@ -25,29 +28,45 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // You would typically send this to your backend or email service here
-    console.log('Form submitted:', formData);
-    
-    // Simulate submission success
-    setSubmitted(true);
-    
-    // Reset form
-    setFormData({
-      parentName: '',
-      email: '',
-      phone: '',
-      childAge: '',
-      subjects: '',
-      message: '',
-    });
+    setSubmitError('');
+    setIsSubmitting(true);
 
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Something went wrong. Please try again.');
+      }
+
+      setSubmitted(true);
+      setFormData({
+        parentName: '',
+        email: '',
+        phone: '',
+        childAge: '',
+        subjects: '',
+        message: '',
+        website: '',
+      });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unable to send right now. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputVariants = {
@@ -99,7 +118,28 @@ export default function ContactForm() {
         </motion.div>
       )}
 
+      {submitError && (
+        <motion.div
+          className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <p className="text-red-700 font-semibold">{submitError}</p>
+        </motion.div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-5">
+        <input
+          type="text"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          autoComplete="off"
+          tabIndex={-1}
+          aria-hidden="true"
+          className="hidden"
+        />
+
         {/* Parent Name */}
         <motion.div
           custom={0}
@@ -296,11 +336,12 @@ export default function ContactForm() {
         {/* Submit Button */}
         <motion.button
           type="submit"
+          disabled={isSubmitting}
           className="w-full bg-gradient-to-r from-emerald-600 to-blue-700 text-white font-bold py-3 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(168, 85, 247, 0.3)' }}
           whileTap={{ scale: 0.95 }}
         >
-          Send My Enquiry
+          {isSubmitting ? 'Sending...' : 'Send My Enquiry'}
         </motion.button>
       </form>
     </motion.div>

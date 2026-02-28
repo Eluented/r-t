@@ -20,6 +20,28 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Contact Form Email Setup
+
+The contact form posts to `POST /api/contact` and sends a styled HTML email to `eluented@gmail.com`.
+
+1. Copy `.env.example` to `.env.local`
+2. Configure SMTP credentials:
+
+```bash
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+SMTP_FROM="Rosalind's Tuition <your-email@gmail.com>"
+```
+
+Security controls included in the endpoint:
+- Input validation and length limits (`zod`)
+- HTML escaping and control-character stripping
+- Honeypot bot trap field
+- IP/User-Agent rate limiting
+- Server-side SMTP only (no credentials exposed to browser)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

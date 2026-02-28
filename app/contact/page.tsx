@@ -33,6 +33,58 @@ export default function ContactPage() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [showAllNwAreas, setShowAllNwAreas] = useState(false);
+
+  const hertfordshireAreas = [
+    'Watford',
+    'Borehamwood & Elstree',
+    'Radlett and Shenley',
+    'Oxhey',
+    'Carpenders Park',
+    'Bushey & Bushey Heath',
+    'Caldecott Hill'
+  ];
+
+  const northLondonAreas = [
+    'Finchley & Muswell Hill',
+    'Barnet & Hampstead',
+    'Mill Hill & West Hendon'
+  ];
+
+  const northWestLondonAreas = [
+    'Edgware (my base)',
+    'Burnt Oak',
+    'Finchley',
+    'Fortis Green',
+    'Hampstead Garden Suburb',
+    'Church End',
+    'Highgate',
+    'Hampstead',
+    'Muswell Hill',
+    'Friern Barnet',
+    'Southgate',
+    'Woodside Park',
+    'Totteridge and Whetstone',
+    'Oakwood',
+    'Cockfosters',
+    'Oakleigh Park',
+    'Hendon and Brent Cross',
+    'Stanmore',
+    'Mill Hill',
+    'Highwood Hill',
+    'Colindale',
+    'Kingsbury',
+    'Queensbury',
+    'Belmont',
+    'Golders Green',
+    'Hadley Wood',
+    'Wembley',
+    'Harrow on the Hill',
+    'Harrow Weald',
+    'Pinner',
+    'Hatch End',
+    'Arkley'
+  ];
 
   // Validation rules
   const validateName = (name: string): string | undefined => {
@@ -55,11 +107,11 @@ export default function ContactPage() {
     // UK phone format validation - allows various formats
     const ukPhoneRegex = /^(?:(?:\+44\s?|0)(?:\d\s?){10})$/;
     const cleanPhone = phone.replace(/[\s\-()]/g, '');
-    
+
     if (!/^[\d\s\-+()]+$/.test(phone)) return 'Phone can only contain numbers, spaces, hyphens, plus, and parentheses';
     if (cleanPhone.length < 10) return 'Phone number must be at least 10 digits';
     if (cleanPhone.length > 15) return 'Phone number must be less than 15 digits';
-    
+
     return undefined;
   };
 
@@ -91,7 +143,7 @@ export default function ContactPage() {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Validate on change if field has been touched
     if (touched[name]) {
       const error = validateField(name as keyof FormData, value);
@@ -128,7 +180,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -140,7 +192,7 @@ export default function ContactPage() {
 
     setIsSubmitting(false);
     setSubmitSuccess(true);
-    
+
     // Reset form after success
     setTimeout(() => {
       setFormData({
@@ -156,8 +208,8 @@ export default function ContactPage() {
     }, 3000);
   };
 
-  const isFormValid = !Object.values(errors).some(error => error) && 
-                      Object.values(formData).every(value => value.trim() !== '');
+  const isFormValid = !Object.values(errors).some(error => error) &&
+    Object.values(formData).every(value => value.trim() !== '');
 
   return (
     <main className="bg-white">
@@ -167,7 +219,7 @@ export default function ContactPage() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0],
             }}
@@ -175,7 +227,7 @@ export default function ContactPage() {
             className="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl"
           />
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               rotate: [0, -90, 0],
             }}
@@ -183,7 +235,7 @@ export default function ContactPage() {
             className="absolute bottom-20 right-10 w-80 h-80 bg-yellow-300 rounded-full blur-3xl"
           />
           <motion.div
-            animate={{ 
+            animate={{
               y: [0, 50, 0],
               x: [0, 30, 0],
             }}
@@ -206,7 +258,7 @@ export default function ContactPage() {
             >
               📞 Get in Touch
             </motion.div>
-            
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -216,14 +268,14 @@ export default function ContactPage() {
               Let's Start Your Child's
               <span className="block text-yellow-200">Learning Journey</span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
             >
-              Ready to help your child thrive? Reach out for a free consultation and discover how personalized tutoring can make all the difference.
+              Ready to help your child thrive? Reach out for a free consultation and discover how personalised tutoring can make all the difference.
             </motion.p>
           </motion.div>
         </div>
@@ -233,7 +285,7 @@ export default function ContactPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative -mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
+
             {/* Contact Info Cards */}
             <div className="space-y-6">
               <motion.div
@@ -251,13 +303,16 @@ export default function ContactPage() {
                   </motion.div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Call or Text</h3>
-                    <a 
-                      href="tel:07908845498" 
+                    <a
+                      href="tel:07908845498"
                       className="text-purple-600 hover:text-purple-700 font-semibold text-lg transition-colors"
                     >
                       07908 845 498
                     </a>
-                    <p className="text-sm text-gray-600 mt-1">Mon-Fri, 9am-6pm</p>
+                    <p className="text-sm text-gray-600 mt-1">Mon-Thur, 9am-9pm</p>
+                    <p className="text-sm text-gray-600 mt-1">Friday, 9am-2pm</p>
+                    <p className="text-sm text-gray-600 mt-1">Sunday, 9am-9pm</p>
+
                   </div>
                 </div>
               </motion.div>
@@ -278,11 +333,12 @@ export default function ContactPage() {
                   </motion.div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-                    <a 
-                      href="mailto:rosalind@example.com" 
+                    <a
+                      href="mailto:rosalind@example.com"
                       className="text-pink-600 hover:text-pink-700 font-semibold break-all transition-colors"
                     >
-                      rosalind@tutoring.co.uk
+
+                      rosalindreindorp@sky.com
                     </a>
                     <p className="text-sm text-gray-600 mt-1">Response within 24 hours</p>
                   </div>
@@ -330,7 +386,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-purple-600 font-bold">✓</span>
-                    <span>Key Stages 1-4 coverage</span>
+                    <span>Key Stages 1-3 coverage</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-purple-600 font-bold">✓</span>
@@ -389,13 +445,12 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           onBlur={() => handleBlur('name')}
-                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${
-                            errors.name && touched.name
-                              ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
-                              : formData.name && !errors.name
+                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${errors.name && touched.name
+                            ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
+                            : formData.name && !errors.name
                               ? 'border-green-500 bg-green-50 focus:border-green-600 focus:ring-green-200'
                               : 'border-gray-300 focus:border-purple-500 focus:ring-purple-200'
-                          } focus:outline-none focus:ring-4`}
+                            } focus:outline-none focus:ring-4`}
                           placeholder="e.g. Jane Smith"
                         />
                         <AnimatePresence>
@@ -425,13 +480,12 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           onBlur={() => handleBlur('email')}
-                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${
-                            errors.email && touched.email
-                              ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
-                              : formData.email && !errors.email
+                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${errors.email && touched.email
+                            ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
+                            : formData.email && !errors.email
                               ? 'border-green-500 bg-green-50 focus:border-green-600 focus:ring-green-200'
                               : 'border-gray-300 focus:border-purple-500 focus:ring-purple-200'
-                          } focus:outline-none focus:ring-4`}
+                            } focus:outline-none focus:ring-4`}
                           placeholder="e.g. jane.smith@email.com"
                         />
                         <AnimatePresence>
@@ -461,13 +515,12 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           onBlur={() => handleBlur('phone')}
-                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${
-                            errors.phone && touched.phone
-                              ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
-                              : formData.phone && !errors.phone
+                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${errors.phone && touched.phone
+                            ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
+                            : formData.phone && !errors.phone
                               ? 'border-green-500 bg-green-50 focus:border-green-600 focus:ring-green-200'
                               : 'border-gray-300 focus:border-purple-500 focus:ring-purple-200'
-                          } focus:outline-none focus:ring-4`}
+                            } focus:outline-none focus:ring-4`}
                           placeholder="e.g. 07908 845 498 or 020 1234 5678"
                         />
                         <AnimatePresence>
@@ -496,13 +549,12 @@ export default function ContactPage() {
                           value={formData.subject}
                           onChange={handleChange}
                           onBlur={() => handleBlur('subject')}
-                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${
-                            errors.subject && touched.subject
-                              ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
-                              : formData.subject && !errors.subject
+                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all ${errors.subject && touched.subject
+                            ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
+                            : formData.subject && !errors.subject
                               ? 'border-green-500 bg-green-50 focus:border-green-600 focus:ring-green-200'
                               : 'border-gray-300 focus:border-purple-500 focus:ring-purple-200'
-                          } focus:outline-none focus:ring-4`}
+                            } focus:outline-none focus:ring-4`}
                         >
                           <option value="">-- Please select --</option>
                           <option value="Maths Tutoring">Maths Tutoring</option>
@@ -545,13 +597,12 @@ export default function ContactPage() {
                           onChange={handleChange}
                           onBlur={() => handleBlur('message')}
                           rows={5}
-                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all resize-none ${
-                            errors.message && touched.message
-                              ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
-                              : formData.message && !errors.message
+                          className={`w-full px-4 py-3 rounded-lg border-2 transition-all resize-none ${errors.message && touched.message
+                            ? 'border-red-500 bg-red-50 focus:border-red-600 focus:ring-red-200'
+                            : formData.message && !errors.message
                               ? 'border-green-500 bg-green-50 focus:border-green-600 focus:ring-green-200'
                               : 'border-gray-300 focus:border-purple-500 focus:ring-purple-200'
-                          } focus:outline-none focus:ring-4`}
+                            } focus:outline-none focus:ring-4`}
                           placeholder="Please tell me about your child's learning needs, current challenges, and what you're hoping to achieve..."
                         />
                         <div className="flex justify-between items-center mt-1">
@@ -568,9 +619,8 @@ export default function ContactPage() {
                               </motion.p>
                             )}
                           </AnimatePresence>
-                          <p className={`text-sm ml-auto ${
-                            formData.message.length > 1000 ? 'text-red-600 font-bold' : 'text-gray-500'
-                          }`}>
+                          <p className={`text-sm ml-auto ${formData.message.length > 1000 ? 'text-red-600 font-bold' : 'text-gray-500'
+                            }`}>
                             {formData.message.length}/1000
                           </p>
                         </div>
@@ -582,11 +632,10 @@ export default function ContactPage() {
                         disabled={!isFormValid || isSubmitting}
                         whileHover={isFormValid && !isSubmitting ? { scale: 1.02 } : {}}
                         whileTap={isFormValid && !isSubmitting ? { scale: 0.98 } : {}}
-                        className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all ${
-                          isFormValid && !isSubmitting
-                            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg hover:shadow-xl cursor-pointer'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        }`}
+                        className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all ${isFormValid && !isSubmitting
+                          ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg hover:shadow-xl cursor-pointer'
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                          }`}
                       >
                         {isSubmitting ? (
                           <span className="flex items-center justify-center gap-2">
@@ -640,27 +689,50 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">Hertfordshire</p>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Hatfield & St Albans <span className="text-gray-500">(AL2)</span></li>
-                      <li>• Welwyn Garden City <span className="text-gray-500">(EN6)</span></li>
-                      <li>• Watford & Rickmansworth <span className="text-gray-500">(WD6, WD7, WD8, WD19, WD23, WD25)</span></li>
-                    </ul>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {hertfordshireAreas.map((area) => (
+                        <span
+                          key={area}
+                          className="inline-flex items-center rounded-full bg-white border border-emerald-200 px-3 py-1 text-xs text-gray-700"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">North London</p>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Finchley & Muswell Hill <span className="text-gray-500">(N2, N3, N6)</span></li>
-                      <li>• Barnet & Hampstead <span className="text-gray-500">(N10, N11, N12, N14, N20, NW3, NW4)</span></li>
-                      <li>• Mill Hill & West Hendon <span className="text-gray-500">(NW7, NW9, NW11)</span></li>
-                    </ul>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {northLondonAreas.map((area) => (
+                        <span
+                          key={area}
+                          className="inline-flex items-center rounded-full bg-white border border-emerald-200 px-3 py-1 text-xs text-gray-700"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">North West London</p>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Edgware (my base) <span className="text-gray-500">(HA8)</span></li>
-                      <li>• Burnt Oak <span className="text-gray-500">(HA0, HA1)</span></li>
-                      <li>• Borehamwood & Surrounds <span className="text-gray-500">(HA3, HA5, HA6, HA7, HA9)</span></li>
-                    </ul>
+                    <p className="text-xs text-gray-500 mb-3">Popular areas shown first, with full list available.</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {(showAllNwAreas ? northWestLondonAreas : northWestLondonAreas.slice(0, 12)).map((area) => (
+                        <span
+                          key={area}
+                          className="inline-flex items-center rounded-full bg-white border border-emerald-200 px-3 py-1 text-xs text-gray-700"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowAllNwAreas((prev) => !prev)}
+                      className="mt-3 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
+                    >
+                      {showAllNwAreas ? 'Show fewer areas' : `Show all ${northWestLondonAreas.length} areas`}
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -677,7 +749,7 @@ export default function ContactPage() {
                     <span className="text-3xl">💻</span>
                     Online Tutoring - UK Wide
                   </h3>
-                  <p className="text-gray-700 mb-4">Live video sessions available for any postcodes not listed above throughout the UK. Perfect for busy families who prefer remote learning with flexible scheduling.</p>
+                  <p className="text-gray-700 mb-4">Live tutoring sessions available for any postcodes not listed above throughout the UK. Perfect for busy families who prefer remote learning with flexible scheduling.</p>
                   <div className="flex items-center gap-2 text-emerald-600 font-semibold">
                     <span>✓</span>
                     <span>Interactive & engaging online sessions</span>
@@ -693,12 +765,12 @@ export default function ContactPage() {
                 >
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="text-3xl">🌍</span>
-                    International - Worldwide Welcome
+                    International Students Welcome
                   </h3>
                   <p className="text-gray-700 mb-4">Students and families across the globe are welcome. I can accommodate different time zones with flexible scheduling to make sessions work for you.</p>
                   <div className="flex items-center gap-2 text-emerald-600 font-semibold">
                     <span>✓</span>
-                    <span>Global reach with local care</span>
+                    <span>International expertise with a personal touch</span>
                   </div>
                 </motion.div>
               </div>
@@ -715,7 +787,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Frequently Asked <span className="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">Questions</span>
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {[
                 {
@@ -732,7 +804,7 @@ export default function ContactPage() {
                 },
                 {
                   q: 'What age groups do you teach?',
-                  a: 'I teach children across Key Stages 1-4, covering primary and secondary education (ages 5-16).'
+                  a: 'I teach children across Key Stages 1-3, covering primary and secondary education (ages 5-16).'
                 }
               ].map((faq, idx) => (
                 <motion.div

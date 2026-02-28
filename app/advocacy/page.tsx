@@ -151,7 +151,7 @@ export default function AdvocacyPage() {
               { icon: '😰', text: "You're fighting to get your child's needs recognised" },
               { icon: '🗂️', text: 'The EHCP process feels impossibly complex' },
               { icon: '⚔️', text: "You've had requests for assessment refused" },
-              { icon: '📚', text: "You're unsure what accommodations your child needs" },
+              { icon: '📚', text: "Are you unsure what your child is entitled to?" },
               { icon: '💔', text: 'You feel lonely and unsupported in this journey' },
               { icon: '🔦', text: 'You need someone who truly understands your reality' }
             ].map((item, idx) => (
@@ -183,7 +183,7 @@ export default function AdvocacyPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               How I Can <span className="text-transparent bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text">Support You</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive advocacy support informed by lived experience and expertise</p>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive advocacy support informed by experience and expertise</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -309,8 +309,8 @@ export default function AdvocacyPage() {
               {
                 icon: '🤝',
                 title: 'Genuine Care',
-                desc: 'I\'m not here to judge or pity. I\'m here to empower you, listen to you, and help you advocate effectively for your child.',
-                subtext: 'Your voice matters most'
+                desc: 'I\'m here to empower you, listen to you, and help you advocate effectively for your child.',
+                subtext: 'Your voice matters'
               }
             ].map((credential, idx) => (
               <motion.div
@@ -335,6 +335,35 @@ export default function AdvocacyPage() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-10 bg-white rounded-3xl border border-emerald-200 shadow-xl overflow-hidden"
+          >
+            <div className="bg-gradient-to-r from-emerald-600 to-cyan-600 px-6 py-4">
+              <h3 className="text-white text-xl md:text-2xl font-bold flex items-center gap-2">
+                <motion.span
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="inline-block"
+                >
+                  🏆
+                </motion.span>
+                SEND Tribunal Success
+              </h3>
+            </div>
+            <div className="p-6 md:p-8 bg-gradient-to-br from-emerald-50/50 to-cyan-50/50">
+              <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+                I have supported parents throughout the SEND tribunal process, including helping families to win tribunal cases and secure strong, positive outcomes for their child.
+              </p>
+              <p className="mt-3 text-emerald-700 font-semibold">
+                Strategic guidance • Clear preparation • Child-focused outcomes
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
