@@ -33,7 +33,7 @@ export default function MathsPage() {
       icon: '🧮',
       title: 'Dyscalculia & Maths Anxiety Support',
       items: [
-        'Multi-sensory maths interventions',
+        'Multi-sensory Maths interventions',
         'Concrete-to-abstract progression',
         'Number line and visual strategies',
         'Reducing anxiety and building confidence',
@@ -152,12 +152,12 @@ export default function MathsPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden hero-lead text-blue-100 max-w-2xl mb-6">
-                Expert one-to-one maths tuition KS1-3. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
+                Expert one-to-one Maths tuition KS1-3. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}
               <p className="hidden md:block hero-lead text-blue-100 max-w-2xl mb-6">
-                Expert one-to-one maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
+                Expert one-to-one Maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
               </p>
 
               {/* Support Types - Visual Pills */}
@@ -334,8 +334,8 @@ export default function MathsPage() {
                 items: [
                   'Multi-sensory approaches (touch, visualise, move)',
                   'Concrete manipulatives and visual representations',
-                  'Number sense development from the ground up',
-                  'Overcoming number anxiety and maths blocks',
+                  'Number sense development',
+                  'Overcoming number anxiety and Maths blocks',
                   'Proven intervention programmes tailored to each child',
                 ]
               },
@@ -343,7 +343,7 @@ export default function MathsPage() {
                 icon: '💭',
                 title: 'Problem-Solving & Reasoning',
                 items: [
-                  'Applying maths to real-world problems',
+                  'Applying Maths to real-world problems',
                   'Word problems broken into manageable steps',
                   'Reasoning and justification skills',
                   'Building mathematical thinking and logic',
@@ -430,7 +430,7 @@ export default function MathsPage() {
               {
                 icon: '🎮',
                 title: 'Interactive & Engaging',
-                desc: 'Lessons include games, activities, and manipulatives that make learning memorable and genuinely enjoyable.'
+                desc: 'Lessons include games, activities, and Maths resources that make learning memorable and genuinely enjoyable.'
               },
               {
                 icon: '📊',
@@ -509,17 +509,17 @@ export default function MathsPage() {
                   {
                     icon: '🧩',
                     title: 'Specialist Interventions',
-                    desc: 'I\'ve developed successful Maths intervention schemes for SEN pupils that really work, helping children make rapid progress.'
+                    desc: 'I have developed successful Maths intervention schemes for SEN pupils that really work, helping children make rapid progress.'
                   },
                   {
                     icon: '📚',
                     title: 'Curriculum Expertise',
-                    desc: 'I\'ve created my own primary and secondary curriculum achieving excellent results with children at every level.'
+                    desc: 'I have created my own primary and secondary curriculum achieving excellent results with children at every level.'
                   },
                   {
                     icon: '💪',
                     title: 'Rapid Confidence Building',
-                    desc: 'Many children regain confidence and improve their skills quickly—sometimes within just a few weeks of starting tuition.'
+                    desc: 'Many children regain confidence and improve their skills quickly, sometimes within just a few weeks of starting tuition.'
                   }
                 ].map((item, idx) => (
                   <motion.div

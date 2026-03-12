@@ -94,7 +94,7 @@ export default function EnglishPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/rosalind_teaching2.webp"
+                  src="/rosalind_teaching3.webp"
                   alt="Rosalind teaching English to a student"
                   width={800}
                   height={500}
@@ -253,7 +253,7 @@ export default function EnglishPage() {
                   'Spelling patterns and rules taught through interventions',
                   'Proven interventions that build confidence and independence',
                   'Grammar and punctuation taught in meaningful contexts',
-                  'Transfering learned skills to writing and comprehension',
+                  'Transferring skills to writing and comprehension',
                   'Particularly effective for children with dyslexia and SEN',
                 ]
               },
@@ -277,7 +277,7 @@ export default function EnglishPage() {
                   'Dyslexia-friendly approaches and multi-sensory techniques',
                   'Support for speech/language and auditory processing difficulties',
                   'Adapted teaching methods for different learning needs',
-                  'Individualised programmes for dyslexia, autism, ADHD and more',
+                  'Individualised programmes for dyslexia, autism (neurodiverse), ADHD and more',
                   'Building both skills and genuine self-belief',
                   'And other SEN difficulties',
                 ]

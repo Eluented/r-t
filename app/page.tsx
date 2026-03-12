@@ -27,7 +27,7 @@ export default function Home() {
     {
       src: '/rosalind_teaching8cropped.webp',
       title: 'One-to-One Tutoring',
-      desc: 'Personalized learning sessions tailored to each child\'s needs'
+      desc: 'Personalised learning sessions tailored to each child\'s needs'
     },
     {
       src: '/rosalind_teaching7.webp',
@@ -404,15 +404,15 @@ export default function Home() {
               {
                 icon: '🌟',
                 title: 'Maths, English & Primary Science',
-                desc: 'Core subjects KS1-3 with specialist support for dyslexia, dyscalculia, autism, ADHD and other learning needs.',
-                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-3, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism, ADHD, and other learning needs.',
+                desc: 'Core subjects KS1-3 with specialist support for dyslexia, dyscalculia, autism (neurodiverse), ADHD and other learning needs.',
+                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-3, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism (neurodiverse), ADHD, and other learning needs.',
                 links: [{ href: '/english', text: 'English Tutoring' }, { href: '/maths', text: 'Maths Tutoring' }],
                 color: 'from-emerald-600 to-emerald-400',
                 borderColor: 'border-emerald-600',
               },
               {
                 icon: '📚',
-                title: 'SATs, Entrance, Revision & Homework Support',
+                title: 'SATs, Entrance Exams, Revision & Homework Support',
                 desc: 'SATs, entrance exams, revision skills and homework support, plus Functional Skills.',
                 descFull: 'Preparation for SATs, 4+, 7+, 11+ entrance exams, study and revision skills, structured homework support, and Entry Level/Functional Skills exams. Recent entrance success includes Haberdashers\', Channing, Queenswood and UCS.',
                 links: [{ href: '/english', text: 'English Exams' }, { href: '/maths', text: 'Maths Exams' }],
@@ -486,7 +486,7 @@ export default function Home() {
                     'BA (Hons) in Professional Practice in Special Needs Education',
                     'GCSE Mathematics and GCSE English qualifications',
                     'CACHE Level 3 Children and Young People\'s Workforce',
-                    'Level 2 Certificates in Autism, Dyslexia & Phonics, Safeguarding',
+                    'Level 2 Certificates in Autism (neurodiverse), Dyslexia & Phonics, Safeguarding',
                     'Enhanced DBS checked with references available',
                     '30 years in education and specialist SEN support',
                   ],
@@ -557,10 +557,10 @@ export default function Home() {
               {[
                 { icon: '🧩', title: 'Dyslexia & Dyspraxia', desc: 'Multi-sensory approaches tailored to learning differences' },
                 { icon: '🔢', title: 'Dyscalculia', desc: 'Concrete-to-abstract progression for Maths confidence' },
-                { icon: '🧠', title: 'Autism & ADHD', desc: 'Structured, personalised learning strategies' },
+                { icon: '🧠', title: 'Autism (neurodiverse) & ADHD', desc: 'Structured, personalised learning strategies' },
                 { icon: '🎧', title: 'Auditory Processing', desc: 'Language delays and communication support' },
                 { icon: '💪', title: 'Anxiety & Confidence', desc: 'Building self-belief and reducing learning anxiety' },
-                { icon: '📚', title: 'Learning Gaps', desc: 'Targeted SEN interventions and bridging support' },
+                { icon: '📚', title: 'Learning Gaps', desc: 'Targeted SEN interventions and bridging gaps in learning' },
                 { icon: '⭐', title: 'Gifted & Talented', desc: 'Stretching their knowledge and challenging higher achievers' },
                 { icon: '🏠', title: 'Home-Educated', desc: 'Flexible programmes for independent learners' },
                 { icon: '🌍', title: 'EAL Learners', desc: 'English as an Additional Language support' },

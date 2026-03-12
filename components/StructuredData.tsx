@@ -137,7 +137,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
           itemOffered: {
             '@type': 'Service',
             name: 'SEN Support',
-            description: 'Specialist support for dyslexia, dyscalculia, autism, and other learning differences',
+            description: 'Specialist support for dyslexia, dyscalculia, autism (neurodiverse), and other learning differences',
           },
         },
       ],

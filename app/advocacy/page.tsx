@@ -64,8 +64,8 @@ export default function AdvocacyPage() {
                 transition={{ delay: 0.1 }}
                 className="hero-title mb-5 md:mb-8"
               >
-                Your Child's <br />
-                <span className="text-emerald-100">Voice Matters</span>
+                SEN Advocacy & Parent Support<br />
+                <span className="text-emerald-100">Your Child's Voice Matters</span>
               </motion.h1>
 
               {/* Subheading */}
@@ -75,7 +75,7 @@ export default function AdvocacyPage() {
                 transition={{ delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 md:mb-12 leading-relaxed max-w-2xl"
               >
-                You don't have to navigate the complex world of special needs alone. I'm here to empower you, guide you, and help you fight for your child's rights and the support they deserve.
+                As a specialist in SEN advocacy, I help parents navigate the complex world of special educational needs. I'm here to empower you, guide you, and help you fight for your child's rights and the support they deserve.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -110,7 +110,7 @@ export default function AdvocacyPage() {
                 transition={{ delay: 0.5 }}
                 className="mt-8 md:mt-12 text-emerald-100 italic text-base md:text-lg"
               >
-                "You are not alone in this process. With specialist guidance and steady support, we can move forward with clarity and confidence."
+                "You are not alone in this process. With specialist SEN advocacy and steady support, we can move forward with clarity and confidence."
               </motion.p>
             </div>
 
@@ -384,19 +384,9 @@ export default function AdvocacyPage() {
               Important Legal Note
             </h3>
             <p className="text-gray-800 mb-5 md:mb-6 leading-relaxed text-sm md:text-lg">
-              While I offer guidance, advice, and emotional support based on my experience and knowledge, <strong>I am not a lawyer</strong>. For complex legal matters, particularly around tribunal representation or legal advice, I recommend seeking specialist legal support from organisations like:
+              While I offer guidance, advice, and emotional support based on my experience and knowledge, <strong>I am not a lawyer</strong>.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <div className="bg-white rounded-xl p-4 md:p-6">
-                <h4 className="font-bold text-amber-900 mb-2">IPSEA</h4>
-                <p className="text-gray-700 text-sm">Independent Parental Special Education Advice - offers free or low-cost specialist advice</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 md:p-6">
-                <h4 className="font-bold text-amber-900 mb-2">ACE</h4>
-                <p className="text-gray-700 text-sm">Alliance for Inclusive Education - provides support and legal information</p>
-              </div>
-            </div>
-            <p className="text-gray-700 mt-6 text-sm italic">I can work alongside these services to provide emotional support and practical guidance.</p>
+
           </motion.div>
         </div>
       </section>

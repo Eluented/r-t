@@ -49,9 +49,9 @@ export default function AboutPage() {
   }, [countersStarted]);
 
   const timeline = [
-    { year: '1999', title: 'The Beginning', desc: 'Started my journey in education, driven by passion for helping children with SEN learning difficulties', icon: '🌱' },
+    { year: '1996', title: 'The Beginning', desc: 'Started my journey in education, driven by passion for helping children with SEN learning difficulties', icon: '🌱' },
     { year: '2005', title: 'Expanding Expertise', desc: 'Developed specialist skills in SEN, EAL, and supporting diverse learners across key stages', icon: '👨‍👩‍👧‍👦' },
-    { year: '2010', title: 'Specialised Training', desc: 'I graduated from Middlesex University with a BA (Hons) in Professional Practice in Special Needs Education', icon: '🎓' },
+    { year: '2016', title: 'Specialised Training', desc: 'I graduated from Middlesex University with a BA (Hons) in Professional Practice in Special Needs Education', icon: '🎓' },
     { year: '2024', title: 'Full Circle', desc: 'Founded Rosalind Tuition, combining 30 years of expertise', icon: '⭐' }
   ];
 
@@ -189,10 +189,10 @@ export default function AboutPage() {
                 className="absolute top-0 left-0 w-3/4 h-2/3 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10"
               >
                 <Image
-                  src="/rosalind_portrait3.webp"
+                  src="/rosalind_portrait1.webp"
                   alt="Rosalind's Portrait"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent" />
               </motion.div>
@@ -347,7 +347,7 @@ export default function AboutPage() {
                   </h3>
                   {idx === 0 && (
                     <p className="hidden md:block text-white/90 text-lg leading-relaxed mt-4">
-                      I believe passionately that every child, regardless of their learning profile, can succeed. Struggling doesn't mean lacking ability, it often means the teaching approach hasn't matched the pupils' learning style. I can normally identify the right approach to unlock a child's full potential.
+                      I believe passionately that every child, regardless of their learning profile, can succeed. Struggling doesn't mean lacking ability, it often means the teaching approach hasn't matched the pupil's learning style. I can normally identify the right approach to unlock a child's full potential.
                     </p>
                   )}
                 </div>
@@ -392,9 +392,9 @@ export default function AboutPage() {
                 className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl"
               >
                 <p className="text-gray-900 font-semibold italic mb-2">
-                  "Every child I teach carries a piece of my own children's journey. I see their struggles, celebrate their victories, and fight for their success."
+                 "I see their struggles, celebrate their victories, and fight for their success."
                 </p>
-                <p className="text-emerald-600 font-bold">— Rosalind</p>
+                <p className="text-emerald-600 font-bold"> Rosalind</p>
               </motion.div>
             </motion.div>
 
