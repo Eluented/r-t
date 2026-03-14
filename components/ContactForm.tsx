@@ -15,10 +15,27 @@ export default function ContactForm() {
     message: '',
     website: '',
   });
+  const [formErrors, setFormErrors] = useState({
+    parentName: '',
+    email: '',
+    phone: '',
+    childAge: '',
+    subjects: '',
+  });
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focused, setFocused] = useState('');
+
+  const validateEmail = (email: string) => {
+    // Simple RFC 5322 compliant regex
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    // UK mobile: 07xxx xxxxxx or 07xxxxxxxxx
+    return /^07\d{9}$/.test(phone.replace(/\s+/g, ''));
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -28,13 +45,53 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }));
+
+    // Validate on change
+    if (name === 'email') {
+      setFormErrors((prev) => ({ ...prev, email: validateEmail(value) ? '' : 'Please enter a valid email address.' }));
+    }
+    if (name === 'phone') {
+      setFormErrors((prev) => ({ ...prev, phone: validatePhone(value) ? '' : 'Please enter a valid UK mobile number (07XXXXXXXXX).' }));
+    }
+    if (name === 'parentName') {
+      setFormErrors((prev) => ({ ...prev, parentName: value.trim().length >= 2 ? '' : 'Name must be at least 2 characters.' }));
+    }
+    if (name === 'childAge') {
+      setFormErrors((prev) => ({ ...prev, childAge: value ? '' : 'Please select an age/year group.' }));
+    }
+    if (name === 'subjects') {
+      setFormErrors((prev) => ({ ...prev, subjects: value ? '' : 'Please select a subject.' }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError('');
-    setIsSubmitting(true);
 
+    // Validate all fields before submit
+    const errors: any = {};
+    if (!formData.parentName.trim() || formData.parentName.trim().length < 2) {
+      errors.parentName = 'Name must be at least 2 characters.';
+    }
+    if (!validateEmail(formData.email)) {
+      errors.email = 'Please enter a valid email address.';
+    }
+    if (!validatePhone(formData.phone)) {
+      errors.phone = 'Please enter a valid UK mobile number (07XXXXXXXXX).';
+    }
+    if (!formData.childAge) {
+      errors.childAge = 'Please select an age/year group.';
+    }
+    if (!formData.subjects) {
+      errors.subjects = 'Please select a subject.';
+    }
+    setFormErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setSubmitError('Please correct the errors in the form.');
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
       if (!web3FormsKey) {
         throw new Error('Form is not configured yet. Please try again shortly.');
@@ -46,22 +103,18 @@ export default function ContactForm() {
       });
 
       const formattedMessage = [
-        'New Tutoring Enquiry — Rosalind\'s Tuition',
-        '────────────────────────────────────────',
+        `New Tutoring Enquiry from Rosalind's Tuition`,
         '',
-        'Parent/Guardian Details',
-        `• Name: ${formData.parentName}`,
-        `• Email: ${formData.email}`,
-        `• Phone: ${formData.phone}`,
+        `Parent/Guardian Name: ${formData.parentName}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone}`,
+        `Child's Age / Year Group: ${formData.childAge}`,
+        `Subjects of Interest: ${formData.subjects}`,
+        `Submitted: ${submittedAt}`,
         '',
-        'Learning Details',
-        `• Child Age / Year Group: ${formData.childAge}`,
-        `• Subjects: ${formData.subjects}`,
-        `• Submitted: ${submittedAt}`,
-        '',
-        'Message / Concerns',
-        '────────────────────────────────────────',
-        formData.message || 'No additional message provided.',
+        formData.message
+          ? `Message / Concerns: ${formData.message}`
+          : 'No additional message provided.'
       ].join('\n');
 
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -97,6 +150,7 @@ export default function ContactForm() {
         message: '',
         website: '',
       });
+      setFormErrors({ parentName: '', email: '', phone: '', childAge: '', subjects: '' });
 
       setTimeout(() => {
         setSubmitted(false);
@@ -207,6 +261,9 @@ export default function ContactForm() {
             placeholder="e.g., John Smith"
             whileFocus={{ scale: 1.02 }}
           />
+          {formErrors.parentName && (
+            <span className="text-red-600 text-sm mt-1 block">{formErrors.parentName}</span>
+          )}
         </motion.div>
 
         {/* Email */}
@@ -237,6 +294,9 @@ export default function ContactForm() {
             placeholder="your.email@example.com"
             whileFocus={{ scale: 1.02 }}
           />
+          {formErrors.email && (
+            <span className="text-red-600 text-sm mt-1 block">{formErrors.email}</span>
+          )}
         </motion.div>
 
         {/* Phone */}
@@ -267,6 +327,9 @@ export default function ContactForm() {
             placeholder="07XXX XXXXXX"
             whileFocus={{ scale: 1.02 }}
           />
+          {formErrors.phone && (
+            <span className="text-red-600 text-sm mt-1 block">{formErrors.phone}</span>
+          )}
         </motion.div>
 
         {/* Child Age */}
@@ -308,6 +371,9 @@ export default function ContactForm() {
             <option value="12-13">Year 9 (12-13)</option>
             <option value="13+">Year 10+ (13+)</option>
           </motion.select>
+          {formErrors.childAge && (
+            <span className="text-red-600 text-sm mt-1 block">{formErrors.childAge}</span>
+          )}
         </motion.div>
 
         {/* Subjects of Interest */}
@@ -341,6 +407,9 @@ export default function ContactForm() {
             <option value="english">English Only</option>
             <option value="both">Both Maths & English</option>
           </motion.select>
+          {formErrors.subjects && (
+            <span className="text-red-600 text-sm mt-1 block">{formErrors.subjects}</span>
+          )}
         </motion.div>
 
         {/* Message */}

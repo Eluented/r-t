@@ -389,11 +389,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
                     <a
-                      href="mailto:rosalind@example.com"
+                      href="mailto:rosalindstuition@gmail.com"
                       className="text-pink-600 hover:text-pink-700 font-semibold break-all transition-colors"
                     >
 
-                      rosalindreindorp@sky.com
+                      rosalindstuition@gmail.com
                     </a>
                     <p className="text-sm text-gray-600 mt-1">Response within 24 hours</p>
                   </div>
