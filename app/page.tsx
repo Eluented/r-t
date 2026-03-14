@@ -96,6 +96,16 @@ export default function Home() {
               >
                 Bridging Learning Gaps and Building Success
               </motion.h1>
+              <motion.div
+                className="mb-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.7 }}
+              >
+                <span className="inline-block bg-emerald-100/80 text-emerald-800 font-semibold rounded-full px-4 py-2 text-base md:text-lg shadow-sm border border-emerald-200">
+                  I teach all abilities
+                </span>
+              </motion.div>
 
               {/* Mobile Text */}
               <motion.p
@@ -104,7 +114,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind. I offer personalised one-to-one tuition in Edgware for KS1–KS3 across Maths, English, Primary Science, History, Geography, and Cookery. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
+                Hello, I’m Rosalind. I offer personalised one-to-one tuition across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
               </motion.p>
 
               {/* Desktop Text */}
@@ -114,7 +124,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind, with over 30 years of teaching experience. Based in Edgware, North West London, I provide personalised one-to-one tuition for KS1–KS3 in Maths, English, Primary Science, History, Geography, and Cookery, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
+                Hello, I’m Rosalind, with over 30 years of teaching experience. I provide personalised one-to-one tuition across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
               </motion.p>
 
               {/* Trust Indicators */}

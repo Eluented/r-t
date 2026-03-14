@@ -54,10 +54,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-8 mb-8 md:mb-10">
-          <nav aria-label="Footer quick links" className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6">
-            <h4 className="text-base md:text-lg font-bold text-white tracking-tight">Quick Links</h4>
-            <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-x-3 gap-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mb-8 md:mb-10">
+          <nav aria-label="Footer quick links" className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6 flex-1">
+            <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2">Quick Links</h4>
+            <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-3 gap-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -71,8 +71,8 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6">
-            <h4 className="text-base md:text-lg font-bold text-white tracking-tight">Contact</h4>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6 flex-1">
+            <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2">Contact</h4>
             <ul className="mt-4 space-y-2.5 text-sm text-gray-300">
               <li>
                 <a href="tel:07908845498" className="inline-flex items-center gap-2 hover:text-white transition-colors duration-200">📞 07908 845 498</a>
@@ -82,23 +82,6 @@ export default function Footer() {
               </li>
               <li>📍 North West London</li>
             </ul>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6">
-            <h4 className="text-base md:text-lg font-bold text-white tracking-tight">Specialist Support</h4>
-            <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-              Specialist in SEN support, SATs preparation, and entrance exam coaching.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {specialisms.map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-gray-200"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 

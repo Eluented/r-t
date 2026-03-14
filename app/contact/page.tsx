@@ -437,7 +437,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-purple-600 font-bold">✓</span>
-                    <span>SEN, EAL & Gifted specialists</span>
+                    <span>SEN, EAL & Gifted and Talented specialists</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-purple-600 font-bold">✓</span>

@@ -38,7 +38,7 @@ export default function EnglishPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden hero-lead text-emerald-100 max-w-2xl mb-6">
-                Expert one-to-one English tuition KS1-3. Reading, writing, phonics, and exam prep. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
+                Expert one-to-one English tuition KS1-3. Reading, writing, phonics, and exam preparation. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
               </p>
 
               {/* Desktop Text */}

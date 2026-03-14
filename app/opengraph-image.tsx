@@ -42,23 +42,33 @@ export default function OpenGraphImage() {
           Expert SEN & Exam Tutoring
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: '92%' }}>
-          <div
-            style={{
-              fontSize: 72,
-              lineHeight: 1.05,
-              fontWeight: 800,
-              letterSpacing: '-0.02em',
-              background: 'linear-gradient(90deg, #059669 0%, #1d4ed8 55%, #d97706 100%)',
-              color: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            Rosalind&apos;s Tuition
-          </div>
-
-          <div style={{ fontSize: 38, lineHeight: 1.2, fontWeight: 700, color: '#1f2937' }}>
-            One-to-One Maths, English & Specialist SEN Support
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center', maxWidth: '92%' }}>
+          <img
+            src={
+              'https://rosalindstuition.com/rosalind_portrait1.webp'
+            }
+            width={180}
+            height={180}
+            style={{ borderRadius: '50%', border: '4px solid #059669', objectFit: 'cover', boxShadow: '0 4px 24px rgba(5,150,105,0.15)' }}
+            alt="Rosalind's Portrait"
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            <div
+              style={{
+                fontSize: 72,
+                lineHeight: 1.05,
+                fontWeight: 800,
+                letterSpacing: '-0.02em',
+                background: 'linear-gradient(90deg, #059669 0%, #1d4ed8 55%, #d97706 100%)',
+                color: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Rosalind's Tuition
+            </div>
+            <div style={{ fontSize: 38, lineHeight: 1.2, fontWeight: 700, color: '#1f2937' }}>
+              One-to-One Maths, English & Specialist SEN Support
+            </div>
           </div>
         </div>
 

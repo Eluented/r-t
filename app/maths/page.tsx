@@ -95,7 +95,7 @@ export default function MathsPage() {
     {
       icon: '⭐',
       title: 'Personalised Learning',
-      desc: 'Every child thinks differently about Maths. I adapt my teaching to suit their learning style, pace, and interests.',
+        desc: 'Every child thinks differently about Maths. I adapt my teaching to suit their learning style, pace, and interests.',
     },
     {
       icon: '💪',
