@@ -794,6 +794,7 @@ export default function ContactPage() {
                     <button
                       type="button"
                       onClick={() => setShowAllNwAreas((prev) => !prev)}
+                      aria-label={showAllNwAreas ? 'Show fewer North West London areas' : `Show all ${northWestLondonAreas.length} North West London areas`}
                       className="mt-3 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
                     >
                       {showAllNwAreas ? 'Show fewer areas' : `Show all ${northWestLondonAreas.length} areas`}

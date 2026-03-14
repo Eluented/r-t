@@ -199,7 +199,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.6 }}
                 >
-                  <h3 className="font-bold text-gray-900 mb-2 text-lg">Rosalind Reindorp</h3>
+                  <p className="font-bold text-gray-900 mb-2 text-lg">Rosalind Reindorp</p>
                   <p className="text-sm text-gray-700 mb-3">BA (Hons) Special Needs Education</p>
                   <div className="flex gap-2">
                     <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">SEN Specialist</span>
