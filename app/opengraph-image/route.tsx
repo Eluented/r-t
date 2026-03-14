@@ -19,7 +19,7 @@ export async function GET(request: Request) {
       >
         <div
           style={{
-            display: 'inline-flex',
+            display: 'flex',
             alignItems: 'center',
             alignSelf: 'flex-start',
             borderRadius: 999,
@@ -34,13 +34,24 @@ export async function GET(request: Request) {
           Expert SEN & Exam Tutoring
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center', maxWidth: '92%' }}>
-          <img
-            src="https://rosalindstuition.com/rosalind_portrait1.webp"
-            width={180}
-            height={180}
-            style={{ borderRadius: '50%', border: '4px solid #059669', objectFit: 'cover', boxShadow: '0 4px 24px rgba(5,150,105,0.15)' }}
-            alt="Rosalind's Portrait"
-          />
+          <div
+            style={{
+              width: 180,
+              height: 180,
+              borderRadius: '50%',
+              border: '4px solid #059669',
+              boxShadow: '0 4px 24px rgba(5,150,105,0.15)',
+              background: 'linear-gradient(135deg, #d1fae5 0%, #bfdbfe 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#065f46',
+              fontSize: 72,
+              fontWeight: 800,
+            }}
+          >
+            R
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             <div
               style={{
