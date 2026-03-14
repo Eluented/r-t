@@ -33,25 +33,7 @@ export async function GET(request: Request) {
         >
           Expert SEN & Exam Tutoring
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center', maxWidth: '92%' }}>
-          <div
-            style={{
-              width: 180,
-              height: 180,
-              borderRadius: '50%',
-              border: '4px solid #059669',
-              boxShadow: '0 4px 24px rgba(5,150,105,0.15)',
-              background: 'linear-gradient(135deg, #d1fae5 0%, #bfdbfe 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#065f46',
-              fontSize: 72,
-              fontWeight: 800,
-            }}
-          >
-            R
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: 32, alignItems: 'center', maxWidth: '100%' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             <div
               style={{

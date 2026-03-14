@@ -123,9 +123,7 @@ export default function AboutPage() {
               >
                 Where 30 years of educational expertise meets a deep understanding of neurodiverse learners. As an SEN specialist and Edgware tutor, I am dedicated to supporting children with a range of learning needs. This is more than a job, it's a calling.
                 <br />
-                <span className="mt-4 block text-sm text-emerald-200">
-                  <a href="/advocacy" className="underline hover:text-emerald-400">SEN Advocacy</a> | <a href="/english" className="underline hover:text-emerald-400">English Tuition</a> | <a href="/maths" className="underline hover:text-emerald-400">Maths Tuition</a> | <a href="/contact" className="underline hover:text-emerald-400">Contact</a>
-                </span>
+        
               </motion.p>
 
               {/* Animated Stats */}
