@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     default: "Rosalind's Tuition | Expert Maths & English Tutoring in North West London",
     template: "%s | Rosalind's Tuition"
   },
-  description: "Professional one-to-one Maths and English tuition in North West London. 30+ years of experience supporting SEN, dyslexia, dyscalculia, EAL learners, and exam preparation. Covering Edgware, Barnet, Finchley, Hertfordshire & surrounding areas.",
-  keywords: ["maths tutor north west london", "english tutor edgware", "SEN tutor", "dyslexia support", "dyscalculia tutor", "11+ tutor", "GCSE tutor", "EAL tutor", "home tuition barnet", "private tutor hertfordshire", "one-to-one tuition", "Key Stage 1 tutor", "Key Stage 2 tutor", "phonics tutor"],
+  description: "Professional one-to-one Maths and English tutoring in North West London. 30+ years of experience supporting SEN, dyslexia, dyscalculia, EAL learners, and exam preparation. Covering Edgware, Barnet, Finchley, Hertfordshire & surrounding areas.",
+  keywords: ["maths tutor north west london", "english tutor edgware", "SEN tutor", "dyslexia support", "dyscalculia tutor", "11+ tutor", "GCSE tutor", "EAL tutor", "home tutor barnet", "private tutor hertfordshire", "one-to-one tutor", "Key Stage 1 tutor", "Key Stage 2 tutor", "phonics tutor"],
   authors: [{ name: "Rosalind" }],
   creator: "Rosalind's Tuition",
   category: 'education',
@@ -27,12 +27,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/favicon.ico',
+        type: 'image/x-icon',
+      },
+      {
         url: '/favicon.svg',
         type: 'image/svg+xml',
       },
     ],
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   alternates: {
     canonical: '/',
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://rosalindstuition.com',
     title: "Rosalind's Tuition | Expert Maths & English Tutoring in North West London",
-    description: "30+ years of experience in Maths & English tuition. Specialist support for SEN, dyslexia, dyscalculia, and EAL learners across North West London.",
+    description: "30+ years of experience in Maths & English tutoring. Specialist support for SEN, dyslexia, dyscalculia, and EAL learners across North West London.",
     siteName: "Rosalind's Tuition",
     images: [
       {
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Rosalind's Tuition | Expert Maths & English Tutoring",
-    description: "30+ years of experience in Maths & English tuition. Specialist SEN support across North West London.",
+    description: "30+ years of experience in Maths & English tutoring. Specialist SEN support across North West London.",
     images: ['/twitter-image'],
   },
   robots: {
@@ -92,9 +96,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         <Header />

@@ -48,7 +48,7 @@ export default function Footer() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-blue-300/30 bg-blue-500/10 px-5 py-3 text-sm font-semibold text-blue-200 hover:bg-blue-500/20 hover:text-white transition-colors duration-200"
               >
                 <span>✉️</span>
-                <span>rosalindreindorp@sky.com</span>
+                <span>rosalindstuition@gmail.com</span>
               </a>
             </div>
           </div>

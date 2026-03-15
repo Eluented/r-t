@@ -104,7 +104,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind. I teach all abilities and offer personalised one-to-one tuition across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
+                Hello, I’m Rosalind. I teach all abilities and offer personalised one-to-one tutoring across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
               </motion.p>
 
               {/* Desktop Text */}
@@ -114,7 +114,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind, with over 30 years of teaching experience. I teach all abilities and provide personalised one-to-one tuition across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
+                Hello, I’m Rosalind, with over 30 years of teaching experience. I teach all abilities and provide personalised one-to-one tutoring across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
               </motion.p>
 
               {/* Trust Indicators */}

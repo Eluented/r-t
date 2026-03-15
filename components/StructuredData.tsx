@@ -7,13 +7,13 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ type = 'home' }: StructuredDataProps) {
-  const baseUrl = 'https://rosalindtuition.com'; // Update with actual domain
+  const baseUrl = 'https://rosalindstuition.com';
 
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: "Rosalind's Tuition",
-    description: '30+ years of experience in Maths & English tuition. Specialist support for SEN, dyslexia, dyscalculia, and EAL learners.',
+    description: '30+ years of experience in Maths & English tutoring. Specialist support for SEN, dyslexia, dyscalculia, and EAL learners.',
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     address: {
@@ -88,7 +88,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     '@id': `${baseUrl}/#localbusiness`,
     name: "Rosalind's Tuition",
     image: `${baseUrl}/rosalind_portrait1.webp`,
-    description: 'Professional one-to-one Maths and English tuition in North West London with 30+ years of experience.',
+    description: 'Professional one-to-one Maths and English tutoring in North West London with 30+ years of experience.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Edgware',
@@ -121,7 +121,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
           itemOffered: {
             '@type': 'Service',
             name: 'Maths Tutoring',
-            description: 'One-to-one maths tuition for Key Stages 1-3, including SEN support and exam preparation',
+            description: 'One-to-one maths tutoring for Key Stages 1-3, including SEN support and exam preparation',
           },
         },
         {
@@ -129,7 +129,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
           itemOffered: {
             '@type': 'Service',
             name: 'English Tutoring',
-            description: 'One-to-one English tuition covering phonics, grammar, creative writing, and exam skills',
+            description: 'One-to-one English tutoring covering phonics, grammar, creative writing, and exam skills',
           },
         },
         {
@@ -149,7 +149,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     '@type': 'Person',
     name: 'Rosalind',
     jobTitle: 'Private Tutor',
-    description: '30+ years of experience in Maths & English tuition with specialist SEN expertise',
+    description: '30+ years of experience in Maths & English tutoring with specialist SEN expertise',
     knowsAbout: [
       'Mathematics Education',
       'English Language Teaching',
@@ -165,8 +165,8 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
 
   const pageNames: Record<NonNullable<StructuredDataProps['type']>, string> = {
     home: 'Home',
-    english: 'English Tuition',
-    maths: 'Maths Tuition',
+    english: 'English Tutor',
+    maths: 'Maths Tutor',
     about: 'About',
     contact: 'Contact',
     advocacy: 'Advocacy',
