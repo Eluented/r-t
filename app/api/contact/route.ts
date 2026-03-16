@@ -11,7 +11,7 @@ type RateLimitEntry = {
 const rateLimitStore = new Map<string, RateLimitEntry>();
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL?.trim() || 'onurbelek11@gmail.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL?.trim() || 'rosalindstuition@gmail.com';
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const contactSchema = z.object({

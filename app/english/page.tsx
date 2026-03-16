@@ -388,7 +388,6 @@ export default function EnglishPage() {
             <h2 className="section-title text-gray-900 mb-4">
               Real Results,<span className="text-transparent bg-gradient-to-r from-emerald-600 to-blue-700 bg-clip-text"> Real Progress</span>
             </h2>
-            <p className="section-lead text-gray-600">What parents and children say about their tutoring experience</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -405,7 +405,7 @@ export default function Home() {
                 icon: '🌟',
                 title: 'Maths, English & Primary Science',
                 desc: 'Core subjects KS1-3 with specialist support for dyslexia, dyscalculia, autism (neurodiverse), ADHD and other learning needs.',
-                descFull: 'Core subject tutoring following the national curriculum for Key Stage 1-3, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism (neurodiverse), ADHD, and other learning needs.',
+                descFull: 'Core subject tutoring, following the national curriculum for Key Stage 1-3, plus Primary Science (KS1/KS2). Specialist support for dyslexia, dyscalculia, autism (neurodiverse), ADHD, and other learning needs.',
                 links: [{ href: '/english', text: 'English Tutoring' }, { href: '/maths', text: 'Maths Tutoring' }],
                 color: 'from-emerald-600 to-emerald-400',
                 borderColor: 'border-emerald-600',
@@ -747,7 +747,7 @@ export default function Home() {
           >
             <h2 className="text-5xl font-bold mb-6">Let's Start Your Child's Journey</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Whether you're navigating SEN, preparing for exams, or filling learning gaps. I'm here to help. Let's have a conversation about your child's needs.
+              Whether you're navigating SEN, preparing for exams, or bridging learning gaps. I'm here to help. Let's have a conversation about your child's needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a

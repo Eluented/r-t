@@ -325,7 +325,7 @@ export default function MathsPage() {
                   'Understanding place value and number bonds',
                   'Fractions, decimals and percentages made clear',
                   'Ratio and proportion with real-world context',
-                  'Early algebra and shape/space work',
+                  'Early algebra and shape work',
                 ]
               },
               {
@@ -474,7 +474,6 @@ export default function MathsPage() {
             <h2 className="section-title text-gray-900 mb-4">
               Experience & <span className="text-transparent bg-gradient-to-r from-blue-600 to-amber-600 bg-clip-text">Results</span>
             </h2>
-            <p className="section-lead text-gray-600">What my pupils and their families have to say</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

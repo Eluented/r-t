@@ -497,7 +497,7 @@ export default function AboutPage() {
           >
             <h2 className="section-title text-white mb-6">Let's Start Your Child's Journey</h2>
             <p className="section-lead text-white/90 mb-10 leading-relaxed">
-              Whether you're navigating SEN, preparing for exams, or filling learning gaps. I'm here to help. Let's have a conversation about your child's needs.
+              Whether you're navigating SEN, preparing for exams, or bridging learning gaps. I'm here to help. Let's have a conversation about your child's needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a

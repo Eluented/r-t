@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  const recipientEmail = 'rosalindstuition@gmail.com';
 
   const [formData, setFormData] = useState({
     parentName: '',
@@ -130,6 +131,8 @@ export default function ContactForm() {
           email: formData.email,
           message: formattedMessage,
           replyto: formData.email,
+          to: recipientEmail,
+          recipient: recipientEmail,
           botcheck: formData.website,
         }),
       });

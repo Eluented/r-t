@@ -306,7 +306,7 @@ export default function AdvocacyPage() {
               {
                 icon: '🎓',
                 title: 'Professional Expertise',
-                desc: 'BA (Hons) in Professional Practice in Special Needs Education. 30 years in the field combining extensive experience with professional knowledge.',
+                desc: 'BA (Hons) in Professional Practice in Special Needs Education. Thirty years in the field combining extensive experience with professional knowledge.',
                 subtext: 'Trained & qualified specialist'
               },
               {

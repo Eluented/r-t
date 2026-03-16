@@ -22,6 +22,7 @@ interface FormErrors {
 
 export default function ContactPage() {
   const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  const recipientEmail = 'rosalindstuition@gmail.com';
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -232,6 +233,8 @@ export default function ContactPage() {
           email: formData.email,
           message: formattedMessage,
           replyto: formData.email,
+          to: recipientEmail,
+          recipient: recipientEmail,
           botcheck: ''
         }),
       });
