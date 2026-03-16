@@ -226,7 +226,7 @@ export default function Home() {
               {
                 icon: '💪',
                 title: 'Confidence Building',
-                desc: 'More than academics—we rebuild self-belief'
+                desc: 'More than academics— I rebuild self-belief'
               },
               {
                 icon: '📈',
@@ -259,11 +259,11 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { href: '/english', title: 'English Tutor', desc: 'Reading, writing, phonics and exam support' },
-              { href: '/maths', title: 'Maths Tutor', desc: 'Confidence, concepts and exam preparation' },
+              { href: '/english', title: 'English Tutoring', desc: 'Reading, writing, phonics and exam support' },
+              { href: '/maths', title: 'Maths Tutoring', desc: 'Confidence, concepts and exam preparation' },
               { href: '/advocacy', title: 'SEN Advocacy', desc: 'Support for EHCPs and parent guidance' },
-              { href: '/about', title: 'About Rosalind', desc: 'Qualifications, experience and teaching approach' },
-              { href: '/contact', title: 'Contact Tutor', desc: 'Book a free consultation and get in touch' },
+              { href: '/about', title: 'About Me', desc: 'Qualifications, experience and teaching approach' },
+              { href: '/contact', title: 'Contact', desc: 'Book a free consultation and get in touch' },
             ].map((item) => (
               <Link
                 key={item.href}

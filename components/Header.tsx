@@ -11,11 +11,11 @@ export default function Header() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/english', label: 'English Tutor' },
-    { href: '/maths', label: 'Maths Tutor' },
+    { href: '/english', label: 'English Tutoring' },
+    { href: '/maths', label: 'Maths Tutoring' },
     { href: '/advocacy', label: 'SEN Advocacy' },
-    { href: '/about', label: 'About Rosalind' },
-    { href: '/contact', label: 'Contact Tutor' },
+    { href: '/about', label: 'About Me' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const containerVariants = {

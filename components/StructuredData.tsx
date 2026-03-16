@@ -74,7 +74,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     },
     areaServed: serviceAreas,
     telephone: '+44 7908 845498',
-    email: 'rosalindreindorp@sky.com',
+    email: 'rosalindstuition@gmail.com',
   };
 
   const websiteSchema = {
@@ -122,7 +122,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     url: baseUrl,
     areaServed: serviceAreas,
     telephone: '+44 7908 845498',
-    email: 'rosalindreindorp@sky.com',
+    email: 'rosalindstuition@gmail.com',
   };
 
   const serviceSchema = {

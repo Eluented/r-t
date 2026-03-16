@@ -44,7 +44,7 @@ export default function Footer() {
                 <span>07908 845 498</span>
               </a>
               <a
-                href="mailto:rosalindreindorp@sky.com"
+                href="mailto:rosalindstuition@gmail.com"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-blue-300/30 bg-blue-500/10 px-5 py-3 text-sm font-semibold text-blue-200 hover:bg-blue-500/20 hover:text-white transition-colors duration-200"
               >
                 <span>✉️</span>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <a href="tel:07908845498" className="inline-flex items-center gap-2 hover:text-white transition-colors duration-200">📞 07908 845 498</a>
               </li>
               <li>
-                <a href="mailto:rosalindreindorp@sky.com" className="inline-flex items-center gap-2 hover:text-white transition-colors duration-200 break-all">✉️ rosalindreindorp@sky.com</a>
+                <a href="mailto:rosalindstuition@gmail.com" className="inline-flex items-center gap-2 hover:text-white transition-colors duration-200 break-all">✉️ rosalindstuition@gmail.com</a>
               </li>
               <li>📍 North West London</li>
             </ul>
