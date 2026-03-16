@@ -104,7 +104,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind. I teach all abilities and offer personalised one-to-one tutoring across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
+                Hello, I’m Rosalind. I offer personalised one-to-one tutoring across Edgware, Barnet, Finchley, Mill Hill, Hampstead, Watford, Radlett and surrounding North West London and Hertfordshire areas, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3. With 30+ years of experience, I help children build confidence, close learning gaps, and prepare for entrance exams.
               </motion.p>
 
               {/* Desktop Text */}
@@ -114,7 +114,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Hello, I’m Rosalind, with over 30 years of teaching experience. I teach all abilities and provide personalised one-to-one tutoring across North West London, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
+                Hello, I’m Rosalind, with over 30 years of teaching experience. I teach all abilities and provide personalised one-to-one tutoring across Edgware, Barnet, Finchley, Mill Hill, Hampstead, Stanmore, Watford, Radlett and surrounding North West London and Hertfordshire areas, teaching Maths, English, Primary Science, History, Geography, and Cookery for KS1–KS3, aligned with the National Curriculum. My lessons are tailored to each child’s learning style to build confidence, close gaps, strengthen core skills, and prepare for entrance exams. I’m proud that pupils I have supported secured places at leading independent schools, including Haberdashers’ Boys’, University College School, Channing, and Queenswood.
               </motion.p>
 
               {/* Trust Indicators */}
@@ -248,6 +248,61 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Popular Pages</h2>
+            <p className="text-gray-600">Explore the key tutoring pages parents in Edgware, Barnet, Finchley and nearby areas visit most often.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { href: '/english', title: 'English Tutor', desc: 'Reading, writing, phonics and exam support' },
+              { href: '/maths', title: 'Maths Tutor', desc: 'Confidence, concepts and exam preparation' },
+              { href: '/advocacy', title: 'SEN Advocacy', desc: 'Support for EHCPs and parent guidance' },
+              { href: '/about', title: 'About Rosalind', desc: 'Qualifications, experience and teaching approach' },
+              { href: '/contact', title: 'Contact Tutor', desc: 'Book a free consultation and get in touch' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-5 hover:border-emerald-300 hover:shadow-md transition"
+              >
+                <p className="font-bold text-gray-900 mb-1">{item.title}</p>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-emerald-100 bg-gradient-to-r from-emerald-50 via-white to-blue-50 p-6 md:p-8">
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Areas Covered</h3>
+                <p className="text-gray-600 max-w-3xl">Rosalind is based in Edgware and supports families across North West London, North London and nearby Hertfordshire with face-to-face tutoring, plus online lessons for families further afield.</p>
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 transition"
+              >
+                Check your area
+              </Link>
+            </div>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
+              <div className="rounded-2xl bg-white/80 p-4 border border-white shadow-sm">
+                <p className="font-semibold text-gray-900 mb-2">North West London</p>
+                <p>Edgware, Mill Hill, Hendon, Golders Green, Stanmore, Harrow, Pinner and nearby areas.</p>
+              </div>
+              <div className="rounded-2xl bg-white/80 p-4 border border-white shadow-sm">
+                <p className="font-semibold text-gray-900 mb-2">North London</p>
+                <p>Barnet, Finchley, Hampstead, Muswell Hill, Highgate, Totteridge and surrounding areas.</p>
+              </div>
+              <div className="rounded-2xl bg-white/80 p-4 border border-white shadow-sm">
+                <p className="font-semibold text-gray-900 mb-2">Hertfordshire</p>
+                <p>Watford, Borehamwood, Elstree, Radlett, Shenley, Bushey and surrounding areas.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

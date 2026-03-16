@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = "Rosalind's Tuition";
+export const alt = "Rosalind's Tutoring";
 export const size = {
   width: 1200,
   height: 630,
@@ -32,7 +32,7 @@ export default function TwitterImage() {
             letterSpacing: '-0.02em',
           }}
         >
-          Rosalind&apos;s Tuition
+          Rosalind&apos;s Tutoring
         </div>
         <div style={{ fontSize: 40, lineHeight: 1.2, fontWeight: 700, color: '#d1fae5' }}>
           Expert Maths, English & SEN Tutoring

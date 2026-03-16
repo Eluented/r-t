@@ -1,23 +1,23 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Rosalind',
+  title: 'About Rosalind | Private Tutor in Edgware & North West London',
   description:
-    "Learn about Rosalind's 30+ years of teaching experience, SEN specialism, and personalised tutoring approach for children across Key Stages 1-3.",
+    "Learn about Rosalind's 30+ years of teaching experience, SEN specialism, and personalised tutoring approach for families in Edgware, Barnet, Finchley, Hertfordshire and surrounding North West London areas.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: "About Rosalind | Rosalind's Tuition",
+    title: "About Rosalind | Private Tutor in Edgware & North West London",
     description:
-      "Meet Rosalind and discover her specialist SEN tutoring background, qualifications, and child-focused teaching approach.",
+      "Meet Rosalind and discover her specialist SEN tutoring background, qualifications, and child-focused teaching approach for local families across North West London and Hertfordshire.",
     url: 'https://rosalindstuition.com/about',
     images: ['/rosalind_portrait3.webp'],
   },
   twitter: {
-    title: "About Rosalind | Rosalind's Tuition",
+    title: "About Rosalind | Private Tutor in Edgware & North West London",
     description:
-      "Discover Rosalind's experience, SEN expertise, and philosophy behind personalised tutoring.",
+      "Discover Rosalind's experience, SEN expertise, and personalised tutoring approach for families across North West London and Hertfordshire.",
     images: ['/rosalind_portrait3.webp'],
   },
 };

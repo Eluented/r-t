@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   applicationName: "Rosalind's Tuition",
   manifest: '/manifest.webmanifest',
   title: {
-    default: "Rosalind's Tuition | Expert Maths & English Tutoring in North West London",
+    default: "Private Tutor in Edgware, Barnet & Finchley | Rosalind's Tuition",
     template: "%s | Rosalind's Tuition"
   },
-  description: "Professional one-to-one Maths and English tutoring in North West London. 30+ years of experience supporting SEN, dyslexia, dyscalculia, EAL learners, and exam preparation. Covering Edgware, Barnet, Finchley, Hertfordshire & surrounding areas.",
-  keywords: ["maths tutor north west london", "english tutor edgware", "SEN tutor", "dyslexia support", "dyscalculia tutor", "11+ tutor", "GCSE tutor", "EAL tutor", "home tutor barnet", "private tutor hertfordshire", "one-to-one tutor", "Key Stage 1 tutor", "Key Stage 2 tutor", "phonics tutor"],
+  description: "Private one-to-one Maths and English tutor in Edgware, Barnet, Finchley, Mill Hill, Hampstead, Harrow, Watford, Radlett and surrounding North West London and Hertfordshire areas. 30+ years of SEN, dyslexia, dyscalculia, EAL and exam tutoring experience.",
+  keywords: ["private tutor edgware", "private tutor barnet", "private tutor finchley", "maths tutor north west london", "english tutor edgware", "SEN tutor barnet", "dyslexia tutor north london", "dyscalculia tutor london", "11+ tutor edgware", "EAL tutor finchley", "home tutor hertfordshire", "private tutor watford", "private tutor radlett", "one-to-one tutoring", "Key Stage 1 tutor", "Key Stage 2 tutor", "phonics tutor"],
   authors: [{ name: "Rosalind" }],
   creator: "Rosalind's Tuition",
   category: 'education',
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://rosalindstuition.com',
-    title: "Rosalind's Tuition | Expert Maths & English Tutoring in North West London",
-    description: "30+ years of experience in Maths & English tutoring. Specialist support for SEN, dyslexia, dyscalculia, and EAL learners across North West London.",
+    title: "Private Tutor in Edgware, Barnet & Finchley | Rosalind's Tuition",
+    description: "Experienced private tutor for Maths, English and SEN support across Edgware, Barnet, Finchley, Hertfordshire and surrounding North West London areas.",
     siteName: "Rosalind's Tuition",
     images: [
       {
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Rosalind's Tuition | Expert Maths & English Tutoring",
-    description: "30+ years of experience in Maths & English tutoring. Specialist SEN support across North West London.",
+    title: "Private Tutor in Edgware, Barnet & Finchley | Rosalind's Tuition",
+    description: "Private tutor for Maths, English and SEN support across North West London and Hertfordshire.",
     images: ['/twitter-image'],
   },
   robots: {

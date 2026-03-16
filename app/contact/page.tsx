@@ -738,7 +738,7 @@ export default function ContactPage() {
             className="mt-20 mb-20"
           >
             <h2 className="section-title text-center text-gray-900 mb-12">
-              Where I Tutor
+              Where I Tutor Across North West London, North London and Hertfordshire
             </h2>
 
             <div className="max-w-5xl mx-auto space-y-8">
@@ -753,7 +753,7 @@ export default function ContactPage() {
                   <span className="text-3xl">🏠</span>
                   Face-to-Face Tuition - North West London
                 </h3>
-                <p className="text-gray-700 mb-6">I provide home tuition across the following areas:</p>
+                <p className="text-gray-700 mb-6">I provide home tutoring from my Edgware base across the following areas, including popular locations such as Barnet, Finchley, Hampstead, Mill Hill, Stanmore, Borehamwood, Radlett, Bushey and Watford.</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
                     <p className="font-semibold text-gray-900 mb-2">Hertfordshire</p>

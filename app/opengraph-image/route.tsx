@@ -46,7 +46,7 @@ export async function GET(request: Request) {
                 backgroundClip: 'text',
               }}
             >
-              Rosalind's Tuition
+              Rosalind's Tutoring
             </div>
             <div style={{ fontSize: 38, lineHeight: 1.2, fontWeight: 700, color: '#1f2937' }}>
               One-to-One Maths, English & Specialist SEN Support

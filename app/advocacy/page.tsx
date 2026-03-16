@@ -75,7 +75,7 @@ export default function AdvocacyPage() {
                 transition={{ delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl text-emerald-100 mb-8 md:mb-12 leading-relaxed max-w-2xl"
               >
-                As a specialist in SEN advocacy, I help parents navigate the complex world of special educational needs. I'm here to empower you, guide you, and help you fight for your child's rights and the support they deserve.
+                As a specialist in SEN advocacy, I help parents navigate the complex world of special educational needs. I support families across Edgware, Barnet, Finchley, Harrow, Watford, Borehamwood and surrounding North West London and Hertfordshire areas, as well as online. I'm here to empower you, guide you, and help you fight for your child's rights and the support they deserve.
               </motion.p>
 
               {/* CTA Buttons */}

@@ -28,7 +28,7 @@ export default function EnglishPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="inline-block bg-emerald-100/20 backdrop-blur px-6 py-3 rounded-full text-emerald-100 font-semibold mb-6">
-                📚 English Tuition - Key Stages 1-3
+                📚 English Tutor - North West London & Hertfordshire
               </div>
               <h1 className="hero-title text-white mb-6">
                 <span className="text-emerald-200">English Tutoring</span>
@@ -38,12 +38,16 @@ export default function EnglishPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden hero-lead text-emerald-100 max-w-2xl mb-6">
-                Expert one-to-one English tuition KS1-3. Reading, writing, phonics, and exam preparation. Specialist support for dyslexia, SEN, and EAL learners. Proven entrance exam success.
+                Expert one-to-one English tutoring for KS1-3 in Edgware, Barnet, Finchley, Hampstead, Mill Hill, Borehamwood, Radlett and nearby areas. Reading, writing, phonics, and exam preparation with specialist SEN, dyslexia and EAL support.
               </p>
 
               {/* Desktop Text */}
               <p className="hidden md:block hero-lead text-emerald-100 max-w-2xl mb-6">
-                Expert one-to-one English tuition following the national curriculum for primary and secondary education. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment. My entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
+                Expert one-to-one English tutoring following the national curriculum for primary and secondary education. I support families across Edgware, Barnet, Finchley, Hampstead, Mill Hill, Borehamwood, Radlett and surrounding North West London and Hertfordshire areas. I help children master reading, writing, phonics, grammar, and exam skills in a safe, supportive environment. My entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
+              </p>
+
+              <p className="text-sm text-emerald-200 mb-8 max-w-2xl">
+                Based in Edgware, I provide face-to-face English tutoring across North West London and nearby Hertfordshire, with online sessions also available.
               </p>
 
               {/* Support Types - Visual Pills */}

@@ -8,6 +8,56 @@ interface StructuredDataProps {
 
 export default function StructuredData({ type = 'home' }: StructuredDataProps) {
   const baseUrl = 'https://rosalindstuition.com';
+  const serviceAreaNames = [
+    'Edgware',
+    'Burnt Oak',
+    'Finchley',
+    'Fortis Green',
+    'Hampstead Garden Suburb',
+    'Church End',
+    'Highgate',
+    'Hampstead',
+    'Muswell Hill',
+    'Friern Barnet',
+    'Southgate',
+    'Woodside Park',
+    'Totteridge',
+    'Whetstone',
+    'Oakwood',
+    'Cockfosters',
+    'Oakleigh Park',
+    'Hendon',
+    'Brent Cross',
+    'Stanmore',
+    'Mill Hill',
+    'Highwood Hill',
+    'Colindale',
+    'Kingsbury',
+    'Queensbury',
+    'Belmont',
+    'Golders Green',
+    'Hadley Wood',
+    'Wembley',
+    'Harrow on the Hill',
+    'Harrow Weald',
+    'Pinner',
+    'Hatch End',
+    'Arkley',
+    'Watford',
+    'Borehamwood',
+    'Elstree',
+    'Radlett',
+    'Shenley',
+    'Oxhey',
+    'Carpenders Park',
+    'Bushey',
+    'Bushey Heath',
+    'Caldecott Hill',
+  ];
+  const serviceAreas = serviceAreaNames.map((name) => ({
+    '@type': 'Place',
+    name,
+  }));
 
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -22,50 +72,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       addressRegion: 'London',
       addressCountry: 'GB',
     },
-    areaServed: [
-      'Edgware',
-      'Burnt Oak',
-      'Finchley',
-      'Fortis Green',
-      'Hampstead Garden Suburb',
-      'Church End',
-      'Highgate',
-      'Hampstead',
-      'Muswell Hill',
-      'Friern Barnet',
-      'Southgate',
-      'Woodside Park',
-      'Totteridge and Whetstone',
-      'Oakwood',
-      'Cockfosters',
-      'Oakleigh Park',
-      'Hendon and Brent Cross',
-      'Stanmore',
-      'Mill Hill',
-      'Highwood Hill',
-      'Colindale',
-      'Kingsbury',
-      'Queensbury',
-      'Belmont',
-      'Golders Green',
-      'Hadley Wood',
-      'Wembley',
-      'Harrow on the Hill',
-      'Harrow Weald',
-      'Pinner',
-      'Hatch End',
-      'Arkley',
-      'Watford',
-      'Borehamwood & Elstree',
-      'Radlett and Shenley',
-      'Oxhey',
-      'Carpenders Park',
-      'Bushey & Bushey Heath',
-      'Caldecott Hill',
-      'Finchley & Muswell Hill',
-      'Barnet & Hampstead',
-      'Mill Hill & West Hendon',
-    ],
+    areaServed: serviceAreas,
     telephone: '+44 7908 845498',
     email: 'rosalindreindorp@sky.com',
   };
@@ -80,6 +87,18 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     publisher: {
       '@id': `${baseUrl}/#localbusiness`,
     },
+  };
+
+  const siteNavigationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+      { '@type': 'SiteNavigationElement', position: 1, name: 'English Tutor', url: `${baseUrl}/english` },
+      { '@type': 'SiteNavigationElement', position: 2, name: 'Maths Tutor', url: `${baseUrl}/maths` },
+      { '@type': 'SiteNavigationElement', position: 3, name: 'Parent Advocacy Support', url: `${baseUrl}/advocacy` },
+      { '@type': 'SiteNavigationElement', position: 4, name: 'About Rosalind', url: `${baseUrl}/about` },
+      { '@type': 'SiteNavigationElement', position: 5, name: 'Contact Tutor', url: `${baseUrl}/contact` },
+    ],
   };
 
   const localBusinessSchema = {
@@ -101,6 +120,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
       longitude: -0.2763,
     },
     url: baseUrl,
+    areaServed: serviceAreas,
     telephone: '+44 7908 845498',
     email: 'rosalindreindorp@sky.com',
   };
@@ -109,6 +129,7 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Private Tutoring',
+    areaServed: serviceAreas,
     provider: {
       '@id': `${baseUrl}/#localbusiness`,
     },
@@ -167,9 +188,9 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
     home: 'Home',
     english: 'English Tutor',
     maths: 'Maths Tutor',
-    about: 'About',
-    contact: 'Contact',
-    advocacy: 'Advocacy',
+    about: 'About Rosalind',
+    contact: 'Contact Tutor',
+    advocacy: 'Parent Advocacy Support',
   };
 
   const contactFaqSchema = type === 'contact' ? {
@@ -244,6 +265,13 @@ export default function StructuredData({ type = 'home' }: StructuredDataProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <Script
+        id="site-navigation-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(siteNavigationSchema),
         }}
       />
       <Script

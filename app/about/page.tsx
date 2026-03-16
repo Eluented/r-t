@@ -121,7 +121,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="hero-lead text-gray-300 mb-8"
               >
-                Where 30 years of educational expertise meets a deep understanding of neurodiverse learners. As an SEN specialist and Edgware tutor, I am dedicated to supporting children with a range of learning needs. This is more than a job, it's a calling.
+                Where 30 years of educational expertise meets a deep understanding of neurodiverse learners. As an SEN specialist and Edgware tutor, I support families across Barnet, Finchley, Hampstead, Mill Hill, Stanmore, Borehamwood, Radlett, Watford and surrounding North West London and Hertfordshire areas. This is more than a job, it's a calling.
                 <br />
         
               </motion.p>

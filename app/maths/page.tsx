@@ -141,7 +141,7 @@ export default function MathsPage() {
               transition={{ delay: 0.1 }}
             >
               <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold mb-6 border border-white/30">
-                🧮 Maths Tuition - Key Stages 1-3
+                🧮 Maths Tutor - North West London & Hertfordshire
               </div>
 
               <h1 className="hero-title text-white mb-6">
@@ -152,12 +152,16 @@ export default function MathsPage() {
 
               {/* Mobile Text */}
               <p className="md:hidden hero-lead text-blue-100 max-w-2xl mb-6">
-                Expert one-to-one Maths tuition KS1-3. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills. Proven entrance exam success.
+                Expert one-to-one Maths tutoring for KS1-3 in Edgware, Barnet, Finchley, Mill Hill, Stanmore, Watford, Radlett and nearby areas. Building confidence, mastering concepts, and excelling in SATs, entrance exams, and Functional Skills.
               </p>
 
               {/* Desktop Text */}
               <p className="hidden md:block hero-lead text-blue-100 max-w-2xl mb-6">
-                Expert one-to-one Maths tuition following the national curriculum for primary and secondary education. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
+                Expert one-to-one Maths tutoring following the national curriculum for primary and secondary education. I support families across Edgware, Barnet, Finchley, Mill Hill, Stanmore, Watford, Radlett and surrounding North West London and Hertfordshire areas. I help children build confidence, master concepts, and excel in SATs, entrance exams, and Functional Skills. Entrance exam successes include Haberdashers', Channing, Queenswood, UCS, and many more.
+              </p>
+
+              <p className="text-sm text-blue-100/90 mb-8 max-w-2xl">
+                Based in Edgware, I offer face-to-face Maths tutoring across North West London and nearby Hertfordshire, alongside online tuition for families further afield.
               </p>
 
               {/* Support Types - Visual Pills */}

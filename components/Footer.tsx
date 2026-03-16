@@ -3,11 +3,11 @@ import Link from 'next/link';
 export default function Footer() {
   const quickLinks = [
     { href: '/', label: 'Home' },
-    { href: '/english', label: 'English' },
-    { href: '/maths', label: 'Maths' },
-    { href: '/advocacy', label: 'Advocacy' },
-    { href: '/about', label: 'About Me' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/english', label: 'English Tutor' },
+    { href: '/maths', label: 'Maths Tutor' },
+    { href: '/advocacy', label: 'SEN Advocacy' },
+    { href: '/about', label: 'About Rosalind' },
+    { href: '/contact', label: 'Contact Tutor' },
   ];
 
   const specialisms = [
